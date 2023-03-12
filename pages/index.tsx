@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Navbar from './Navbar'
+import Landing from './Landing';
 
 const Home = () => {
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true)
@@ -23,6 +24,7 @@ const Home = () => {
       <Navbar 
         isTopOfPage={isTopOfPage}
       />
+      <Landing />
     </>
   )
 };
