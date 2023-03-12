@@ -11,8 +11,8 @@ module.exports = {
         "af-white": "#FEF9FF",
         "plat": "#DBD9DB",
         "rose": "#B098A4",
-        "gray": "747572",
-        "ebony": "45503B"
+        "gray": "#747572",
+        "ebony": "#45503B"
       },
     },
     screens: {
