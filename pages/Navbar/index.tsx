@@ -1,43 +1,75 @@
+import { useState } from "react"
 import Image from 'next/image'
+import { RxHamburgerMenu } from "react-icons/rx"
 
+import { useMediaQuery } from "../../hooks/useMediaQuery"
 import Logo from '../../public/assets/Logo.png'
 
 const menu = [
-  {id: 1, text: 'Główna'},
-  {id: 2, text: 'O nas'},
-  {id: 3, text: 'Syntezy na zlecenie'},
-  {id: 4, text: 'Katalizatory'},
-  {id: 5, text: 'Sklep'},
+  {text: 'Główna'},
+  {text: 'O nas'},
+  {text: 'Syntezy na zlecenie'},
+  {text: 'Katalizatory'},
+  {text: 'Sklep'},
 ];
 
 const flexBetween = "flex items-center justify-between";
 
-export const index = () => {
+type Props = {
+  isTopOfPage: Boolean
+}
+
+export const index = ({
+  isTopOfPage,
+}: Props) => {
+  const [isMenuToogled, setIsMenuToggled] = useState<boolean>(false)
+  const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 1060px)")
+
   return (
     <nav className={`${flexBetween} fixed top-0 z-30 w-full py-3`}>
-      <div className="mx-auto w-5/6 max-w-[1200px]">
+      <div className={`${flexBetween} mx-auto w-5/6 max-w-[1200px]`}>
         <div className={`${flexBetween}`}>
           <figure className="p-2 h-16 w-16">
-            <a href="./">
+            <a className="cursor-pointer" href="./">
               <Image src={Logo} alt={"Logo"} />
             </a>
           </figure>
-          <p>Advanced materials for molecular design</p>
+          {
+            isAboveMediumScreens ? (
+              <p className="pl-3 text-xl">Advanced materials for molecular design</p>
+            ) : null
+          }
         </div>
 
-        <div>
-          <ul className={`${flexBetween}`}>
-            {
-              menu.map(item => {
-                return (
-                  <li key={item.id}>
-                    {item.text}
-                  </li>
-                )
-              })
-            }
-          </ul>
-        </div>
+        {
+          isAboveMediumScreens ? (
+            <div>
+              <ul className={`${flexBetween} gap-8 text-sm`}>
+                {
+                  menu.map(item => {
+                    return (
+                      <li 
+                        key={item.text}
+                        className="cursor-pointer"
+                      >
+                        {item.text}
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            </div>
+          ) : (
+            <div>
+              <button
+                  className="rounded-full bg-secondary-500 p-2"
+                  onClick={() => setIsMenuToggled(!isMenuToogled)}
+                >
+                  <RxHamburgerMenu className="h-6 w-6" />
+                </button>
+            </div>
+          )
+        }
       </div>
     </nav>
   )
