@@ -24,9 +24,10 @@ export const index = ({
 }: Props) => {
   const [isMenuToogled, setIsMenuToggled] = useState<boolean>(false)
   const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 1060px)")
+  const navbarBackground = isTopOfPage ? "" : "bg-gray drop-shadow"
 
   return (
-    <nav className={`${flexBetween} fixed top-0 z-30 w-full py-3`}>
+    <nav className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-3`}>
       <div className={`${flexBetween} mx-auto w-5/6 max-w-[1200px]`}>
         <div className={`${flexBetween}`}>
           <figure className="p-2 h-16 w-16">
