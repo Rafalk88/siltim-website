@@ -22,7 +22,7 @@ const Landing = () => {
           className="h-[500px] w-full absolute"
         >
           {/* HERO */}
-          <section className="mx-auto w-5/6 max-w-[1200px] md:flex">
+          <section className="mx-auto w-5/6 max-w-[1200px] md:flex md:gap-8">
             <figure className="md:w-1/2 flex flex-col justify-center">
               <Image 
                 src={HeroImg}
