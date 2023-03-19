@@ -2,6 +2,7 @@ import Image from "next/image"
 
 import Submenu from "./Submenu"
 import Item from "./Item"
+import AboutUs from "./AboutUs"
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 
 import HeroImg from '../../public/assets/new_hero.jpg'
@@ -60,6 +61,7 @@ const Landing = () => {
           </Submenu>
 
           {/* CALL TO ACTION R&D */}
+          <AboutUs />
 
         </div>
     </section>
