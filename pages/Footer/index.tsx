@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-rich-black">
       <div className="w-5/6 max-w-[1200px] mx-auto text-af-white">
-        <figure>
+        <figure className="py-8">
           <img src="" alt="logo" />
         </figure>
 
@@ -34,20 +34,18 @@ const Footer = () => {
             }
           </section>
 
-          <section></section>
+          <SocialMediaIcons className="flex gap-4" />
         </section>
 
-        <SocialMediaIcons className="flex gap-4" />
-
-        <section className="flex gap-2">
+        <section className="gap-2 py-6 flex justify-center">
           <a href="" className="cursor-pointer">Polityka prywatności</a>
           <p>|</p>
           <a href="" className="cursor-pointer">RODO</a>
         </section>
 
-        <section>
+        <section className="pb-6 flex flex-col items-center">
           <p>&copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone.</p>
-          <div className="flex gap-2">
+          <div className="flex gap-2 py-2">
             <p>Strona stworzona przez</p>
             <a href="" className="cursor-pointer">Rafała Kochaneckiego</a>
           </div> 
