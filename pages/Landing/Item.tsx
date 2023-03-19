@@ -10,8 +10,8 @@ const Item = ({ title, icon }: Props) => {
 
   {console.log(icon)}
   return (
-    <article className="relative w-1/3 cursor-pointer
-      border rounded-xl"
+    <article className="relative cursor-pointer
+      border rounded-xl mb-6 md:w-1/3"
     >
       <div className="flex flex-col items-center">
         <p className="flex justify-center py-6 bg-af-white

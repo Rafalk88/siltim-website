@@ -6,7 +6,7 @@ type Props = {
 
 const Submenu = ({ children }: Props) => {
   return (
-    <section className="flex justify-between w-5/6 max-w-[1200px] mx-auto pt-12 gap-2">
+    <section className="md:flex md:justify-between w-5/6 max-w-[1200px] mx-auto pt-12 gap-2">
       {children}
     </section>
   )
