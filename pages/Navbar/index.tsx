@@ -27,7 +27,9 @@ export const index = ({
   const navbarBackground = isTopOfPage ? "" : "bg-gray drop-shadow"
 
   return (
-    <nav className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-3`}>
+    <nav className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full
+    py-3`}
+    >
       <div className={`${flexBetween} mx-auto w-5/6 max-w-[1200px]`}>
         <div className={`${flexBetween}`}>
           <figure className="p-2 h-16 w-16">
@@ -35,17 +37,12 @@ export const index = ({
               <Image src={Logo} alt={"Logo"} />
             </a>
           </figure>
-          {
-            isAboveMediumScreens ? (
-              <p className="pl-3 text-xl">Advanced materials for molecular design</p>
-            ) : null
-          }
         </div>
 
         {
           isAboveMediumScreens ? (
             <div>
-              <ul className={`${flexBetween} gap-8 text-sm`}>
+              <ul className={`${flexBetween} gap-8 text-sm text-rich-black`}>
                 {
                   menu.map(item => {
                     return (
