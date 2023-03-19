@@ -5,7 +5,7 @@ import { RxHamburgerMenu } from "react-icons/rx"
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 import Logo from '../../public/assets/Logo.png'
 
-const menu = [
+export const menu = [
   {text: 'Główna'},
   {text: 'O nas'},
   {text: 'Syntezy na zlecenie'},

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Navbar from './Navbar'
 import Landing from './Landing';
+import Footer from "./Footer"
 
 const Home = () => {
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true)
@@ -25,6 +26,7 @@ const Home = () => {
         isTopOfPage={isTopOfPage}
       />
       <Landing />
+      <Footer />
     </>
   )
 };
