@@ -17,8 +17,8 @@ const Landing = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
   
   return (
-    <section className="gap-16 pt-24 md:h-full md:pb-0 relative">
-        <div
+    <main className="gap-16 pt-24 md:h-full md:pb-0 relative">
+        <section
           className="h-[500px] w-full absolute"
         >
           {/* HERO */}
@@ -63,8 +63,8 @@ const Landing = () => {
           {/* CALL TO ACTION R&D */}
           <AboutUs />
 
-        </div>
-    </section>
+        </section>
+    </main>
   )
 }
 
