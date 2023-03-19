@@ -1,4 +1,6 @@
 import Image from "next/image"
+
+import Submenu from "./Submenu"
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 
 import HeroImg from '../../public/assets/new_hero.jpg'
@@ -22,7 +24,8 @@ const Landing = () => {
               </h2>
               <p className="pt-8 text-rich-black">Pełny katalog produktów do pobrania:</p>
               <button
-                className="w-[200px] h-[45px] bg-blue-200 hover:bg-blue-400 shadow-sm rounded-md mt-4 text-af-white duration-500"
+                className="w-[200px] h-[45px] bg-blue-200 hover:bg-blue-400 shadow-sm
+                rounded-md mt-4 text-af-white duration-500"
               >
                 Pobierz
               </button>
@@ -39,6 +42,7 @@ const Landing = () => {
           </div>
           
           {/* POTRÓJNY BAR Z MENU */}
+          <Submenu />
 
           {/* CALL TO ACTION R&D */}
 
