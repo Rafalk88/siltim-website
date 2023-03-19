@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <section className="w-5/6 max-w-[1200px] mx-auto md:flex">
+    <section className="w-5/6 max-w-[1200px] mx-auto md:flex pb-8">
       <div className="md:w-4/6">
         <h3 className="text-2xl py-8">
           Siltim to spółka o charakterze badawczo-rozwojowym.
