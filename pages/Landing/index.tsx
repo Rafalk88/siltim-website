@@ -1,9 +1,16 @@
 import Image from "next/image"
 
 import Submenu from "./Submenu"
+import Item from "./Item"
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 
 import HeroImg from '../../public/assets/new_hero.jpg'
+
+const subMenuItems = [
+  {title: "Na Zamówienie", icon: "order"},
+  {title: "Katalizatory", icon: "catalysts"},
+  {title: "Sklep", icon: "shopping"}
+]
 
 const Landing = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
@@ -14,8 +21,8 @@ const Landing = () => {
           className="h-[500px] w-full absolute"
         >
           {/* HERO */}
-          <div className="mx-auto w-5/6 max-w-[1200px] flex">
-            <div className="w-1/2 flex flex-col justify-center">
+          <section className="mx-auto w-5/6 max-w-[1200px] flex">
+            <article className="w-1/2 flex flex-col justify-center">
               {/* TEXT */}
               <h2
                 className="text-3xl font-bold"
@@ -29,24 +36,31 @@ const Landing = () => {
               >
                 Pobierz
               </button>
-            </div>
+            </article>
 
-            <div className="w-1/2 flex flex-col justify-center">
+            <figure className="w-1/2 flex flex-col justify-center">
               <Image 
                 src={HeroImg}
                 alt="Hero-image" 
                 width={580}
                 height={400}
               />
-            </div>
-          </div>
+            </figure>
+          </section>
           
           {/* POTRÓJNY BAR Z MENU */}
-          <Submenu />
+          <Submenu>
+            {
+              subMenuItems.map((item) => {
+                return (
+                  <Item key={item.title} title={item.title} icon={item.icon} />
+                )
+              })
+            }
+          </Submenu>
 
           {/* CALL TO ACTION R&D */}
 
-          {/* THUMBY */}
         </div>
     </section>
   )
