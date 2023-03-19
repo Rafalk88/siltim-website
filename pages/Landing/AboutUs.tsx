@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <section>
+    <section className="w-5/6 max-w-[1200px] mx-auto pt-8">
       About Us
     </section>
   )
