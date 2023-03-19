@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Navbar from './Navbar'
 import Landing from './Landing';
+import Contact from './Contact';
 import Footer from "./Footer"
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
         isTopOfPage={isTopOfPage}
       />
       <Landing />
+      <Contact />
       <Footer />
     </>
   )
