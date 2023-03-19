@@ -1,3 +1,4 @@
+import SocialMediaIcons from "@/components/SocialMediaIcons"
 import { menu } from "../Navbar"
 
 const Footer = () => {
@@ -36,7 +37,7 @@ const Footer = () => {
           <section></section>
         </section>
 
-        <section></section>
+        <SocialMediaIcons className="flex gap-4" />
 
         <section className="flex gap-2">
           <a href="" className="cursor-pointer">Polityka prywatności</a>
