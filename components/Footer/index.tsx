@@ -47,7 +47,7 @@ const Footer = () => {
 
         <section className="flex flex-col items-center">
           <p>&copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone.</p>
-          <div className="gap-2 py-4 center flex flex-col items-center">
+          <div className="gap-2 py-4 center flex flex-col items-center md:flex-row">
             <p>Strona stworzona przez</p>
             <Link href="https://www.linkedin.com/in/rafalkochanecki/" className="cursor-pointer">Rafała Kochaneckiego</Link>
           </div> 
