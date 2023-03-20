@@ -1,5 +1,6 @@
+import Link from "next/link"
 import SocialMediaIcons from "@/components/SocialMediaIcons"
-import { menu } from "../Navbar"
+import { menu } from "../navbar"
 
 const Footer = () => {
   return (
@@ -19,16 +20,17 @@ const Footer = () => {
             <p>VAT EU: PL 6343003739</p>
           </article>
 
-          <section>
+          <section className="flex flex-col">
             {
               menu.map(item => {
                 return (
-                  <li 
+                  <Link
                     key={item.text}
+                    href={`/${item.route}`}
                     className="list-none cursor-pointer"
                   >
                     {item.text}
-                  </li>
+                  </Link>
                 )
               })
             }
@@ -38,16 +40,16 @@ const Footer = () => {
         </section>
 
         <section className="gap-2 py-6 flex justify-center">
-          <a href="" className="cursor-pointer">Polityka prywatności</a>
+          <Link href="" className="cursor-pointer">Polityka prywatności</Link>
           <p>|</p>
-          <a href="" className="cursor-pointer">RODO</a>
+          <Link href="" className="cursor-pointer">RODO</Link>
         </section>
 
         <section className="pb-6 flex flex-col items-center">
           <p>&copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone.</p>
           <div className="flex gap-2 py-2">
             <p>Strona stworzona przez</p>
-            <a href="" className="cursor-pointer">Rafała Kochaneckiego</a>
+            <Link href="" className="cursor-pointer">Rafała Kochaneckiego</Link>
           </div> 
         </section>
       </div>

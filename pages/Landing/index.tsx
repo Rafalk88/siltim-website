@@ -3,6 +3,7 @@ import Image from "next/image"
 import Submenu from "./Submenu"
 import Item from "./Item"
 import AboutUs from "./AboutUs"
+import Contact from "./Contact"
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 
 import HeroImg from '../../public/assets/new_hero.jpg'
@@ -17,8 +18,8 @@ const Landing = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
   
   return (
-    <main className="gap-16 pt-24 md:pb-0">
-        <section
+    <section className="gap-16 md:pb-0">
+        <div
           className="w-full"
         >
           {/* HERO */}
@@ -63,8 +64,11 @@ const Landing = () => {
           {/* CALL TO ACTION R&D */}
           <AboutUs />
 
-        </section>
-    </main>
+          {/* CONTACT */}
+          <Contact />
+
+        </div>
+    </section>
   )
 }
 

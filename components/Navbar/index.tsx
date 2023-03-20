@@ -1,16 +1,17 @@
 import { useState } from "react"
 import Image from 'next/image'
+import Link from "next/link"
 import { RxHamburgerMenu } from "react-icons/rx"
 
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 import Logo from '../../public/assets/Logo.png'
 
 export const menu = [
-  {text: 'Główna'},
-  {text: 'O nas'},
-  {text: 'Syntezy na zlecenie'},
-  {text: 'Katalizatory'},
-  {text: 'Sklep'},
+  {text: 'Główna', route: ''},
+  {text: 'O nas', route: 'about'},
+  {text: 'Syntezy na zlecenie', route: 'synthesis'},
+  {text: 'Katalizatory', route: 'catalysts'},
+  {text: 'Sklep', route: 'shop'},
 ];
 
 const flexBetween = "flex items-center justify-between";
@@ -33,9 +34,9 @@ export const index = ({
       <div className={`${flexBetween} mx-auto w-5/6 max-w-[1200px]`}>
         <div className={`${flexBetween}`}>
           <figure className="p-2 h-16 w-16">
-            <a className="cursor-pointer" href="./">
+            <Link href="/" className="cursor-pointer">
               <Image src={Logo} alt={"Logo"} />
-            </a>
+            </Link>
           </figure>
         </div>
 
@@ -46,12 +47,9 @@ export const index = ({
                 {
                   menu.map(item => {
                     return (
-                      <li 
-                        key={item.text}
-                        className="cursor-pointer"
-                      >
+                      <Link key={item.text} href={`/${item.route}`} className="cursor-pointer">
                         {item.text}
-                      </li>
+                      </Link>
                     )
                   })
                 }

@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const icons = [
   {
     name: "facebook",
@@ -19,7 +21,7 @@ const SocialMediaIcons = ({ className }: Props) => {
       {
         icons.map((icon) => {
           return (
-            <a
+            <Link
               key={icon.name}
               href={icon.link}
               className="hover:opacity-50 transition duration-500"
@@ -27,7 +29,7 @@ const SocialMediaIcons = ({ className }: Props) => {
               rel="noreferrer"
             >
               <img src={`./assets/${icon.name}.png`} alt={`${icon.name}-link`} />
-            </a>
+            </Link>
           )
         })
       }
