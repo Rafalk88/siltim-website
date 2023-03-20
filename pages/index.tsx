@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Navbar from './Navbar'
+import Navbar from '../components/Navbar'
 import Landing from './Landing';
 import Contact from './Contact';
 import Footer from "./Footer"
