@@ -9,9 +9,9 @@ import { useMediaQuery } from "../../hooks/useMediaQuery"
 import HeroImg from '../../public/assets/new_hero.jpg'
 
 const subMenuItems = [
-  {title: "Na Zamówienie", icon: "order"},
+  {title: "Na Zamówienie", icon: "synthesis"},
   {title: "Katalizatory", icon: "catalysts"},
-  {title: "Sklep", icon: "shopping"}
+  {title: "Sklep", icon: "shop"}
 ]
 
 const Landing = () => {
