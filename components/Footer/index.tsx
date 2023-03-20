@@ -49,7 +49,7 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone.</p>
           <div className="flex gap-2 py-2">
             <p>Strona stworzona przez</p>
-            <Link href="" className="cursor-pointer">Rafała Kochaneckiego</Link>
+            <Link href="https://www.linkedin.com/in/rafalkochanecki/" className="cursor-pointer">Rafała Kochaneckiego</Link>
           </div> 
         </section>
       </div>
