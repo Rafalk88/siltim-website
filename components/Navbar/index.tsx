@@ -2,6 +2,7 @@ import { useState } from "react"
 import Image from 'next/image'
 import Link from "next/link"
 import { RxHamburgerMenu } from "react-icons/rx"
+import { XMarkIcon } from "@heroicons/react/24/outline"
 
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 import Logo from '../../public/assets/Logo.png'
@@ -23,7 +24,7 @@ type Props = {
 export const index = ({
   isTopOfPage,
 }: Props) => {
-  const [isMenuToogled, setIsMenuToggled] = useState<boolean>(false)
+  const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
   const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 1060px)")
   const navbarBackground = isTopOfPage ? "" : "bg-gray drop-shadow"
 
@@ -59,11 +60,35 @@ export const index = ({
             <div>
               <button
                   className="rounded-full bg-secondary-500 p-2"
-                  onClick={() => setIsMenuToggled(!isMenuToogled)}
+                  onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
                   <RxHamburgerMenu className="h-6 w-6" />
                 </button>
             </div>
+          )
+        }
+
+        {
+          !isAboveMediumScreens && isMenuToggled && (
+            <section className=" fixed right-0 bottom-0 h-full bg-pink w-[300px] text-af-white">
+              <div className="flex justify-end p-12">
+                <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+                  <XMarkIcon className="w-6 h-6 cursor-pointer" />
+                </button>
+              </div>
+
+              <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
+              {
+                  menu.map(item => {
+                    return (
+                      <Link key={item.text} href={`/${item.route}`} className="cursor-pointer">
+                        {item.text}
+                      </Link>
+                    )
+                  })
+                }
+              </div>
+            </section>
           )
         }
       </div>
