@@ -1,6 +1,6 @@
 const index = () => {
   return (
-    <section className="w-5/6 max-w-[1200px] mx-auto py-8">
+    <section className="w-5/6 max-w-[1200px] min-h-[calc(100vh-480px)] mx-auto py-8">
       <h3 className="text-3xl flex justify-center font-bold">Syntezy na zlecenie</h3>
       <h6 className="py-6 font-bold">Zastosowania laboratoryjne</h6>
       <p>
