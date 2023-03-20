@@ -1,5 +1,5 @@
 import SocialMediaIcons from "@/components/SocialMediaIcons"
-import { menu } from "../../components/Navbar"
+import { menu } from "../Navbar"
 
 const Footer = () => {
   return (
