@@ -10,7 +10,7 @@ const Footer = () => {
           <img src="" alt="logo" />
         </figure>
 
-        <section className="flex gap-4">
+        <section className="md:flex gap-4">
           <article>
             <p>Kontakt i dane przedsiębiorstwa</p>
             <p>Siltim Sp. z o.o.</p>
@@ -20,7 +20,7 @@ const Footer = () => {
             <p>VAT EU: PL 6343003739</p>
           </article>
 
-          <section className="flex flex-col">
+          <section className="flex flex-col py-6 md:py-0">
             {
               menu.map(item => {
                 return (
@@ -45,9 +45,9 @@ const Footer = () => {
           <Link href="" className="cursor-pointer">RODO</Link>
         </section>
 
-        <section className="pb-6 flex flex-col items-center">
+        <section className="flex flex-col items-center">
           <p>&copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone.</p>
-          <div className="flex gap-2 py-2">
+          <div className="gap-2 py-4 center flex flex-col items-center">
             <p>Strona stworzona przez</p>
             <Link href="https://www.linkedin.com/in/rafalkochanecki/" className="cursor-pointer">Rafała Kochaneckiego</Link>
           </div> 
