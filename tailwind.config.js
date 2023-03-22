@@ -25,6 +25,9 @@ module.exports = {
       sm: "768px",
       md: "1060px",
     },
+    animation: {
+      "loading": 'spin 1s infinite'
+    }
   },
   plugins: [],
 }
