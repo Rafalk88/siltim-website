@@ -26,7 +26,7 @@ export const index = ({
 }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
   const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 1060px)")
-  const navbarBackground = isTopOfPage ? "" : "bg-gray drop-shadow"
+  const navbarBackground = isTopOfPage ? "" : "bg-gray drop-shadow bg-white"
 
   return (
     <nav className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full
