@@ -41,9 +41,13 @@ const Contact = () => {
 
   const onSubmit = async () => {
     try {
+      setState((prevState) => ({
+        ...prevState,
+        isLoading: true,
+      }))
+
       await sendContactForm(values)
-      setTouched(initTouched)
-      setState(initState)
+
       toast({
         title: "Wysłano wiadomość.",
         status: "success",
@@ -63,6 +67,9 @@ const Contact = () => {
         isLoading: false,
         error: error.message
       }))
+    } finally {
+      setTouched(initTouched)
+      setState(initState)
     }
   }
 
