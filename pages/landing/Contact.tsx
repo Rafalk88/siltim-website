@@ -11,7 +11,7 @@ const initValues = {
   message: ""
 }
 
-const initState = { values: initValues, isLoading: false, error: null}
+const initState = { values: initValues, isLoading: false, }
 const initTouched = {name: false, email: false, message: false}
 
 type Events = {
@@ -23,7 +23,7 @@ const Contact = () => {
   const [state, setState] = useState(initState)
   const [touched, setTouched] = useState(initTouched)
 
-  const { values, isLoading, error } = state
+  const { values, isLoading } = state
 
   const handleChange = ({ target }: Events) => 
     setState((prevState) => ({
@@ -65,7 +65,6 @@ const Contact = () => {
       setState((prevState) => ({
         ...prevState,
         isLoading: false,
-        error: error.message
       }))
     } finally {
       setTouched(initTouched)
