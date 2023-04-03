@@ -4,6 +4,8 @@ import Submenu from "./Submenu"
 import Item from "./Item"
 import AboutUs from "./AboutUs"
 import Contact from "./Contact"
+import ChemSlider from "./Slider"
+
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 
 import HeroImg from '../../public/assets/new_hero.jpg'
@@ -63,6 +65,11 @@ const Landing = () => {
 
           {/* CALL TO ACTION R&D */}
           <AboutUs />
+
+          {/* IMAGE SLIDER */}
+          <ChemSlider 
+            className="mx-auto w-5/6 max-w-[1200px] py-10"
+          />
 
           {/* CONTACT */}
           <Contact />
