@@ -16,6 +16,10 @@ module.exports = {
         "pink": "#EF476F",
         "emerald": "#06D6A0"
       },
+      content: {
+        "arrow-left": 'url("../public/assets/ArrowLeftCircleIcon.svg")',
+        "arrow-right": 'url("../public/assets/ArrowRightCircleIcon.svg")',
+      },
       backgroundImage: {
         'hero': "url('../public/assets/new_hero.jpg')",
       },
