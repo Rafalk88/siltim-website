@@ -2,12 +2,8 @@ import Link from "next/link"
 
 const icons = [
   {
-    name: "facebook",
-    link: "",
-  },
-  {
-    name: "instagram",
-    link: "",
+    name: "linkedin",
+    link: "https://www.linkedin.com/company/siltim/",
   },
 ]
 
@@ -24,7 +20,7 @@ const SocialMediaIcons = ({ className }: Props) => {
             <Link
               key={icon.name}
               href={icon.link}
-              className="hover:opacity-50 transition duration-500"
+              className="hover:opacity-50 transition duration-500 w-[48px] h-[48px]"
               target="_blank"
               rel="noreferrer"
             >
