@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react"
 
-import Navbar from './navbar'
-import Footer from "./footer"
+import TopDiv from "./TopDiv"
+import Navbar from "./Navbar"
+import Footer from "./Footer"
 
 type Props = {
   children: React.ReactNode
@@ -25,6 +26,7 @@ const Layout = ({ children }: Props) => {
 
   return (
     <section>
+      <TopDiv />
       <Navbar 
         isTopOfPage={isTopOfPage}
       />
