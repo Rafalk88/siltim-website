@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <title>Siltim Sp. z o.o. | Strona główna</title>
       </Head>
-      <body className="bg-af-white">
+      <body>
         <Main />
         <NextScript />
       </body>
