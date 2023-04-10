@@ -8,20 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "af-white": "#F9FCFF",
-        "sunglow": "#FFD166",
-        "rich-black": "#04151F",
-        "blue-200": "#1e4363",
-        "blue-400": "#17324a",
-        "pink": "#EF476F",
-        "emerald": "#06D6A0"
+        "blue": "#0133FF",
+        "dark-grey": "#4A4661",
+        "light-grey": "#F4F4F5"
       },
       content: {
-        "arrow-left": 'url("../public/assets/ArrowLeftCircleIcon.svg")',
-        "arrow-right": 'url("../public/assets/ArrowRightCircleIcon.svg")',
+        "arrow-left": 'url("../public/assets/RightArrow.svg")',
+        "arrow-right": 'url("../public/assets/RightArrow.svg")',
       },
       backgroundImage: {
-        'hero': "url('../public/assets/new_hero.jpg')",
+        'hero': "url('../public/assets/hero.jpg')",
       },
     },
     screens: {
