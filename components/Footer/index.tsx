@@ -1,6 +1,6 @@
 import Link from "next/link"
 import SocialMediaIcons from "@/components/SocialMediaIcons"
-import { menu } from "../navbar"
+import { menu } from "../Navbar"
 
 const Footer = () => {
   return (
@@ -36,7 +36,7 @@ const Footer = () => {
             }
           </section>
 
-          <SocialMediaIcons className="flex gap-4" />
+          <SocialMediaIcons className="flex gap-4" width={48} height={48} />
         </section>
 
         <section className="gap-2 py-6 flex justify-center">

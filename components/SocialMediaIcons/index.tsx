@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 const icons = [
   {
@@ -9,9 +10,11 @@ const icons = [
 
 type Props = {
   className: string
+  width?: number
+  height?: number
 }
 
-const SocialMediaIcons = ({ className }: Props) => {
+const SocialMediaIcons = ({ className, width, height }: Props) => {
   return (
     <section className={className}>
       {
@@ -20,11 +23,11 @@ const SocialMediaIcons = ({ className }: Props) => {
             <Link
               key={icon.name}
               href={icon.link}
-              className="hover:opacity-50 transition duration-500 w-[48px] h-[48px]"
+              className={`hover:opacity-50 transition duration-500`}
               target="_blank"
               rel="noreferrer"
             >
-              <img src={`./assets/${icon.name}.png`} alt={`${icon.name}-link`} />
+              <Image src={`/assets/${icon.name}.png`} alt={`${icon.name}-link`} width={width} height={height} />
             </Link>
           )
         })
