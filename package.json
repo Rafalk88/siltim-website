@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^2.5.5",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@fontsource/montserrat": "^4.5.14",
     "@heroicons/react": "^2.0.16",
     "@sanity/client": "^3.2.0",
     "@sanity/image-url": "^1.0.1",
