@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Button } from "@chakra-ui/react"
 
 import Submenu from "./Submenu"
 import Item from "./Item"
@@ -8,7 +9,8 @@ import ChemSlider from "./Slider"
 
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 
-import HeroImg from '../../public/assets/new_hero.jpg'
+import { FolderArrowDownIcon } from "@heroicons/react/24/solid"
+import HeroImg from '../../public/assets/hero.png'
 
 const subMenuItems = [
   {title: "Na Zamówienie", icon: "synthesis"},
@@ -20,35 +22,37 @@ const Landing = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
   
   return (
-    <section className="gap-16 md:pb-0">
+    <section className="gap-16 md:pb-0 relative">
         <div
           className="w-full"
         >
           {/* HERO */}
-          <section className="mx-auto w-5/6 max-w-[1200px] md:flex md:gap-8">
-            <figure className="md:w-1/2 flex flex-col justify-center">
-              <Image 
+          <section className="mx-auto w-5/6 max-w-[1200px] pt-16 md:flex md:gap-8">
+            <figure className="absolute top-0 left-0 md:w-1/2 flex flex-col justify-center z-[-1]">
+              <Image
                 src={HeroImg}
-                alt="Hero-image" 
-                width={580}
-                height={400}
+                alt="Hero-image"
               />
             </figure>
 
             <article className="md:w-1/2 flex flex-col justify-center">
               {/* TEXT */}
               <h2
-                className="text-3xl font-bold pt-8 md:pt-0"
+                className="w-1/2 text-3xl text-af-white font-poppins font-bold pt-8 md:pt-0"
               >
                 Advanced materials for molecular design
               </h2>
-              <p className="pt-8 text-rich-black">Pełny katalog produktów do pobrania:</p>
-              <button
-                className="w-[200px] h-[45px] bg-blue-200 hover:bg-blue-400 shadow-sm
-                rounded-md mt-4 text-af-white duration-500"
+              <p className="pt-12 text-af-white font-bold">Pełny katalog produktów do pobrania:</p>
+              <Button
+                className="w-[200px] h-[45px] mb-2 shadow-sm
+                mt-4 duration-500 font-rajdhani font-bold"
+                data-role="download"
+                variant="outline"
+                colorScheme="whiteAlpha"
+                leftIcon={<FolderArrowDownIcon width={20} height={20} />}
               >
                 Pobierz
-              </button>
+              </Button>
             </article>
           </section>
           

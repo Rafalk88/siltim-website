@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { ShoppingCartIcon, BeakerIcon, ArrowPathRoundedSquareIcon } from "@heroicons/react/24/outline"
+import { ShoppingBagIcon, CubeIcon, ClipboardDocumentListIcon } from "@heroicons/react/24/solid"
 
 type Props = {
   title: string
@@ -10,36 +10,36 @@ type Props = {
 const Item = ({ title, icon }: Props) => {
 
   return (
-    <article className="relative cursor-pointer
-      border rounded-xl mb-6 md:w-1/3"
+    <article
+      className="cursor-pointer mb-6 w-[250px] bg-slate-200
+        hover:scale-105 transition duration-200"
     >
       <Link
         className="flex flex-col items-center"
         href={`/${icon}`}
       >
-        <p className="flex justify-center py-6 bg-af-white
-          opacity-75"
+        <p className="flex justify-center pt-6 opacity-75 font-rajdhani font-bold"
         >
           {title}
         </p>
         {
           (icon === "shop")
           ? 
-          <ShoppingCartIcon className="w-[120px] h-[120px] my-6" />
+          <ShoppingBagIcon className="w-[100px] h-[100px] my-6" />
           :
           null
         }
         {
           (icon === "catalysts")
           ? 
-          <BeakerIcon className="w-[120px] h-[120px] my-6" />
+          <CubeIcon className="w-[100px] h-[100px] my-6" />
           :
           null
         }
         {
           (icon === "synthesis")
           ? 
-          <ArrowPathRoundedSquareIcon className="w-[120px] h-[120px] my-6" />
+          <ClipboardDocumentListIcon className="w-[100px] h-[100px] my-6" />
           :
           null
         }

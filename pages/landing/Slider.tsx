@@ -3,12 +3,6 @@ import Slider from "react-slick"
 
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "@heroicons/react/24/solid"
 
-import Image1 from "../../public/assets/image-1.jpg"
-import Image2 from "../../public/assets/image-2.jpg"
-import Image3 from "../../public/assets/image-3.jpg"
-import Image4 from "../../public/assets/image-4.jpg"
-import Image5 from "../../public/assets/image-5.jpg"
-
 type Props = {
   className: string
 }
@@ -77,35 +71,35 @@ const ChemSlider = ({ className }: Props) => {
       <Slider {...settings}>
         <figure className="p-2">
           <Image 
-            src={Image1}
+            src={""}
             alt="slide-1"
           />
         </figure>
 
         <figure className="p-2">
           <Image 
-            src={Image2}
+            src={""}
             alt="slide-2"
           />
         </figure>
 
         <figure className="p-2">
           <Image 
-            src={Image3}
+            src={""}
             alt="slide-3"
           />
         </figure>
 
         <figure className="p-2">
           <Image 
-            src={Image4}
+            src={""}
             alt="slide-4"
           />
         </figure>
 
         <figure className="p-2">
           <Image 
-            src={Image5}
+            src={""}
             alt="slide-5"
           />
         </figure>
