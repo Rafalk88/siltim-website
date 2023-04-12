@@ -1,59 +1,59 @@
 import Link from "next/link"
+import Image from "next/image"
 import SocialMediaIcons from "@/components/SocialMediaIcons"
 import { menu } from "../Navbar"
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-rich-black">
-      <div className="w-5/6 max-w-[1200px] mx-auto text-af-white">
-        <figure className="py-8">
-          <img src="" alt="logo" />
-        </figure>
+    <footer className="w-full bg-blue">
+      <div className="w-5/6 max-w-[1200px] mx-auto md:flex pt-12 text-white">
+        <div className="text-lg w-full">
+          <div className="md:flex md:justify-between">
+            <article>
+              <p>Siltim Sp. z o.o.</p>
+              <p>Św. Jana 11/4</p>
+              <p>40-012 Katowice, Polska</p>
+              <p>KRS: 0000934584</p>
+              <p>VAT EU: PL 6343003739</p>
+            </article>
 
-        <section className="md:flex gap-4">
-          <article>
-            <p>Kontakt i dane przedsiębiorstwa</p>
-            <p>Siltim Sp. z o.o.</p>
-            <p>Św. Jana 11/4</p>
-            <p>40-012 Katowice, Polska</p>
-            <p>Rejestr przedsiębiorców KRS: 0000934584</p>
-            <p>VAT EU: PL 6343003739</p>
-          </article>
+            <div className="md:flex md:justify-between w-2/3">
+              <article className="flex flex-col py-6 md:py-0">
+                {
+                  menu.map(item => {
+                    return (
+                      <Link
+                        key={item.text}
+                        href={`/${item.route}`}
+                        className="list-none cursor-pointer hover:text-light-grey"
+                      >
+                        {item.text}
+                      </Link>
+                    )
+                  })
+                }
+              </article>
 
-          <section className="flex flex-col py-6 md:py-0">
-            {
-              menu.map(item => {
-                return (
-                  <Link
-                    key={item.text}
-                    href={`/${item.route}`}
-                    className="list-none cursor-pointer"
-                  >
-                    {item.text}
-                  </Link>
-                )
-              })
-            }
-          </section>
+              <SocialMediaIcons className="flex gap-4 hover:text-light-grey" width={48} height={48} />
+            </div>
+          </div>
 
-          <SocialMediaIcons className="flex gap-4" width={48} height={48} />
-        </section>
-
-        <section className="gap-2 py-6 flex justify-center">
-          <Link href="" className="cursor-pointer">Polityka prywatności</Link>
-          <p>|</p>
-          <Link href="" className="cursor-pointer">RODO</Link>
-        </section>
-
-        <section className="flex flex-col items-center">
-          <p>&copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone.</p>
-          <div className="gap-2 py-4 center flex flex-col items-center md:flex-row">
-            <p>Strona stworzona przez</p>
-            <Link href="https://www.linkedin.com/in/rafalkochanecki/" className="cursor-pointer">Rafała Kochaneckiego</Link>
-          </div> 
-        </section>
+          <div className="md:flex md:justify-between md:items-center py-6">
+            <div className="flex gap-2">
+              <Link href="" className="cursor-pointer hover:text-light-grey">Polityka prywatności</Link>
+              <p>|</p>
+              <Link href="" className="cursor-pointer hover:text-light-grey">RODO</Link>
+            </div>
+            <p>&copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone</p>
+            <div className="gap-2 py-4 center flex flex-col items-center md:flex-row">
+              <p>Webmaster</p>
+              <Link href="https://www.linkedin.com/in/rafalkochanecki/" className="cursor-pointer hover:text-light-grey">
+                Rafał Kochanecki
+              </Link>
+            </div> 
+          </div>
+        </div>
       </div>
-      
     </footer>
   )
 }
