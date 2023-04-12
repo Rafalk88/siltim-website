@@ -14,18 +14,18 @@ const TopDiv = () => {
           <Image
             className="ml-2"
             src={SecuredLetter}
-            alt={"letter-icon"}
+            alt={"Letter-icon"}
           />
           <p className={textStyles}>office@siltim.com</p>
           <Image 
             className="ml-2"
             src={PlaceMarker}
-            alt={"location-icon"}
+            alt={"Location-icon"}
           />
           <p className={textStyles}>Św. Jana 11/4, 40-012 Katowice, Polska</p>
         </div>
         
-        <SocialMediaIcons className={""} width={23} height={23} />
+        <SocialMediaIcons width={23} height={23} />
       </div>
     </section>
   )
