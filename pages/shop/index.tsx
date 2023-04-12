@@ -14,7 +14,7 @@ const index = () => {
           <IframeResizer 
             src="https://siltim-chem-catalogue.onrender.com"
             heightCalculationMethod="lowestElement"
-            minHeight={1546}
+            minHeight={850}
             style={{
               width: '1px',
               minWidth: '100%',

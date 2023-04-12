@@ -16,7 +16,7 @@ const TopDiv = () => {
             src={SecuredLetter}
             alt={"letter-icon"}
           />
-          <p className={textStyles}>kontakt@domena.pl</p>
+          <p className={textStyles}>office@siltim.com</p>
           <Image 
             className="ml-2"
             src={PlaceMarker}

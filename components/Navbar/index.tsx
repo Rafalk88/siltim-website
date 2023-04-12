@@ -14,8 +14,9 @@ export const menu = [
   {text: 'O nas', route: 'about', lineWidth: 100},
   {text: 'Katalizatory', route: 'catalysts', lineWidth: 100},
   {text: 'Syntezy na zlecenie', route: 'synthesis', lineWidth: 195},
+  {text: 'Sklep', route: 'shop', mq: "sm"},
 ];
- 
+
 const flexBetween = "flex items-center justify-between";
 
 type Props = {
@@ -28,9 +29,10 @@ export const index = ({
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
   const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 1060px)")
   const navbarBackground = isTopOfPage ? "" : "bg-gray drop-shadow bg-white"
+  const topPosition = isTopOfPage ? "top-[40px]" : "top-0"
 
   return (
-    <nav className={`${navbarBackground} ${flexBetween} fixed top-[40px] z-30 w-full
+    <nav className={`${navbarBackground} ${flexBetween} fixed ${topPosition} z-30 w-full
     py-3`}
     >
       <div className={`flex items-center mx-auto w-5/6 max-w-[1200px]`}>
@@ -48,16 +50,19 @@ export const index = ({
               <ul className={`${flexBetween} gap-8 text-sm`}>
                 {
                   menu.map(item => {
-                    return (
-                      <div className={`flex flex-col before:content-[''] before:w-[${item.lineWidth}px]
-                        before:h-[1px] before:bg-black before:hover:bg-blue hover:text-blue`}
-                      >
-                        <Link key={item.text} href={`/${item.route}`} className="cursor-pointer text-sm">
-                          {item.text}
-                        </Link>
-                      </div>
-                      
-                    )
+                    const lineW = `before:w-[${item.lineWidth}px]`
+
+                    if (!item.mq) {
+                      return (
+                        <div className={`flex flex-col before:content-[''] ${lineW}
+                          before:h-[1px] before:bg-black before:hover:bg-blue hover:text-blue`}
+                        >
+                          <Link key={item.text} href={`/${item.route}`} className="cursor-pointer text-sm">
+                            {item.text}
+                          </Link>
+                        </div>
+                      )
+                    }
                   })
                 }
               </ul>
@@ -75,9 +80,9 @@ export const index = ({
               {/* SEARCH BTN HERE */}
             </div>
           ) : (
-            <div>
+            <div className="w-5/6 flex justify-end">
               <button
-                  className="rounded-full bg-secondary-500 p-2"
+                  className="rounded-full bg-secondary-500 p-2 text-dark-grey hover:text-black"
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
                   <RxHamburgerMenu className="h-6 w-6" />
@@ -88,7 +93,7 @@ export const index = ({
 
         {
           !isAboveMediumScreens && isMenuToggled && (
-            <section className=" fixed right-0 bottom-0 h-full bg-pink w-[300px] text-af-white">
+            <section className=" fixed right-0 bottom-0 h-full bg-pink w-[300px] text-dark-grey bg-light-grey">
               <div className="flex justify-end p-12">
                 <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
                   <XMarkIcon className="w-6 h-6 cursor-pointer" />
@@ -99,7 +104,12 @@ export const index = ({
               {
                   menu.map(item => {
                     return (
-                      <Link key={item.text} href={`/${item.route}`} className="cursor-pointer">
+                      <Link 
+                        key={item.text}
+                        href={`/${item.route}`}
+                        className="cursor-pointer hover:text-black"
+                        onClick={() => setIsMenuToggled(!isMenuToggled)}
+                        >
                         {item.text}
                       </Link>
                     )

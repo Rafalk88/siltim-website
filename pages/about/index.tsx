@@ -8,7 +8,7 @@ const index = () => {
           Siltim Sp. z o.o. | O nas
         </title>
       </Head>
-      <section className="w-5/6 max-w-[1200px] min-h-[calc(100vh-478px)] mx-auto py-8">
+      <section className="w-5/6 max-w-[1200px] h-screen mx-auto py-8">
         <h3 className="text-3xl flex justify-center font-bold">Nasz misja</h3>
         <p className="py-6">
           Założona w 2021 roku firma Siltim jest start-upową firmą chemiczną
