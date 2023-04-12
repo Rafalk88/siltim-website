@@ -1,35 +1,35 @@
-import Image from 'next/image'
+import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import { Button } from "@chakra-ui/react"
 
+import Typography from "../Typography"
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 
-import Logo from '../../public/assets/Logo.png'
+import Logo from "../../public/assets/Logo.png"
 import { RxHamburgerMenu } from "react-icons/rx"
 import { XMarkIcon } from "@heroicons/react/24/outline"
 
+const flexBetween = "flex items-center justify-between"
 export const menu = [
-  {text: 'Główna', route: '', lineWidth: 100},
-  {text: 'O nas', route: 'about', lineWidth: 100},
-  {text: 'Katalizatory', route: 'catalysts', lineWidth: 100},
-  {text: 'Syntezy na zlecenie', route: 'synthesis', lineWidth: 195},
-  {text: 'Sklep', route: 'shop', mq: "sm"},
+  {text: "Główna", route: "", lineWidth: 100},
+  {text: "O nas", route: "about", lineWidth: 100},
+  {text: "Katalizatory", route: "catalysts", lineWidth: 100},
+  {text: "Syntezy na zlecenie", route: "synthesis", lineWidth: 195},
+  {text: "Sklep", route: "shop", mq: "sm"},
 ];
-
-const flexBetween = "flex items-center justify-between";
 
 type Props = {
   isTopOfPage: Boolean
 }
 
-export const index = ({
-  isTopOfPage,
-}: Props) => {
+export const index = ({ isTopOfPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
   const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 1060px)")
   const navbarBackground = isTopOfPage ? "" : "bg-gray drop-shadow bg-white"
   const topPosition = isTopOfPage ? "top-[40px]" : "top-0"
+
+  const handleClick = () => setIsMenuToggled(!isMenuToggled)
 
   return (
     <nav className={`${navbarBackground} ${flexBetween} fixed ${topPosition} z-30 w-full
@@ -47,7 +47,11 @@ export const index = ({
         {
           isAboveMediumScreens ? (
             <div className={`${flexBetween} w-5/6`}>
-              <ul className={`${flexBetween} gap-8 text-sm`}>
+              <Typography 
+                className={`${flexBetween} gap-8`}
+                variant="small"
+                as="ul"
+              >
                 {
                   menu.map(item => {
                     const lineW = `before:w-[${item.lineWidth}px]`
@@ -57,7 +61,7 @@ export const index = ({
                         <div className={`flex flex-col before:content-[''] ${lineW}
                           before:h-[1px] before:bg-black before:hover:bg-blue hover:text-blue`}
                         >
-                          <Link key={item.text} href={`/${item.route}`} className="cursor-pointer text-sm">
+                          <Link key={item.text} href={`/${item.route}`} className="cursor-pointer">
                             {item.text}
                           </Link>
                         </div>
@@ -65,7 +69,7 @@ export const index = ({
                     }
                   })
                 }
-              </ul>
+              </Typography>
 
               <Link href={"/shop"} passHref>
                 <Button
@@ -82,8 +86,8 @@ export const index = ({
           ) : (
             <div className="w-5/6 flex justify-end">
               <button
-                  className="rounded-full bg-secondary-500 p-2 text-dark-grey hover:text-black"
-                  onClick={() => setIsMenuToggled(!isMenuToggled)}
+                  className="rounded-full p-2 text-dark-grey hover:text-black"
+                  onClick={handleClick}
                 >
                   <RxHamburgerMenu className="h-6 w-6" />
                 </button>
@@ -93,14 +97,18 @@ export const index = ({
 
         {
           !isAboveMediumScreens && isMenuToggled && (
-            <section className=" fixed right-0 bottom-0 h-full bg-pink w-[300px] text-dark-grey bg-light-grey">
+            <section className="fixed right-0 bottom-0 w-[300px] h-full text-dark-grey bg-light-grey">
               <div className="flex justify-end p-12">
-                <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+                <button onClick={handleClick}>
                   <XMarkIcon className="w-6 h-6 cursor-pointer" />
                 </button>
               </div>
 
-              <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
+              <Typography
+                className="flex flex-col gap-10 ml-[33%] font-normal"
+                variant="h4"
+                as="div"
+              >
               {
                   menu.map(item => {
                     return (
@@ -115,7 +123,7 @@ export const index = ({
                     )
                   })
                 }
-              </div>
+              </Typography>
             </section>
           )
         }
