@@ -1,34 +1,42 @@
 import Link from "next/link"
-import Image from "next/image"
 import SocialMediaIcons from "@/components/SocialMediaIcons"
+import Typography from "../Typography"
 import { menu } from "../Navbar"
 
 const Footer = () => {
   return (
     <footer className="w-full bg-blue">
       <div className="w-5/6 max-w-[1200px] mx-auto md:flex pt-12 text-white">
-        <div className="w-full text-lg">
+        <div className="w-full">
           <div className="sm:flex sm:justify-between">
-            <article>
+            <Typography
+              variant="body"
+              as="div"
+            >
               <p>Siltim Sp. z o.o.</p>
               <p>Św. Jana 11/4</p>
               <p>40-012 Katowice, Polska</p>
               <p>KRS: 0000934584</p>
               <p>VAT EU: PL 6343003739</p>
-            </article>
+            </Typography>
 
             <div className="sm:flex sm:justify-between w-2/3">
               <article className="flex flex-col py-6 md:py-0">
                 {
                   menu.map(item => {
                     return (
-                      <Link
-                        key={item.text}
-                        href={`/${item.route}`}
-                        className="list-none cursor-pointer hover:text-light-grey"
+                      <Typography
+                        variant="body"
                       >
-                        {item.text}
-                      </Link>
+                        <Link
+                          key={item.text}
+                          href={`/${item.route}`}
+                          className="list-none cursor-pointer hover:text-light-grey"
+                        >
+                          {item.text}
+                        </Link>
+                      </Typography>
+                      
                     )
                   })
                 }
@@ -39,13 +47,27 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row justify-between items-center py-6">
-            <div className="flex gap-2">
+            <Typography
+              className="flex gap-2"
+              variant="body"
+              as="div"
+            >
               <Link href="" className="cursor-pointer hover:text-light-grey">Polityka prywatności</Link>
               <p>|</p>
               <Link href="" className="cursor-pointer hover:text-light-grey">RODO</Link>
-            </div>
-            <p className="text-center">&copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone</p>
-            <div className="gap-2 center flex items-center">
+            </Typography>
+            <Typography 
+              className="text-center"
+              variant="body"
+              as="p"
+            >
+              &copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone
+            </Typography>
+            <Typography 
+              className="gap-2 center flex items-center"
+              variant="body"
+              as="div"
+            >
               <p>Webmaster</p>
               <Link
                 href="https://www.linkedin.com/in/rafalkochanecki/"
@@ -55,7 +77,7 @@ const Footer = () => {
               >
                 Rafał Kochanecki
               </Link>
-            </div> 
+            </Typography> 
           </div>
         </div>
       </div>
