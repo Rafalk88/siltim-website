@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <footer className="w-full bg-blue">
       <div className="w-5/6 max-w-[1200px] mx-auto md:flex pt-12 text-white">
-        <div className="text-lg w-full">
-          <div className="md:flex md:justify-between">
+        <div className="w-full text-lg">
+          <div className="sm:flex sm:justify-between">
             <article>
               <p>Siltim Sp. z o.o.</p>
               <p>Św. Jana 11/4</p>
@@ -17,7 +17,7 @@ const Footer = () => {
               <p>VAT EU: PL 6343003739</p>
             </article>
 
-            <div className="md:flex md:justify-between w-2/3">
+            <div className="sm:flex sm:justify-between w-2/3">
               <article className="flex flex-col py-6 md:py-0">
                 {
                   menu.map(item => {
@@ -38,16 +38,21 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="md:flex md:justify-between md:items-center py-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center py-6">
             <div className="flex gap-2">
               <Link href="" className="cursor-pointer hover:text-light-grey">Polityka prywatności</Link>
               <p>|</p>
               <Link href="" className="cursor-pointer hover:text-light-grey">RODO</Link>
             </div>
-            <p>&copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone</p>
-            <div className="gap-2 py-4 center flex flex-col items-center md:flex-row">
+            <p className="text-center">&copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone</p>
+            <div className="gap-2 center flex items-center">
               <p>Webmaster</p>
-              <Link href="https://www.linkedin.com/in/rafalkochanecki/" className="cursor-pointer hover:text-light-grey">
+              <Link
+                href="https://www.linkedin.com/in/rafalkochanecki/"
+                className="cursor-pointer hover:text-light-grey"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Rafał Kochanecki
               </Link>
             </div> 
