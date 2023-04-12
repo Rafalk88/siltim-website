@@ -1,5 +1,7 @@
 import Head from "next/head"
 
+import Typography from "@/components/Typography"
+
 const index = () => {
   return (
     <>
@@ -8,10 +10,28 @@ const index = () => {
           Siltim Sp. z o.o. | Syntezy
         </title>
       </Head>
-      <section className="w-5/6 max-w-[1200px] min-h-[calc(100vh-480px)] mx-auto py-8">
-        <h3 className="text-3xl flex justify-center font-bold">Syntezy na zlecenie</h3>
-        <h6 className="py-6 font-bold">Zastosowania laboratoryjne</h6>
-        <p>
+      <section className="w-5/6 max-w-[1200px] h-[calc(100vh-120px)] mx-auto
+        flex flex-col justify-center items-center pt-20 sm:pt-0"
+      >
+        <Typography
+          className="flex justify-center"
+          variant="h3"
+          as="h3"
+        >
+          Syntezy na zlecenie
+        </Typography>
+        <Typography
+          className="py-6"
+          variant="h5"
+          as="h5"
+        >
+          Zastosowania laboratoryjne
+        </Typography>
+        <Typography
+          className="py-6"
+          variant="body"
+          as="p"
+        >
           Pobieramy honorarium tylko w przypadku zrealizowanych syntez
           związków chemicznych i ponosimy koszty opracowania metod z tym
           związanych. Ponieważ otrzymywanie nieopisanych dotąd związków
@@ -21,17 +41,27 @@ const index = () => {
           przedziale czasowym. W trakcie tego okresu pozostajemy w
           kontakcie i informujemy o postępach prac, szacując przy tym
           datę dostawy.
-        </p>
+        </Typography>
 
-        <h6 className="py-6 font-bold">Zastosowania przemysłowe</h6>
-        <p>
+        <Typography
+          className="py-6"
+          variant="h5"
+          as="h5"
+        >
+          Zastosowania przemysłowe
+        </Typography>
+        <Typography
+          className="py-6"
+          variant="body"
+          as="p"
+        >
           Zapraszamy do współpracy w zakresie przygotowania i testowania
           syntez pilotażowych z wykorzystaniem aparatury ze stali
           nierdzewnej o nominalnej objętości reaktora 50 L. Podejmujemy
           się zadań w zakresie przygotowania oryginalnej procesowej
           dokumentacji P&ID. Dysponujemy własnymi rozwiązaniami w
           zakresie aparatury na cele budowy prototypów i demonstratorów. 
-        </p>
+        </Typography>
       </section>
     </>
     
