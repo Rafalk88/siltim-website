@@ -1,7 +1,9 @@
 import Image from "next/image"
 import Slider from "react-slick"
 
-import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "@heroicons/react/24/solid"
+import Image1 from "@/public/assets/carousel_image_1.jpeg"
+import Image2 from "@/public/assets/carousel_image_2.jpeg"
+import Image3 from "@/public/assets/carousel_image_3.jpeg"
 
 type Props = {
   className: string
@@ -16,48 +18,36 @@ const settings = {
   dots: true,
   infinite: true,
   speed: 2500,
-  slidesToShow: 3,
+  slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 5000,
   pauseOnHover: true,
-  nextArrow: <SampleNextArrow />,
-  prevArrow: <SamplePrevArrow />,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        dots: false
-      }
-    }
-  ]
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
 }
 
-function SampleNextArrow(props: BtnProps) {
-  const arrow = <ArrowRightCircleIcon />
+const imagesStyles = "p-2"
 
+function NextArrow(props: BtnProps) {
   const { className, onClick } = props;
   return (
     <button
-      className={`${className} block before:content-arrow-right`}
+      className={`${className} block before:content-arrow-right rounded-full w-[42px] h-[42px]
+        right-[-65px] drop-shadow-lg bg-white hover:bg-light-grey`
+      }
       onClick={onClick}
       data-role="none"
     />
   );
 }
 
-function SamplePrevArrow(props: BtnProps) {
+function PrevArrow(props: BtnProps) {
   const { className, onClick } = props;
   return (
     <button
-      className={`${className} block before:content-arrow-left`}
+      className={`${className} block before:content-arrow-left rounded-full w-[42px] h-[42px]
+      left-[-65px] drop-shadow-lg bg-white hover:bg-light-grey`}
       onClick={onClick}
       data-role="none"
     />
@@ -69,38 +59,24 @@ const ChemSlider = ({ className }: Props) => {
   return (
     <section className={className}>
       <Slider {...settings}>
-        <figure className="p-2">
+        <figure className={imagesStyles}>
           <Image 
-            src={""}
+            src={Image1}
             alt="slide-1"
           />
         </figure>
 
-        <figure className="p-2">
+        <figure className={imagesStyles}>
           <Image 
-            src={""}
+            src={Image2}
             alt="slide-2"
           />
         </figure>
 
-        <figure className="p-2">
+        <figure className={imagesStyles}>
           <Image 
-            src={""}
+            src={Image3}
             alt="slide-3"
-          />
-        </figure>
-
-        <figure className="p-2">
-          <Image 
-            src={""}
-            alt="slide-4"
-          />
-        </figure>
-
-        <figure className="p-2">
-          <Image 
-            src={""}
-            alt="slide-5"
           />
         </figure>
       </Slider>
