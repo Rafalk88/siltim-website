@@ -29,19 +29,21 @@ const tags: Record<Variant, ElementType> = {
 }
 
 const sizes: Record<Variant, string> = {
-  h1: "text-5xl font-bold sm:text-4xl",
-  h2: "text-4xl font-bold sm:text-3xl",
-  h3: "text-3xl font-bold sm:text-2xl",
-  h4: "text-2xl font-bold sm:text-1xl",
-  h5: "text-xl font-bold sm:text-lg",
-  body: "text-lg sm:text-md",
-  "body-small": "text-md sm:text-sm",
-  small: "text-sm sm:text-xs"
+  h1: "text-4xl font-bold sm:text-5xl",
+  h2: "text-3xl font-bold sm:text-4xl",
+  h3: "text-2xl font-bold sm:text-3xl",
+  h4: "text-xl font-bold sm:text-2xl",
+  h5: "text-lg font-bold sm:text-xl",
+  body: "text-md sm:text-lg",
+  "body-small": "text-sm sm:text-md",
+  small: "text-xs sm:text-sm"
 }
 
-export const Typography = ({ variant, children, className, as }: Props) => {
+const Typography = ({ variant, children, className, as }: Props) => {
   const sizeClasses = sizes[variant]
   const Tag = as || tags[variant]
 
   return <Tag className={`${sizeClasses} ${className}`}>{children}</Tag>
 }
+
+export default Typography
