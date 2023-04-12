@@ -1,7 +1,11 @@
 import Head from "next/head"
-import IframeResizer from "iframe-resizer-react"
+
+import { useMediaQuery } from "@/hooks/useMediaQuery"
 
 const index = () => {
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1000px)")
+  const iframeRwdHeight = isAboveMediumScreens ? "850px" : "1720px"
+
   return (
     <>
       <Head>
@@ -10,15 +14,11 @@ const index = () => {
         </title>
       </Head>
       <section className="w-5/6 max-w-[1200px] mx-auto">
-        <div className="w-full">
-          <IframeResizer 
+        <div className="w-full pt-40">
+          <iframe
             src="https://siltim-chem-catalogue.onrender.com"
-            heightCalculationMethod="lowestElement"
-            minHeight={850}
-            style={{
-              width: '1px',
-              minWidth: '100%',
-            }}
+            width="100%"
+            height={iframeRwdHeight}
           />
         </div>
       </section>
