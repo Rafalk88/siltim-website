@@ -1,8 +1,17 @@
 import { useState } from "react"
-import { Button, FormControl, FormLabel, FormErrorMessage, Input, Textarea, useToast } from "@chakra-ui/react"
-import isEmail from 'validator/lib/isEmail';
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  Input,
+  Textarea,
+  useToast
+} from "@chakra-ui/react"
+import isEmail from 'validator/lib/isEmail'
 
 import { sendContactForm } from "@/api/api"
+import Typography from "@/components/Typography"
 
 const initValues = { name: "", email: "", title: "", message: "" }
 const initState = { values: initValues, isLoading: false, }
@@ -89,10 +98,20 @@ const Contact = () => {
       <div className="w-5/6 max-w-[1200px] h-full mx-auto py-12 md:py-0 md:flex md:items-center">
         <div className="md:flex md:justify-around w-full">
           <div className="pb-12 md:pb-0 md:w-1/4 flex flex-col items-center">
-            <h2 className="pb-8 font-extrabold text-5xl text-dark-grey">Skontaktuj się z nami</h2>
-            <p className="mb-2 text-2xl text-dark-grey">
+            <Typography
+              className="pb-8 font-extrabold text-dark-grey"
+              variant="h1"
+              as="h2"
+            >
+              Skontaktuj się z nami
+            </Typography>
+            <Typography
+              className="mb-2 text-dark-grey"
+              variant="h4"
+              as="p"
+            >
               Aby wysłać wiadomość, wypełnij formularz
-            </p>
+            </Typography>
           </div>
 
           <div className="md:w-1/2 flex flex-col items-end">
@@ -195,15 +214,15 @@ const Contact = () => {
             </FormControl>
 
             <Button
-              className="w-[250px] h-[45px] bg-white hover:bg-slate-400 hover:text-white 
-              transition duration-500 active:cursor-pointer font-rajdhani"
+              className="w-full sm:w-[250px] h-[45px] transition duration-500
+                active:cursor-pointer"
               variant="primary"
               isLoading={isLoading}
               loadingText={'Wysyłanie'}
               isDisabled={!values.name || !values.email || !values.message}
               onClick={onSubmit}
             >
-              Wyślij wiadomość
+              Wyślij
             </Button>
           </div>
         </div>
