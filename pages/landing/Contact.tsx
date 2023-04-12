@@ -1,19 +1,13 @@
 import { useState } from "react"
-import { Button, FormControl, FormErrorMessage, Input, Textarea, useToast } from "@chakra-ui/react"
+import { Button, FormControl, FormLabel, FormErrorMessage, Input, Textarea, useToast } from "@chakra-ui/react"
+import isEmail from 'validator/lib/isEmail';
 
 import { sendContactForm } from "@/api/api"
-import { EnvelopeIcon } from "@heroicons/react/24/solid"
 
-const emailPattern = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
-
-const initValues = {
-  name: "",
-  email: "",
-  message: ""
-}
-
+const initValues = { name: "", email: "", title: "", message: "" }
 const initState = { values: initValues, isLoading: false, }
-const initTouched = {name: false, email: false, message: false}
+const initTouched = {name: false, email: false,title: false, message: false }
+const initHasError = { name: false, email: false, title: false, message: false }
 
 type Events = {
   target: HTMLInputElement
@@ -23,10 +17,11 @@ const Contact = () => {
   const toast = useToast()
   const [state, setState] = useState(initState)
   const [touched, setTouched] = useState(initTouched)
+  const [hasError, setHasError] = useState(initHasError)
 
   const { values, isLoading } = state
 
-  const handleChange = ({ target }: Events) => 
+  const handleChange = ({ target }: Events) => {
     setState((prevState) => ({
       ...prevState,
       values: {
@@ -35,13 +30,24 @@ const Contact = () => {
       }
     }))
 
-  const onBlur = ({ target }: Events) => setTouched((prevState) => ({
-    ...prevState,
-    [target.name]: true
-  }))
+    if (touched.email && !target.value || !isEmail(target.value)) {
+      setHasError((prevState) => ({
+        ...prevState,
+        [target.name]: true
+      }))
+    } else {
+      setHasError((prevState) => ({
+        ...prevState,
+        [target.name]: false
+      }))
+    }
+  }
 
-  const validate = () => {
-    
+  const onBlur = ({ target }: Events) => {
+    setTouched((prevState) => ({
+      ...prevState,
+      [target.name]: true
+    }))
   }
 
   const onSubmit = async () => {
@@ -74,84 +80,134 @@ const Contact = () => {
     } finally {
       setTouched(initTouched)
       setState(initState)
+      setHasError(initHasError)
     }
   }
 
   return (
-    <section className="w-full bg-emerald">
-      <div className="w-5/6 max-w-[1200px] mx-auto py-12 md:flex md:justify-around">
-        <div className="px-2 pb-4">
-          <h2 className="py-8 font-poppins font-bold text-4xl">Skontaktuj się z nami</h2>
-          <p className="text-af-white text-xl w-3/4 mb-2">
-            Witam! Z niecierpliwością czekamy na kontakt od Ciebie.
-          </p>
+    <section className="w-full md:h-[calc(100vh/1.5)]">
+      <div className="w-5/6 max-w-[1200px] h-full mx-auto py-12 md:py-0 md:flex md:items-center">
+        <div className="md:flex md:justify-around w-full">
+          <div className="pb-12 md:pb-0 md:w-1/4 flex flex-col items-center">
+            <h2 className="pb-8 font-extrabold text-5xl text-dark-grey">Skontaktuj się z nami</h2>
+            <p className="mb-2 text-2xl text-dark-grey">
+              Aby wysłać wiadomość, wypełnij formularz
+            </p>
+          </div>
+
+          <div className="md:w-1/2 flex flex-col items-end">
+            <div className="w-full md:flex md:justify-between gap-x-5">
+              <FormControl
+                className="mb-4"
+                isRequired
+                isInvalid={touched.name && !values.name}
+              >
+                <FormLabel
+                  className="mb-1.5 text-dark-grey"
+                >
+                  Imię i nazwisko
+                </FormLabel>
+                <Input
+                  type="text"
+                  name="name"
+                  errorBorderColor="red.600"
+                  focusBorderColor="#0133FF"
+                  value={values.name}
+                  onChange={handleChange}
+                  onBlur={onBlur}
+                />
+                <FormErrorMessage>To pole jest wymagane</FormErrorMessage>
+              </FormControl>
+
+              <FormControl
+                className="mb-4"
+                isRequired
+                isInvalid={touched.email && !values.email || hasError.email}
+              >
+                <FormLabel
+                  className="mb-1.5 text-dark-grey"
+                >
+                  Adres e-mail
+                </FormLabel>
+                <Input
+                  type="email"
+                  name="email"
+                  errorBorderColor="red.600"
+                  focusBorderColor="#0133FF"
+                  value={values.email}
+                  onChange={handleChange}
+                  onBlur={onBlur}
+                />
+                {
+                  (touched.email && !values.email) ? (
+                    <FormErrorMessage>To pole jest wymagane</FormErrorMessage>
+                  ) : (null)
+                }
+                {
+                  (hasError.email) ? (
+                    <FormErrorMessage>Nieprawidłowy adres email</FormErrorMessage>
+                  ) : (null)
+                }
+              </FormControl>
+            </div>
+
+            <FormControl
+                className="mb-4"
+              >
+                <FormLabel
+                  className="text-dark-grey"
+                >
+                  Tytuł wiadomości
+                </FormLabel>
+                <Input
+                  type="text"
+                  name="title"
+                  errorBorderColor="red.600"
+                  onChange={handleChange}
+                  value={values.title}
+                  onBlur={onBlur}
+                />
+              </FormControl>
+
+            <FormControl
+              className="mb-8"
+              isRequired
+              isInvalid={touched.message && !values.message}
+            >
+              <FormLabel
+                className="text-dark-grey"
+              >
+                Wiadomość
+              </FormLabel>
+              <Textarea
+                type="text"
+                name="message"
+                minLength={10}
+                maxLength={40}
+                errorBorderColor="red.600"
+                focusBorderColor="#0133FF"
+                rows={6}
+                value={values.message}
+                onChange={handleChange}
+                onBlur={onBlur}
+              />
+              <FormErrorMessage>To pole jest wymagane</FormErrorMessage>
+            </FormControl>
+
+            <Button
+              className="w-[250px] h-[45px] bg-white hover:bg-slate-400 hover:text-white 
+              transition duration-500 active:cursor-pointer font-rajdhani"
+              variant="primary"
+              isLoading={isLoading}
+              loadingText={'Wysyłanie'}
+              isDisabled={!values.name || !values.email || !values.message}
+              onClick={onSubmit}
+            >
+              Wyślij wiadomość
+            </Button>
+          </div>
         </div>
-
-        <div className="sm:w-3/4 flex flex-col items-end">
-          <FormControl
-            className="mb-2 bg-af-white"
-            isRequired
-            isInvalid={touched.name && !values.name}
-          >
-            <Input
-              type="text"
-              placeholder="Wpisz imię i nazwisko."
-              name="name"
-              errorBorderColor="red.600"
-              value={values.name}
-              onChange={handleChange}
-              onBlur={onBlur}
-            />
-            <FormErrorMessage>To pole jest wymagane</FormErrorMessage>
-          </FormControl>
-
-          <FormControl
-            className="mb-2 bg-af-white"
-            isRequired
-            isInvalid={touched.email && !values.email}
-          >
-            <Input
-              type="email"
-              placeholder="Podaj adres email."
-              name="email"
-              errorBorderColor="red.600"
-              value={values.email}
-              onChange={handleChange}
-              onBlur={onBlur}
-            />
-            <FormErrorMessage>To pole jest wymagane</FormErrorMessage>
-          </FormControl>
-            
-          <FormControl
-            className="mb-2 bg-af-white"
-            isRequired
-            isInvalid={touched.message && !values.message}
-          >
-            <Textarea
-              type="text"
-              placeholder="Wpisz wiadomość."
-              name="message"
-              errorBorderColor="red.600"
-              rows={6}
-              value={values.message}
-              onChange={handleChange}
-              onBlur={onBlur}
-            />
-            <FormErrorMessage>To pole jest wymagane</FormErrorMessage>
-          </FormControl>
-
-          <Button
-            className="w-[250px] h-[45px] bg-white hover:bg-slate-400 hover:text-white 
-            transition duration-500 active:cursor-pointer font-rajdhani"
-            isLoading={isLoading}
-            loadingText={'Wysyłanie'}
-            isDisabled={!values.name || !values.email || !values.message}
-            leftIcon={<EnvelopeIcon width={20} height={20} />}
-            onClick={onSubmit}
-          >
-            Wyślij wiadomość
-          </Button>
-        </div>
+        
       </div>
     </section>
   )
