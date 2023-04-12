@@ -1,28 +1,13 @@
-import React, { useState, useEffect } from "react"
-
 import TopDiv from "./TopDiv"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 type Props = {
   children: React.ReactNode
+  isTopOfPage: boolean
 }
 
-const Layout = ({ children }: Props) => {
-  const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true)
-
-  useEffect(() =>{
-    const handleScroll = () => {
-      if (!window.scrollY) {
-        setIsTopOfPage(true)
-      } else {
-        setIsTopOfPage(false)
-      }
-    }
-    window.addEventListener("scroll", handleScroll)
-
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+const Layout = ({ children, isTopOfPage }: Props) => {
 
   return (
     <section>
