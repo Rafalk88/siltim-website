@@ -1,30 +1,19 @@
 import Image from "next/image"
 import Slider from "react-slick"
 
+import { useMediaQuery } from "@/hooks/useMediaQuery"
+
 import Image1 from "@/public/assets/carousel_image_1.jpeg"
 import Image2 from "@/public/assets/carousel_image_2.jpeg"
 import Image3 from "@/public/assets/carousel_image_3.jpeg"
 
 type Props = {
-  className: string
+  className?: string
 }
 
 type BtnProps = {
   className?: string
   onClick?: () => void
-}
-
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 2500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 5000,
-  pauseOnHover: true,
-  nextArrow: <NextArrow />,
-  prevArrow: <PrevArrow />,
 }
 
 const imagesStyles = "p-2"
@@ -55,6 +44,22 @@ function PrevArrow(props: BtnProps) {
 }
 
 const ChemSlider = ({ className }: Props) => {
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1000px)")
+  const showArrowsAndDots = isAboveMediumScreens ? true : false
+
+  const settings = {
+    dots: showArrowsAndDots,
+    arrows: showArrowsAndDots,
+    infinite: true,
+    speed: 2500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  }
 
   return (
     <section className={className}>
