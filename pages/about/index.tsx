@@ -1,5 +1,7 @@
 import Head from "next/head"
 
+import Typography from "@/components/Typography"
+
 const index = () => {
   return (
     <>
@@ -8,9 +10,21 @@ const index = () => {
           Siltim Sp. z o.o. | O nas
         </title>
       </Head>
-      <section className="w-5/6 max-w-[1200px] h-screen mx-auto py-8">
-        <h3 className="text-3xl flex justify-center font-bold">Nasz misja</h3>
-        <p className="py-6">
+      <section className="w-5/6 max-w-[1200px] h-[calc(100vh-120px)] mx-auto
+        flex flex-col justify-center items-center pt-20 sm:pt-0"
+      >
+        <Typography 
+          className="flex justify-center"
+          variant="h3"
+          as="h3"
+        >
+          Nasz misja
+        </Typography>
+        <Typography
+          className="py-6"
+          variant="body"
+          as="p"
+        >
           Założona w 2021 roku firma Siltim jest start-upową firmą chemiczną
           napędzaną innowacjami naukowymi. Naszą misją jest rozwój nowych
           technologii, ze szczególnym uwzględnieniem projektowania i produkcji
@@ -21,7 +35,7 @@ const index = () => {
           oprzyrządowania, modele 3D oraz dokumentację fazy wykonawczej.
           Zainteresowania naukowe: projektowanie leków, barwniki i materiały
           dla elektroniki organicznej, całkowita synteza chemiczna.
-        </p>
+        </Typography>
       </section>
     </>
     
