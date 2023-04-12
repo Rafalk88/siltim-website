@@ -20,7 +20,7 @@ const Layout = ({ children, isTopOfPage }: Props) => {
       <Navbar 
         isTopOfPage={isTopOfPage}
       />
-      <main className="pt-24">
+      <main>
         {children}
       </main>
       <Footer />

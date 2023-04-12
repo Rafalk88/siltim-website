@@ -22,7 +22,7 @@ const Landing = ({ isTopOfPage }:Props) => {
           className="w-full"
         >
           {/* HERO */}
-          <section className="mx-auto w-5/6 md:h-screen max-w-[1200px] md:pt-56 flex flex-col
+          <section className="mx-auto w-5/6 sm:h-[calc(100vh/1.05)] max-w-[1200px] pt-24 md:pt-56 flex flex-col
             justify-between items-center"
           >
             <div className="md:flex md:justify-between md:gap-8 pb-12 md:pb-0">
@@ -62,7 +62,7 @@ const Landing = ({ isTopOfPage }:Props) => {
             {
               (isTopOfPage && isAboveMediumScreens) ? (
                 <Image
-                  className="hidden md:block md:order-2"
+                  className="md:block md:order-2"
                   src={Arrow}
                   alt={"info-arrow"}
                 />

@@ -9,10 +9,8 @@ const AboutUs = () => {
     <section className="w-5/6 md:h-screen max-w-[1200px] mx-auto pb-24 md:pb-0 md:flex
       md:justify-center md:items-center md:gap-x-40"
     >
-      <div className="w-1/2 pb-12 mx-auto md:mx-0 md:pb-0 md:w-1/3">
-        <ChemSlider 
-          className=""
-        />
+      <div className="w-full pb-12 mx-auto md:mx-0 md:pb-0 sm:w-1/2 md:w-1/3">
+        <ChemSlider />
       </div> 
 
       <div className="md:w-1/3">
@@ -36,8 +34,7 @@ const AboutUs = () => {
         </p>
 
         <Button 
-        className="w-[250px] h-[45px]
-          cursor-pointer font-rajdhani font-bold"
+        className="w-[250px] h-[45px] cursor-pointer font-bold"
         data-role="information"
         variant="primary"
         >
