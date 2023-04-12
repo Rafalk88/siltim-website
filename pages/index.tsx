@@ -1,10 +1,14 @@
 import React from 'react';
 import Landing from './landing';
 
-const Home = () => {
+type Props = {
+  isTopOfPage: boolean
+}
+
+const Home = ({ isTopOfPage, ...otherProps }:Props) => {
   return (
     <>
-      <Landing />
+      <Landing isTopOfPage={isTopOfPage} />
     </>
   )
 };
