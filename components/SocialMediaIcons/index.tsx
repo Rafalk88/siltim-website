@@ -9,7 +9,7 @@ const icons = [
 ]
 
 type Props = {
-  className: string
+  className?: string
   width?: number
   height?: number
 }
@@ -23,11 +23,16 @@ const SocialMediaIcons = ({ className, width, height }: Props) => {
             <Link
               key={icon.name}
               href={icon.link}
-              className={`hover:opacity-50 transition duration-500`}
+              className="hover:opacity-50 transition duration-500"
               target="_blank"
               rel="noreferrer"
             >
-              <Image src={`/assets/${icon.name}.png`} alt={`${icon.name}-link`} width={width} height={height} />
+              <Image 
+                src={`/assets/${icon.name}.png`}
+                alt={`${icon.name}-link`}
+                width={width}
+                height={height}
+              />
             </Link>
           )
         })
