@@ -9,7 +9,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery"
 
 import HeroImg from "@/public/assets/hero.png"
 import Arrow from "@/public/assets/Arrow.svg"
-//fff
+//ffff
 type Props = {
   isTopOfPage: boolean
 }

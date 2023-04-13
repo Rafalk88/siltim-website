@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react"
 
 import Typography from "@/components/Typography"
 import ChemSlider from "./ChemSlider"
-// fff
+// ffff
 const AboutUs = () => {
   return (
     <section className="w-5/6 max-w-[1200px] md:h-screen mx-auto pb-24 md:pb-0 md:flex
