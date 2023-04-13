@@ -10,6 +10,7 @@ const ERR__MESSAGE = "Wymagana metoda POST"
 const CONTACT_MESSAGE_FIELDS = {
   name: "Name",
   email: "Email",
+  title: "Title",
   message: "Message",
 }
 
@@ -20,13 +21,13 @@ type EmailContent = {
 const generateEmailContent = (data: EmailContent) => {
   const stringData = Object.entries(data).reduce(
     (str, [key, value]) => 
-      (str += `${CONTACT_MESSAGE_FIELDS[key]}: \n${value} \n \n`),
+      (str += `${CONTACT_MESSAGE_FIELDS[key as keyof EmailContent]}: \n${value} \n \n`),
     ""
   )
 
   const htmlData = Object.entries(data).reduce(
     (str, [key, value]) => 
-      (str += `<h1 class="form-heading" align="left">${CONTACT_MESSAGE_FIELDS[key]}</h1><p class="form-answer" align="left">${value}</p>`),
+      (str += `<h1 class="form-heading" align="left">${CONTACT_MESSAGE_FIELDS[key as keyof EmailContent]}</h1><p class="form-answer" align="left">${value}</p>`),
     ""
   )
 
