@@ -15,12 +15,16 @@ const TopDiv = () => {
             className="ml-2"
             src={SecuredLetter}
             alt={"Letter-icon"}
+            width={24}
+            height={24}
           />
           <p className={textStyles}>office@siltim.com</p>
           <Image 
             className="ml-2"
             src={PlaceMarker}
             alt={"Location-icon"}
+            width={24}
+            height={24}
           />
           <p className={textStyles}>Św. Jana 11/4, 40-012 Katowice, Polska</p>
         </div>
