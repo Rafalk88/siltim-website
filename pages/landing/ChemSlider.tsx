@@ -15,7 +15,7 @@ type BtnProps = {
   className?: string
   onClick?: () => void
 }
-
+// fff
 const imagesStyles = "p-2"
 
 function NextArrow(props: BtnProps) {
