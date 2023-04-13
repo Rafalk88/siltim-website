@@ -75,7 +75,6 @@ export const index = ({ isTopOfPage }: Props) => {
               <Link href={"/shop"} passHref>
                 <Button
                   className="w-[125px] h-[42px]"
-                  as="a"
                   variant="primary"
                 >
                   Sklep
