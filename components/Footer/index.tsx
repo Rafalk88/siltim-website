@@ -64,7 +64,7 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone
             </Typography>
             <Typography 
-              className="gap-2 center flex items-center"
+              className="gap-2 flex"
               variant="body"
               as="div"
             >
