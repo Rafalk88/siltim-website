@@ -23,7 +23,7 @@ type Props = {
   isTopOfPage: Boolean
 }
 
-export const index = ({ isTopOfPage }: Props) => {
+export const Navbar = ({ isTopOfPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
   const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 1060px)")
   const navbarBackground = isTopOfPage ? "" : "bg-gray drop-shadow bg-white"
@@ -132,4 +132,4 @@ export const index = ({ isTopOfPage }: Props) => {
   )
 }
 
-export default index
+export default Navbar

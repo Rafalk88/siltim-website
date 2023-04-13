@@ -12,7 +12,7 @@ const NotFound = () => {
     setTimeout(() => {
       router.push('/')
     }, 3000)
-  }, [])
+  }, [router])
 
   return (
     <section className="w-full h-[calc(100vh-120px)] flex justify-center

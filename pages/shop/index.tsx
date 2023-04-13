@@ -2,7 +2,7 @@ import Head from "next/head"
 
 import { useMediaQuery } from "@/hooks/useMediaQuery"
 
-const index = () => {
+const Shop = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1000px)")
   const iframeRwdHeight = isAboveMediumScreens ? "850px" : "1720px"
 
@@ -26,4 +26,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Shop
