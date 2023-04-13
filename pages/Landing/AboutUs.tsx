@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react"
 
 import Typography from "@/components/Typography"
-import ChemSlider from "./Slider"
+import ChemSlider from "./ChemSlider"
 
 const AboutUs = () => {
   return (
