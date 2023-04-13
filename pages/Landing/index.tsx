@@ -2,7 +2,9 @@ import Image from "next/image"
 import { Button } from "@chakra-ui/react"
 
 import Typography from "@/components/Typography"
+// @ts-ignore
 import AboutUs from "./AboutUs"
+// @ts-ignore
 import Contact from "./Contact"
 
 import { useMediaQuery } from "@/hooks/useMediaQuery"
