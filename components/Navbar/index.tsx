@@ -60,8 +60,9 @@ export const index = ({ isTopOfPage }: Props) => {
                       return (
                         <div className={`flex flex-col before:content-[''] ${lineW}
                           before:h-[1px] before:bg-black before:hover:bg-blue hover:text-blue`}
+                          key={item.text}
                         >
-                          <Link key={item.text} href={`/${item.route}`} className="cursor-pointer">
+                          <Link href={`/${item.route}`} className="cursor-pointer">
                             {item.text}
                           </Link>
                         </div>
