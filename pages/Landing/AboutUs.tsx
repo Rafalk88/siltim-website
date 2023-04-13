@@ -1,16 +1,16 @@
 import { Button } from "@chakra-ui/react"
 
 import Typography from "@/components/Typography"
-import ChemSlider from "./ChemSlider"
+//import ChemSlider from "./ChemSlider"
 
 const AboutUs = () => {
   return (
     <section className="w-5/6 max-w-[1200px] md:h-screen mx-auto pb-24 md:pb-0 md:flex
       md:justify-center md:items-center md:gap-x-40"
     >
-      <div className="w-full pb-12 mx-auto md:mx-0 md:pb-0 sm:w-1/2 md:w-1/3">
+      {/* <div className="w-full pb-12 mx-auto md:mx-0 md:pb-0 sm:w-1/2 md:w-1/3">
         <ChemSlider />
-      </div> 
+      </div> */}
 
       <div className="md:w-1/3">
         <Typography
