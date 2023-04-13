@@ -27,9 +27,9 @@ const Footer = () => {
                     return (
                       <Typography
                         variant="body"
+                        key={item.text}
                       >
                         <Link
-                          key={item.text}
                           href={`/${item.route}`}
                           className="list-none cursor-pointer hover:text-light-grey"
                         >
