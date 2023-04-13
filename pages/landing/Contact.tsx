@@ -9,7 +9,7 @@ import {
   useToast
 } from "@chakra-ui/react"
 import isEmail from 'validator/lib/isEmail'
-// ff
+
 import { sendContactForm } from "@/api/api"
 import Typography from "@/components/Typography"
 
