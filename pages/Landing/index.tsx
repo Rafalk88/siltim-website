@@ -14,7 +14,6 @@ type Props = {
   isTopOfPage: boolean
 }
 
-// dodaję w celu usuniecia bledu
 const Landing = ({ isTopOfPage }:Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
   
