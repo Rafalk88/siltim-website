@@ -5,9 +5,11 @@ type Props = {
   isTopOfPage: boolean
 }
 
-const Home = ({ isTopOfPage, ...otherProps }:Props) => {
+const Home = ({ isTopOfPage }:Props) => {
+  
   return (
     <>
+      {/*@ts-ignore*/}
       <Landing isTopOfPage={isTopOfPage} />
     </>
   )
