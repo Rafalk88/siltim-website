@@ -19,7 +19,7 @@ const initTouched = {name: false, email: false,title: false, message: false }
 const initHasError = { name: false, email: false, title: false, message: false }
 
 type Events = {
-  target: HTMLInputElement
+  target: EventTarget
 }
 
 const Contact = () => {
@@ -31,31 +31,35 @@ const Contact = () => {
   const { values, isLoading } = state
 
   const handleChange = ({ target }: Events) => {
+    const {name, value } = target as HTMLInputElement
+
     setState((prevState) => ({
       ...prevState,
       values: {
         ...prevState.values,
-        [target?.name]: target?.value
+        [name]: value
       }
     }))
 
-    if (touched.email && !target.value || !isEmail(target.value)) {
+    if (touched.email && !value || !isEmail(value)) {
       setHasError((prevState) => ({
         ...prevState,
-        [target.name]: true
+        [name]: true
       }))
     } else {
       setHasError((prevState) => ({
         ...prevState,
-        [target.name]: false
+        [name]: false
       }))
     }
   }
 
   const onBlur = ({ target }: Events) => {
+    const { name } = target as HTMLInputElement
+
     setTouched((prevState) => ({
       ...prevState,
-      [target.name]: true
+      [name]: true
     }))
   }
 
@@ -199,7 +203,6 @@ const Contact = () => {
                 Wiadomość
               </FormLabel>
               <Textarea
-                type="text"
                 name="message"
                 minLength={10}
                 maxLength={40}
