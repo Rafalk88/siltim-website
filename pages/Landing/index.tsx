@@ -2,10 +2,8 @@ import Image from "next/image"
 import { Button } from "@chakra-ui/react"
 
 import Typography from "@/components/Typography"
-// @ts-ignore
 import AboutUs from "./AboutUs"
-// @ts-ignore
-import Contact from "./Contact"
+import Contact from "./ChemSlider"
 
 import { useMediaQuery } from "@/hooks/useMediaQuery"
 
@@ -16,6 +14,7 @@ type Props = {
   isTopOfPage: boolean
 }
 
+// dodaję w celu usuniecia bledu
 const Landing = ({ isTopOfPage }:Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
   
