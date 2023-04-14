@@ -4,7 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react"
 import Layout from '../components/Layout'
 import Loader from '../components/Loader'
 
-import { theme } from '../components/theme'
+import { theme } from '../config/theme'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import './global.css'
