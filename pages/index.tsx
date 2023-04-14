@@ -9,7 +9,6 @@ const Home = ({ isTopOfPage }:Props) => {
   
   return (
     <>
-      {/*@ts-ignore*/}
       <Landing isTopOfPage={isTopOfPage} />
     </>
   )
