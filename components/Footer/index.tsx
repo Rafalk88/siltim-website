@@ -10,6 +10,7 @@ const Footer = () => {
         <div className="w-full">
           <div className="sm:flex sm:justify-between">
             <Typography
+              className="pr-4"
               variant="body"
               as="div"
             >
@@ -46,25 +47,25 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-between items-center py-6">
+          <div className="flex flex-col sm:flex-row justify-between md:items-center py-6">
             <Typography
-              className="flex gap-2"
+              className="md:flex gap-2 pb-4 sm:pb-0"
               variant="body"
               as="div"
             >
-              <Link href="" className="cursor-pointer hover:text-light-grey hover:underline">Polityka prywatności</Link>
-              <p>|</p>
-              <Link href="" className="cursor-pointer hover:text-light-grey hover:underline">RODO</Link>
+              <Link href="" className="block pb-4 cursor-pointer text-center hover:text-light-grey hover:underline">Polityka prywatności</Link>
+              <p className="hidden md:block">|</p>
+              <Link href="" className="block cursor-pointer text-center hover:text-light-grey hover:underline">RODO</Link>
             </Typography>
             <Typography 
-              className="text-center"
+              className="text-center pb-4 sm:pb-0"
               variant="body"
               as="p"
             >
               &copy; {new Date().getFullYear()} Siltim. Wszelkie prawa zastrzeżone
             </Typography>
             <Typography 
-              className="gap-2 flex"
+              className="gap-2 flex sm:flex-col md:flex-row justify-center"
               variant="body"
               as="div"
             >
