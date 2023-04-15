@@ -10,8 +10,8 @@ const index = () => {
           Siltim Sp. z o.o. | O nas
         </title>
       </Head>
-      <section className="w-5/6 max-w-[1200px] h-[calc(100vh-120px)] mx-auto
-        flex flex-col justify-center items-center pt-20 sm:pt-0"
+      <section className="w-5/6 max-w-[1200px] sm:h-[calc(100vh-80px)] mx-auto
+        flex flex-col justify-center items-center pt-40 sm:pt-0"
       >
         <Typography 
           className="flex justify-center"
