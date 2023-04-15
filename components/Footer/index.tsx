@@ -31,7 +31,7 @@ const Footer = () => {
                       >
                         <Link
                           href={`/${item.route}`}
-                          className="list-none cursor-pointer hover:text-light-grey"
+                          className="list-none cursor-pointer hover:text-light-grey hover:underline"
                         >
                           {item.text}
                         </Link>
@@ -52,9 +52,9 @@ const Footer = () => {
               variant="body"
               as="div"
             >
-              <Link href="" className="cursor-pointer hover:text-light-grey">Polityka prywatności</Link>
+              <Link href="" className="cursor-pointer hover:text-light-grey hover:underline">Polityka prywatności</Link>
               <p>|</p>
-              <Link href="" className="cursor-pointer hover:text-light-grey">RODO</Link>
+              <Link href="" className="cursor-pointer hover:text-light-grey hover:underline">RODO</Link>
             </Typography>
             <Typography 
               className="text-center"
@@ -71,7 +71,7 @@ const Footer = () => {
               <p>Webmaster</p>
               <Link
                 href="https://www.linkedin.com/in/rafalkochanecki/"
-                className="cursor-pointer hover:text-light-grey"
+                className="cursor-pointer hover:text-light-grey hover:underline"
                 target="_blank"
                 rel="noreferrer"
               >

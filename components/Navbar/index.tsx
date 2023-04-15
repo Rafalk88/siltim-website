@@ -115,7 +115,7 @@ export const Navbar = ({ isTopOfPage }: Props) => {
                       <Link 
                         key={item.text}
                         href={`/${item.route}`}
-                        className="cursor-pointer hover:text-black"
+                        className="cursor-pointer hover:text-black hover:underline"
                         onClick={() => setIsMenuToggled(!isMenuToggled)}
                         >
                         {item.text}
