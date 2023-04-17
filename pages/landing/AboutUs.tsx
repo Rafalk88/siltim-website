@@ -17,7 +17,7 @@ const AboutUs = () => {
           variant="h1"
           as="h3"
         >
-          Charakter badawczo-rozwojowy
+          Potencjał badawczy
         </Typography>
         <Typography
           className="py-8 text-dark-grey"
