@@ -23,8 +23,8 @@ const Landing = ({ isTopOfPage }:Props) => {
           className="w-full"
         >
           {/* HERO */}
-          <section className="mx-auto w-5/6 md:min-h-[calc(100vh/1.05)] max-w-[1200px] pt-24 md:pt-56 flex flex-col
-            justify-between items-center"
+          <section className="mx-auto w-5/6 md:min-h-[calc(100vh/1.05)] xl:min-h-full max-w-[1200px]
+            pt-24 md:pt-56 flex flex-col justify-between items-center xl:mb-20"
           >
             <div className="pb-12 md:pb-0 md:flex md:justify-between md:gap-8 ">
               <figure className="py-14 md:py-0 flex flex-col items-center md:items-end md:order-2
@@ -50,9 +50,9 @@ const Landing = ({ isTopOfPage }:Props) => {
                   variant="body"
                   as="p"
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin risus
-                  eu purus aliquam, et pellentesque risus luctus. Duis elementum purus vitae mauris
-                  facilisis cursus. Aliquam convallis
+                  Związki chemiczne, które umieściliśmy w naszym katalogu to propozycje do wykorzystania
+                  w kolejnych syntezach chemicznych związanych szczególnie z projektami odkrywania leków,
+                  barwników fluorescencyjnych, katalizatorów heterogenicznych oraz związków zapachowych.
                 </Typography>
                 <Typography
                   className="pt-9 text-dark-grey"
@@ -75,7 +75,7 @@ const Landing = ({ isTopOfPage }:Props) => {
             {
               (isTopOfPage && isAboveMediumScreens) ? (
                 <Image
-                  className="md:block md:order-2"
+                  className="md:block md:order-2 xl:hidden"
                   src={Arrow}
                   alt={"info-arrow"}
                 />
