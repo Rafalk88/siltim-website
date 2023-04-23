@@ -71,16 +71,6 @@ const Landing = ({ isTopOfPage }:Props) => {
                 </Button>
               </article>
             </div>
-            
-            {
-              (isTopOfPage && isAboveMediumScreens) ? (
-                <Image
-                  className="md:block md:order-2 xl:hidden"
-                  src={Arrow}
-                  alt={"info-arrow"}
-                />
-              ) : null
-            }
           </section>
           
           {/* CALL TO ACTION R&D */}
