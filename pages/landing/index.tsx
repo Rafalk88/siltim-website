@@ -5,30 +5,25 @@ import Typography from "@/components/Typography"
 import AboutUs from "./AboutUs"
 import Contact from "./Contact"
 
-import { useMediaQuery } from "@/hooks/useMediaQuery"
-
 import HeroImg from "@/public/assets/hero.png"
-import Arrow from "@/public/assets/Arrow.svg"
 
 type Props = {
   isTopOfPage: boolean
 }
 
 const Landing = ({ isTopOfPage }:Props) => {
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
-  
   return (
     <section className="gap-16">
         <div
           className="w-full"
         >
           {/* HERO */}
-          <section className="mx-auto w-5/6 md:min-h-[calc(100vh/1.05)] xl:min-h-full max-w-[1200px]
+          <section className="mx-auto w-5/6 max-w-[1200px]
             pt-24 md:pt-56 flex flex-col justify-between items-center xl:mb-20"
           >
-            <div className="pb-12 md:pb-0 md:flex md:justify-between md:gap-8 ">
-              <figure className="py-14 md:py-0 flex flex-col items-center md:items-end md:order-2
-                md:w-1/2 z-[-1]"
+            <div className="pb-12 md:pb-0 md:flex md:justify-between md:gap-14 ">
+              <figure className="hidden md:py-0 md:flex md:justify-center md:items-center md:order-2
+                md:w-1/3 z-[-1]"
               >
                 <Image
                   src={HeroImg}
@@ -36,7 +31,7 @@ const Landing = ({ isTopOfPage }:Props) => {
                 />
               </figure>
 
-              <article className="sm:w-3/4 pt-10 pb-20 md:w-1/2 flex flex-col justify-center">
+              <article className="sm:w-3/4 pt-10 pb-20 md:w-2/3 flex flex-col justify-center">
                 {/* TEXT */}
                 <Typography
                   className="font-extrabold text-dark-grey pt-8 md:pt-0"

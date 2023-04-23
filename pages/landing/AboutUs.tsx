@@ -25,11 +25,8 @@ const AboutUs = () => {
           as="p"
         >
           Dzięki naszemu zaangażowaniu w projekty badawcze jakie inicjujemy, bądź w jakich
-          partycypujemy, chcielibyśmy wykazać wkład <br /> w postęp naukowy w dziedzinie 
-          chemii. Wierzymy, że odpowiedni stopień automatyzacji oraz cyfryzacji tych procesów, 
-          otworzy nowe możliwości na drodze do nowych struktur <br /> i przyczyni się do 
-          odkrycia nieznanych dotąd obszarów przestrzeni chemicznej. Z tego względu testujemy
-          i doskonalimy oryginalne rozwiązania od początku działalności.
+          partycypujemy, chcielibyśmy wykazać wkład w postęp naukowy w dziedzinie 
+          chemii. 
         </Typography>
 
         <Typography
@@ -37,10 +34,10 @@ const AboutUs = () => {
           variant="body"
           as="p"
         >
-          Kluczowy personel badawczy w osobach dr Piotra Bartczaka oraz dr inż. Jacka Mularskiego
-          obejmuje kierownictwo oraz stawia nowe wyzwania w zakresie prac projektowych, syntez
-          chemicznych, strukturyzacji bazy danych <br /> i wdrożeniem chmury obliczeniowej opartej
-          <br /> o metody uczenia maszynowego, i syntezy.
+          Wierzymy, że odpowiedni stopień automatyzacji oraz cyfryzacji tych procesów, 
+          otworzy nowe możliwości na drodze do nowych struktur i przyczyni się do 
+          odkrycia nieznanych dotąd obszarów przestrzeni chemicznej. Z tego względu testujemy
+          i doskonalimy oryginalne rozwiązania od początku działalności.
         </Typography>
 
         <Button
