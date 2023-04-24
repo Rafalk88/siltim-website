@@ -12,10 +12,10 @@ import { XMarkIcon } from "@heroicons/react/24/outline"
 
 const flexBetween = "flex items-center justify-between"
 export const menu = [
-  {text: "Główna", route: "", lineWidth: 100},
-  {text: "O nas", route: "about", lineWidth: 100},
-  {text: "Katalizatory", route: "catalysts", lineWidth: 100},
-  {text: "Syntezy na zlecenie", route: "synthesis", lineWidth: 195},
+  {text: "Główna", route: ""},
+  {text: "O nas", route: "about"},
+  {text: "Katalizatory", route: "catalysts"},
+  {text: "Syntezy na zlecenie", route: "synthesis"},
   {text: "Sklep", route: "shop", mq: "sm"},
 ];
 
@@ -38,7 +38,7 @@ export const Navbar = ({ isTopOfPage }: Props) => {
       <div className={`flex items-center mx-auto w-5/6 max-w-[1200px]`}>
         <div className={`${flexBetween} w-1/6`}>
           <div className="p-2 h-16 w-16">
-            <Link href="/" className="cursor-pointer">
+            <Link href="/" className="cursor-pointer" passHref>
               <Image src={Logo} alt={"Logo"} />
             </Link>
           </div>
@@ -54,11 +54,9 @@ export const Navbar = ({ isTopOfPage }: Props) => {
               >
                 {
                   menu.map(item => {
-                    const lineW = `before:w-[${item.lineWidth}px]`
-
                     if (!item.mq) {
                       return (
-                        <div className={`flex flex-col before:content-[''] ${lineW}
+                        <div className={`flex flex-col before:content-[''] before:w-[150px]
                           before:h-[1px] before:bg-black before:hover:bg-blue hover:text-blue`}
                           key={item.text}
                         >
