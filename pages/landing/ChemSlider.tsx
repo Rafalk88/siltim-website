@@ -48,7 +48,7 @@ const ChemSlider = ({ className }: Props) => {
   const showArrowsAndDots = isAboveMediumScreens ? true : false
 
   const settings = {
-    dots: showArrowsAndDots,
+    dots: false,
     arrows: showArrowsAndDots,
     infinite: true,
     speed: 2500,

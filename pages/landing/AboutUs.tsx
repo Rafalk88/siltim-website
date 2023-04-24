@@ -9,7 +9,9 @@ const AboutUs = () => {
       md:justify-center md:items-center md:gap-x-40 xl:py-40"
     >
       <div className="w-full pb-12 mx-auto md:mx-0 md:pb-0 sm:w-1/2 md:w-1/3">
+        <div className="w-full h-[150px] bg-blue"></div>
         <ChemSlider />
+        <div className="w-full h-[150px] bg-blue"></div>
       </div>
       <div className="md:w-1/3">
         <Typography
