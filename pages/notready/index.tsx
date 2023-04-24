@@ -10,14 +10,14 @@ const NotReady = () => {
   useEffect(() => {
     setTimeout(() => {
       router.push('/')
-    }, 3000)
+    }, 10000)
   }, [router])
 
   return (
     <section className="w-full h-[calc(100vh-120px)] flex justify-center
       items-center gap-12"
     >
-      <div>
+      <div className="w-5/6 mx-auto">
         <Typography
           variant="h2"
           as="h2"

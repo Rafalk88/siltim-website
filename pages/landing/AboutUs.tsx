@@ -1,4 +1,5 @@
 import { Button } from "@chakra-ui/react"
+import Link from "next/link"
 
 import Typography from "@/components/Typography"
 import ChemSlider from "./ChemSlider"
@@ -42,13 +43,16 @@ const AboutUs = () => {
           i doskonalimy oryginalne rozwiązania od początku działalności.
         </Typography>
 
-        <Button
-          className="w-full sm:w-[250px] h-[45px] cursor-pointer font-bold"
-          data-role="information"
-          variant="primary"
-        >
-          Zobacz nasze osiągnęcia
-        </Button>
+        <Link href={"/notready"} passHref>
+          <Button
+            className="w-full sm:w-[250px] h-[45px] cursor-pointer font-bold"
+            data-role="information"
+            variant="primary"
+          >
+            Zobacz nasze osiągnęcia
+          </Button>
+        </Link>
+        
       </div>
     </section>
   )
