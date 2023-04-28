@@ -56,7 +56,7 @@ export const Navbar = ({ isTopOfPage }: Props) => {
                   menu.map(item => {
                     if (!item.mq) {
                       return (
-                        <div className={`flex flex-col before:content-[''] before:w-[150px]
+                        <div className={`flex flex-col before:content-[''] before:w-[135px]
                           before:h-[1px] before:bg-black before:hover:bg-blue hover:text-blue`}
                           key={item.text}
                         >
