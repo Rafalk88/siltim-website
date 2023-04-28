@@ -10,7 +10,7 @@ const NotReady = () => {
   useEffect(() => {
     setTimeout(() => {
       router.push('/')
-    }, 10000)
+    }, 6500)
   }, [router])
 
   return (
