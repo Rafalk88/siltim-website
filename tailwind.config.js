@@ -6,6 +6,11 @@ module.exports = {
     "./hooks/**/*.{js,ts}"
   ],
   theme: {
+    listStyleType: {
+      none: "none",
+      lower: "lower-alpha",
+      decimal: "decimal",
+    },
     extend: {
       colors: {
         "blue": "#0133FF",

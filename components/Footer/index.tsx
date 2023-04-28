@@ -1,5 +1,7 @@
 import Link from "next/link"
+
 import SocialMediaIcons from "@/components/SocialMediaIcons"
+import Policy from "../../pages/policy"
 import Typography from "../Typography"
 import { menu } from "../Navbar"
 
@@ -53,9 +55,9 @@ const Footer = () => {
               variant="body"
               as="div"
             >
-              <Link href="" className="block pb-4 cursor-pointer text-center hover:text-light-grey hover:underline">Polityka prywatności</Link>
-              <p className="hidden md:block">|</p>
-              <Link href="" className="block cursor-pointer text-center hover:text-light-grey hover:underline">RODO</Link>
+              <Link href="/policy" className="block pb-4 cursor-pointer text-center hover:text-light-grey hover:underline">
+                Polityka prywatności
+              </Link>
             </Typography>
             <Typography 
               className="text-center pb-4 sm:pb-0"
