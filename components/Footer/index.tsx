@@ -55,7 +55,7 @@ const Footer = () => {
               variant="body"
               as="div"
             >
-              <Link href="/policy" className="block pb-4 cursor-pointer text-center hover:text-light-grey hover:underline">
+              <Link href="/policy" className="block cursor-pointer text-center hover:text-light-grey hover:underline">
                 Polityka prywatności
               </Link>
             </Typography>
