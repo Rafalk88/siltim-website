@@ -95,34 +95,37 @@ export const Navbar = ({ isTopOfPage }: Props) => {
 
         {
           !isAboveMediumScreens && isMenuToggled && (
-            <section className="fixed right-0 bottom-0 w-[300px] h-full text-dark-grey bg-light-grey">
-              <div className="flex justify-end p-12">
-                <button onClick={handleClick}>
-                  <XMarkIcon className="w-6 h-6 cursor-pointer" />
-                </button>
-              </div>
+            <section className="fixed right-0 bottom-0 w-full h-full bg-black/25" onClick={handleClick}>
+              <div className="fixed right-0 bottom-0 w-[300px] h-full text-dark-grey bg-light-grey">
+                <div className="flex justify-end p-12">
+                  <button onClick={handleClick}>
+                    <XMarkIcon className="w-6 h-6 cursor-pointer" />
+                  </button>
+                </div>
 
-              <Typography
-                className="flex flex-col gap-10 ml-[33%] font-normal"
-                variant="h4"
-                as="div"
-              >
-              {
-                  menu.map(item => {
-                    return (
-                      <Link 
-                        key={item.text}
-                        href={`/${item.route}`}
-                        className="cursor-pointer hover:text-black hover:underline"
-                        onClick={() => setIsMenuToggled(!isMenuToggled)}
+                <Typography
+                  className="flex flex-col gap-10 ml-[33%] font-normal"
+                  variant="h4"
+                  as="div"
+                >
+                  {
+                    menu.map(item => {
+                      return (
+                        <Link 
+                          key={item.text}
+                          href={`/${item.route}`}
+                          className="cursor-pointer hover:text-black hover:underline"
+                          onClick={() => setIsMenuToggled(!isMenuToggled)}
                         >
-                        {item.text}
-                      </Link>
-                    )
-                  })
-                }
-              </Typography>
+                          {item.text}
+                        </Link>
+                      )
+                    })
+                  }
+                </Typography>
+              </div>
             </section>
+            
           )
         }
       </div>
