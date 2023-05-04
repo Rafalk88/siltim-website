@@ -1,7 +1,8 @@
 import Link from "next/link"
+import Image from "next/image"
 
+import Logo from "../../public/assets/logo_white.png"
 import SocialMediaIcons from "@/components/SocialMediaIcons"
-import Policy from "../../pages/policy"
 import Typography from "../Typography"
 import { menu } from "../Navbar"
 
@@ -11,6 +12,12 @@ const Footer = () => {
       <div className="w-5/6 max-w-[1200px] mx-auto md:flex pt-12 text-white">
         <div className="w-full">
           <div className="sm:flex sm:justify-between">
+            <div className="max-w-[135px] pr-4 mb-4">
+              <Link href="/" className="cursor-pointer" passHref>
+                <Image src={Logo} alt={"Logo"} />
+              </Link>
+            </div>
+
             <Typography
               className="pr-4"
               variant="body"
@@ -24,7 +31,7 @@ const Footer = () => {
             </Typography>
 
             <div className="sm:flex sm:justify-between w-2/3">
-              <article className="flex flex-col py-6 md:py-0">
+              <article className="flex flex-col py-6 sm:py-0 md:py-0">
                 {
                   menu.map(item => {
                     return (
