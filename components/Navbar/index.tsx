@@ -36,7 +36,7 @@ export const Navbar = ({ isTopOfPage }: Props) => {
     py-3`}
     >
       <div className={`flex items-center mx-auto w-5/6 max-w-[1200px]`}>
-        <div className={`${flexBetween} max-w-[136px] md:px-6`}>
+        <div className={`${flexBetween} max-w-[156px] md:px-6`}>
           <div>
             <Link href="/" className="cursor-pointer" passHref>
               <Image src={Logo} alt={"Logo"} />
