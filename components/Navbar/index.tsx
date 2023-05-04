@@ -6,7 +6,7 @@ import { Button } from "@chakra-ui/react"
 import Typography from "../Typography"
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 
-import Logo from "../../public/assets/Logo.png"
+import Logo from "../../public/assets/logo_black.png"
 import { RxHamburgerMenu } from "react-icons/rx"
 import { XMarkIcon } from "@heroicons/react/24/outline"
 
@@ -36,8 +36,8 @@ export const Navbar = ({ isTopOfPage }: Props) => {
     py-3`}
     >
       <div className={`flex items-center mx-auto w-5/6 max-w-[1200px]`}>
-        <div className={`${flexBetween} w-1/6`}>
-          <div className="p-2 h-16 w-16">
+        <div className={`${flexBetween} max-w-[136px] md:px-6`}>
+          <div>
             <Link href="/" className="cursor-pointer" passHref>
               <Image src={Logo} alt={"Logo"} />
             </Link>
@@ -46,7 +46,7 @@ export const Navbar = ({ isTopOfPage }: Props) => {
 
         {
           isAboveMediumScreens ? (
-            <div className={`${flexBetween} w-5/6`}>
+            <div className={`${flexBetween} md:w-5/6`}>
               <Typography 
                 className={`${flexBetween} gap-8`}
                 variant="small"
