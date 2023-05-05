@@ -11,6 +11,21 @@ export default function Document() {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#2d89ef" />
         <meta name="theme-color" content="#ffffff" />
+        <meta name="keywords" content="Siltim, benzen, reakcja chemiczna, chemia, labolatorium"></meta>
+        <meta name="author" content="Rafał Kochanecki"></meta>
+        <meta
+          name="description"
+          content="Strona firmy chemicznej wraz ze sklepem z materiami. Jesteśmy czynni od poniedziałku do soboty od 8:00 do 18:00"
+        />
+        <meta property="og:title" content="Siltim sp. z o.o." />
+        <meta
+          property="og:description"
+          content="Advanced materials for molecular design"
+        />
+        <meta
+          property="og:image"
+          content="../public/assets/logo_black.png"
+        />
       </Head>
       <body>
         <Main />
