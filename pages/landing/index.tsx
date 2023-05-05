@@ -20,7 +20,7 @@ const Landing = ({ isTopOfPage }:Props) => {
       >
         {/* HERO */}
         <section className="mx-auto w-5/6 max-w-[1200px]
-          pt-24 md:pt-56 flex flex-col justify-between items-center xl:mb-20"
+          pt-20 md:pt-56 flex flex-col justify-between items-center xl:mb-20"
         >
           <div className="pb-12 md:pb-0 md:flex md:justify-between md:gap-14 ">
             <figure className="hidden md:py-0 md:flex md:justify-center md:items-center md:order-2
