@@ -35,8 +35,8 @@ export const Navbar = ({ isTopOfPage }: Props) => {
     <nav className={`${navbarBackground} ${flexBetween} fixed ${topPosition} z-30 w-full
     py-3`}
     >
-      <div className={`flex items-center mx-auto w-5/6 max-w-[1200px]`}>
-        <div className={`${flexBetween} max-w-[156px] md:px-6`}>
+      <div className={`${flexBetween} mx-auto w-5/6 max-w-[1200px]`}>
+        <div className={`${flexBetween} max-w-[156px]`}>
           <div>
             <Link href="/" className="cursor-pointer" passHref>
               <Image src={Logo} alt={"Logo"} />
