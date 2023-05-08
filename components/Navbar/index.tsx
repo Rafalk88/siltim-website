@@ -27,7 +27,7 @@ export const Navbar = ({ isTopOfPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
   const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 1060px)")
   const navbarBackground = isTopOfPage ? "" : "bg-gray drop-shadow bg-white"
-  const topPosition = isTopOfPage ? "top-[40px]" : "top-0"
+  const topPosition = isTopOfPage ? "top-[50px]" : "top-0"
 
   const handleClick = () => setIsMenuToggled(!isMenuToggled)
 
