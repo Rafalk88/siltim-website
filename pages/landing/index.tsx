@@ -8,11 +8,7 @@ import Contact from "./Contact"
 
 import HeroImg from "@/public/assets/hero.png"
 
-type Props = {
-  isTopOfPage: boolean
-}
-
-const Landing = ({ isTopOfPage }:Props) => {
+const Landing = () => {
   return (
     <section className="gap-16">
       <div
