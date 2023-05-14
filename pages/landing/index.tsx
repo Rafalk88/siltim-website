@@ -19,8 +19,8 @@ const Landing = () => {
           pt-20 md:pt-56 flex flex-col justify-between items-center xl:mb-20"
         >
           <div className="pb-12 md:pb-0 md:flex md:justify-between md:gap-14 ">
-            <figure className="hidden md:py-0 md:flex md:justify-center md:items-center md:order-2
-              md:w-1/3 z-[-1]"
+            <figure className="hidden md:py-0 md:flex md:justify-center md:items-center
+              md:order-2 md:w-1/3 z-[-1]"
             >
               <Image
                 src={HeroImg}
@@ -28,7 +28,9 @@ const Landing = () => {
               />
             </figure>
 
-            <article className="sm:w-3/4 pt-10 pb-20 md:w-2/3 flex flex-col justify-center">
+            <article className="sm:w-3/4 pt-10 pb-20 md:w-2/3 flex flex-col
+              justify-center"
+            >
               {/* TEXT */}
               <Typography
                 className="font-extrabold text-dark-grey pt-8 md:pt-0"

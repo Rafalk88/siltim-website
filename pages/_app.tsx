@@ -6,8 +6,6 @@ import Layout from '../components/Layout'
 import Loader from '../components/Loader'
 
 import { theme } from '../config/theme'
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
 import './global.css'
 
 import type { AppProps } from 'next/app'

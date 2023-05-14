@@ -1,91 +1,68 @@
 import Image from "next/image"
-import Slider from "react-slick"
+import { Splide, SplideSlide } from "@splidejs/react-splide"
 
-import { useMediaQuery } from "@/hooks/useMediaQuery"
+import { useMediaQuery } from "../../hooks/useMediaQuery"
 
 import Image1 from "@/public/assets/carousel_image_1.jpeg"
 import Image2 from "@/public/assets/carousel_image_2.jpeg"
 import Image3 from "@/public/assets/carousel_image_3.jpeg"
 
-type Props = {
-  className?: string
-}
+import "@splidejs/react-splide/css"
 
-type BtnProps = {
-  className?: string
-  onClick?: () => void
-}
+const ChemSlider = () => {
+  const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 767px)")
+  const width = isAboveMediumScreens ? 650 : 300
+  const height = isAboveMediumScreens ? 350 : 200
+  const arrows = isAboveMediumScreens ? true : false
 
-const imagesStyles = "p-2"
-
-function NextArrow(props: BtnProps) {
-  const { className, onClick } = props;
-  return (
-    <button
-      className={`${className} block before:content-arrow-right rounded-full w-[42px] h-[42px]
-        right-[-65px] drop-shadow-lg bg-white hover:bg-light-grey`
-      }
-      onClick={onClick}
-      data-role="none"
-    />
-  );
-}
-
-function PrevArrow(props: BtnProps) {
-  const { className, onClick } = props;
-  return (
-    <button
-      className={`${className} block before:content-arrow-left rounded-full w-[42px] h-[42px]
-      left-[-65px] drop-shadow-lg bg-white hover:bg-light-grey`}
-      onClick={onClick}
-      data-role="none"
-    />
-  );
-}
-
-const ChemSlider = ({ className }: Props) => {
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1000px)")
-  const showArrowsAndDots = isAboveMediumScreens ? true : false
-
-  const settings = {
-    dots: false,
-    arrows: showArrowsAndDots,
-    infinite: true,
-    speed: 9000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+  const options = {
+    type: 'loop',
+    gap: '1rem',
     autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: 'linear',
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    arrows: arrows,
+    pauseOnHover: false,
+    resetProgress: false,
+    speed: 7000,
+    width: `${width}px`,
+    height: `${height}px`,
+    autoWidth: true,
+    autoHeight: true,
+    perPage: 1,
+    pagination: false,
   }
 
   return (
-    <section className={className}>
-      <Slider {...settings}>
-        <figure className={imagesStyles}>
-          <Image 
-            src={Image1}
-            alt="slide-1"
-          />
-        </figure>
-
-        <figure className={imagesStyles}>
-          <Image 
-            src={Image2}
-            alt="slide-2"
-          />
-        </figure>
-
-        <figure className={imagesStyles}>
-          <Image 
-            src={Image3}
-            alt="slide-3"
-          />
-        </figure>
-      </Slider>
-    </section>
+    <Splide 
+      tag="section"
+      aria-label="My Favorite Images"
+      options={options}
+      className="mx-auto"
+    >
+      <SplideSlide>
+        <Image
+          src={Image1}
+          alt="Splide-image-1"
+          width={width}
+          height={height}
+        />
+      </SplideSlide>
+      <SplideSlide>
+        <Image
+          src={Image2}
+          alt="Splide-image-2"
+          width={width}
+          height={height}
+        />
+      </SplideSlide>
+      <SplideSlide>
+        <Image
+          src={Image3}
+          alt="Splide-image-3"
+          width={width}
+          height={height}
+        />
+      </SplideSlide>
+    </Splide>
   )
 }
 

@@ -7,12 +7,10 @@ import ChemSlider from "./ChemSlider"
 const AboutUs = () => {
   return (
     <section className="w-5/6 max-w-[1200px] mx-auto md:pt-12 pb-24 md:pb-0 md:flex
-      md:justify-center md:items-center md:gap-x-40 xl:py-40"
+      md:justify-around md:items-center xl:py-40"
     >
-      <div className="w-full pb-12 mx-auto md:mx-0 md:pb-0 sm:w-1/2 md:w-1/3">
-        <div className="w-full h-[150px] bg-blue"></div>
+      <div className="sm:px-4 pb-12 mx-auto md:mx-0 md:pb-0">
         <ChemSlider />
-        <div className="w-full h-[150px] bg-blue"></div>
       </div>
       <div className="md:w-1/3">
         <Typography
