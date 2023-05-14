@@ -98,7 +98,7 @@ const Contact = () => {
   }
 
   return (
-    <section className="w-full md:py-40 xl:min-h-fit">
+    <section className="w-full md:py-40 xl:min-h-fit" id="contact">
       <div className="w-5/6 max-w-[1200px] h-full mx-auto py-12 md:py-0 md:flex md:items-center">
         <div className="md:flex md:justify-around w-full">
           <div className="pb-12 md:pb-0 md:w-1/4 flex flex-col items-center">

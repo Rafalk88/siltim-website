@@ -25,6 +25,9 @@ module.exports = {
       backgroundImage: {
         'hero': "url('../public/assets/hero.jpg')",
       },
+      dropShadow: {
+        'md': '0 4px 2px rgb(0 0 0 / 0.35)'
+      },
     },
     screens: {
       xs: "480px",

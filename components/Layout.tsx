@@ -1,6 +1,7 @@
 import TopDiv from "./TopDiv"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
+import Anchor from "./Anchor"
 
 import { useMediaQuery } from "@/hooks/useMediaQuery"
 
@@ -14,6 +15,7 @@ const Layout = ({ children, isTopOfPage }: Props) => {
 
   return (
     <section>
+      <Anchor />
       {
         isAboveMediumScreens ? (<TopDiv />) : null
       }
