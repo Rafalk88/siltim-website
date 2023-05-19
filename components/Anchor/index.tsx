@@ -6,7 +6,7 @@ import SecuredLetter from "@/public/assets/SecuredLetter.svg"
 const Anchor = () => {
   return (
     <section className="w-[80px] h-[80px] rounded-full flex justify-center
-      items-center bg-blue fixed top-[900px] right-[80px] cursor-pointer
+      items-center bg-blue fixed top-[85%] right-[1%] cursor-pointer
       drop-shadow-md hover:bg-blue/80"
     >
       <Link href="/#contact" className="cursor-pointer" passHref>
