@@ -1,15 +1,20 @@
 import Image from "next/image"
-import SocialMediaIcons from "../SocialMediaIcons"
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard"
 
+import SocialMediaIcons from "../SocialMediaIcons"
 import SecuredLetter from "@/public/assets/SecuredLetter.svg"
 import PlaceMarker from "@/public/assets/PlaceMarker.svg"
 
-const textStyles = "text-white ml-2"
+const textStyles = "text-white ml-2 cursor-pointer"
 
 const TopDiv = () => {
+  const [text, copy] = useCopyToClipboard()
+
   return (
     <section className="w-full h-[40px] bg-blue">
-      <div className="mx-auto w-5/6 max-w-[1200px] h-full flex justify-between items-center">
+      <div className="mx-auto w-5/6 max-w-[1200px] h-full flex justify-between 
+        items-center"
+      >
         <div className="flex">
           <Image
             className="ml-2"
@@ -18,8 +23,13 @@ const TopDiv = () => {
             width={24}
             height={24}
           />
-          <p className={textStyles}>office@siltim.com</p>
-          <Image 
+          <p
+            className={textStyles}
+            onClick={() => copy('office@siltim.com')}
+          >
+            office@siltim.com
+          </p>
+          <Image
             className="ml-2"
             src={PlaceMarker}
             alt={"Location-icon"}
