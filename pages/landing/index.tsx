@@ -25,6 +25,7 @@ const Landing = () => {
               <Image
                 src={HeroImg}
                 alt="Hero-image"
+                priority={true}
               />
             </figure>
 
