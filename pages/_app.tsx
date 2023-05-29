@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const handleStart = (url: string) => (url !== router.asPath) && setLoading(true);
-    const handleComplete = () => setLoading(false);
+    const handleComplete = () => setTimeout(() => setLoading(false), 700);
 
     router.events.on('routeChangeStart', handleStart)
     router.events.on('routeChangeComplete', handleComplete)
