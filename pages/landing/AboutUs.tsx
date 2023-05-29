@@ -6,8 +6,8 @@ import ChemSlider from "./ChemSlider"
 
 const AboutUs = () => {
   return (
-    <section className="w-5/6 max-w-[1200px] mx-auto md:pt-12 pb-24 md:pb-0 md:flex
-      md:justify-around md:items-center xl:py-40"
+    <section className="w-5/6 max-w-[1200px] mx-auto py-6 md:flex
+      md:justify-around md:items-center"
     >
       <div className="sm:px-4 pb-12 mx-auto md:mx-0 md:pb-0">
         <ChemSlider />
