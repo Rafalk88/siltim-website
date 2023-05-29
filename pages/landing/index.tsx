@@ -29,7 +29,7 @@ const Landing = () => {
               />
             </figure>
 
-            <article className="sm:w-3/4 pt-10 pb-20 md:w-2/3 flex flex-col
+            <article className="sm:w-3/4 pt-10 md:pb-20 md:w-2/3 flex flex-col
               justify-center"
             >
               {/* TEXT */}

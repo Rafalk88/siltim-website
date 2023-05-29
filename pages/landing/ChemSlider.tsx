@@ -11,8 +11,7 @@ import "@splidejs/react-splide/css"
 
 const ChemSlider = () => {
   const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 767px)")
-  const width = isAboveMediumScreens ? 650 : 300
-  const height = isAboveMediumScreens ? 350 : 200
+  const height = isAboveMediumScreens ? 430 : 200
   const arrows = isAboveMediumScreens ? true : false
 
   const options = {
@@ -23,10 +22,8 @@ const ChemSlider = () => {
     pauseOnHover: false,
     resetProgress: false,
     speed: 10000,
-    width: `${width}px`,
+    width: `650px`,
     height: `${height}px`,
-    autoWidth: true,
-    autoHeight: true,
     perPage: 1,
     pagination: false,
   }
@@ -34,7 +31,7 @@ const ChemSlider = () => {
   return (
     <Splide 
       tag="section"
-      aria-label="My Favorite Images"
+      aria-label="Chemistry slider"
       options={options}
       className="mx-auto"
     >
@@ -42,7 +39,7 @@ const ChemSlider = () => {
         <Image
           src={Image1}
           alt="Splide-image-1"
-          width={width}
+          width={650}
           height={height}
         />
       </SplideSlide>
@@ -50,7 +47,7 @@ const ChemSlider = () => {
         <Image
           src={Image2}
           alt="Splide-image-2"
-          width={width}
+          width={650}
           height={height}
         />
       </SplideSlide>
@@ -58,7 +55,7 @@ const ChemSlider = () => {
         <Image
           src={Image3}
           alt="Splide-image-3"
-          width={width}
+          width={650}
           height={height}
         />
       </SplideSlide>
