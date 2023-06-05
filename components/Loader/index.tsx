@@ -1,20 +1,13 @@
-import { RevolvingDot } from 'react-loader-spinner'
+import RingLoader from "react-spinners/RingLoader"
 
 const Loader = () => {
   return (
     <section className="flex justify-center items-center fixed top-0
-      left-0 w-full h-full z-50 bg-slate-400/50"
+      left-0 w-full h-full z-50 bg-slate-300/80"
     >
-      <RevolvingDot
-        height="100"
-        width="100"
-        radius={75}
+      <RingLoader
+        size={180}
         color="#0133FF"
-        secondaryColor=''
-        ariaLabel="revolving-dot-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
       />
     </section>
   )
