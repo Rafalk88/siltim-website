@@ -3,7 +3,7 @@ import {
   useToast
 } from "@chakra-ui/react"
 import isEmail from 'validator/lib/isEmail'
-import ContactForm from "./ContactForm"
+import ContactForm from "@/components/ContactForm"
 
 import { sendContactForm } from "@/api/api"
 import Typography from "@/components/Typography"

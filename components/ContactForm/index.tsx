@@ -1,4 +1,3 @@
-import React from "react"
 import {
   Button,
   FormControl,
@@ -65,9 +64,11 @@ const ContactForm = ({
               name="name"
               errorBorderColor="red.600"
               focusBorderColor="#0133FF"
+              autoComplete="name"
               value={values?.name}
               onChange={handleChange}
               onBlur={onBlur}
+              formNoValidate
             />
             <FormErrorMessage>To pole jest wymagane</FormErrorMessage>
           </FormControl>
@@ -85,11 +86,13 @@ const ContactForm = ({
             <Input
               type="email"
               name="email"
+              autoComplete="email"
               errorBorderColor="red.600"
               focusBorderColor="#0133FF"
               value={values?.email}
               onChange={handleChange}
               onBlur={onBlur}
+              formNoValidate
             />
             {
               (touched?.email && !values?.email) ? (
@@ -115,10 +118,12 @@ const ContactForm = ({
             <Input
               type="text"
               name="title"
+              autoComplete="title"
               errorBorderColor="red.600"
               onChange={handleChange}
               value={values?.title}
               onBlur={onBlur}
+              formNoValidate
             />
           </FormControl>
 
@@ -136,6 +141,7 @@ const ContactForm = ({
             name="message"
             minLength={10}
             maxLength={40}
+            autoComplete="message"
             errorBorderColor="red.600"
             focusBorderColor="#0133FF"
             rows={6}
