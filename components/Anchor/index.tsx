@@ -35,7 +35,7 @@ const Anchor = () => {
       
       {
         isVisible ? (
-          <section className="fixed top-[32%] right-[5%] bg-white p-5">
+          <section className="fixed top-[32%] right-[5%] bg-white rounded-xl shadow-xl p-5 z-[25]">
             <div className="bg-blue h-12 mb-8 flex items-center justify-between px-3">
               <Typography
                 className="text-white"
@@ -53,6 +53,7 @@ const Anchor = () => {
             </div>
             <Contact 
               main={false}
+              setIsVisible={setIsVisible}
             />
           </section>
         ) : null

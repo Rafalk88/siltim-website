@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import {
   useToast
 } from "@chakra-ui/react"
@@ -19,9 +19,10 @@ type Events = {
 
 type Props = {
   main: boolean
+  setIsVisible?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Contact = ({ main }: Props) => {
+const Contact = ({ main, setIsVisible }: Props) => {
   const toast = useToast()
   const [state, setState] = useState(initState)
   const [touched, setTouched] = useState(initTouched)
@@ -30,7 +31,7 @@ const Contact = ({ main }: Props) => {
   const { values } = state
 
   const handleChange = ({ target }: Events) => {
-    const {name, value } = target as HTMLInputElement
+    const { name, value } = target as HTMLInputElement
 
     setState((prevState) => ({
       ...prevState,
@@ -93,6 +94,7 @@ const Contact = ({ main }: Props) => {
       setTouched(initTouched)
       setState(initState)
       setHasError(initHasError)
+      setIsVisible?.(false)
     }
   }
 
