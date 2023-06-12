@@ -26,7 +26,7 @@ type Props = {
 export const Navbar = ({ isTopOfPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
   const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 1060px)")
-  const navbarBackground = isTopOfPage ? "" : "bg-gray drop-shadow bg-white"
+  const navbarBackground = isTopOfPage ? "" : "drop-shadow bg-white"
   const topPosition = isTopOfPage ? "top-[50px]" : "top-0"
 
   const handleClick = () => setIsMenuToggled(!isMenuToggled)
@@ -95,8 +95,8 @@ export const Navbar = ({ isTopOfPage }: Props) => {
 
         {
           !isAboveMediumScreens && isMenuToggled && (
-            <section className="fixed right-0 bottom-0 w-full h-full bg-black/25" onClick={handleClick}>
-              <div className="fixed right-0 bottom-0 w-[300px] h-full text-dark-grey bg-light-grey">
+            <section className="fixed right-0 top-0 w-full h-screen bg-black/25" onClick={handleClick}>
+              <div className="fixed right-0 top-0 w-[300px] h-screen text-dark-grey bg-light-grey">
                 <div className="flex justify-end p-12">
                   <button onClick={handleClick}>
                     <XMarkIcon className="w-6 h-6 cursor-pointer" />
@@ -104,7 +104,7 @@ export const Navbar = ({ isTopOfPage }: Props) => {
                 </div>
 
                 <Typography
-                  className="flex flex-col gap-10 ml-[33%] font-normal"
+                  className="flex flex-col gap-8 ml-[33%] font-normal"
                   variant="h4"
                   as="div"
                 >
@@ -125,7 +125,6 @@ export const Navbar = ({ isTopOfPage }: Props) => {
                 </Typography>
               </div>
             </section>
-            
           )
         }
       </div>
