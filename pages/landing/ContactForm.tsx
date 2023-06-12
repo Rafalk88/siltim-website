@@ -1,3 +1,4 @@
+import React from "react"
 import {
   Button,
   FormControl,
@@ -8,13 +9,31 @@ import {
 } from "@chakra-ui/react"
 
 type Props = {
-  state: any,
-  touched: any,
-  hasError: any,
+  state: {
+    values: {
+      name: string,
+      email: string,
+      title: string,
+      message: string
+    },
+    isLoading: boolean
+  },
+  touched: {
+    name: boolean,
+    email: boolean,
+    title: boolean,
+    message: boolean
+  },
+  hasError: {
+    name: boolean,
+    email: boolean,
+    title: boolean,
+    message: boolean
+  },
   handleChange: any,
   onBlur: any,
-  onSubmit: () => void
-  main?: any
+  onSubmit: () => {}
+  main?: boolean
 }
 
 const ContactForm = ({
@@ -46,7 +65,7 @@ const ContactForm = ({
               name="name"
               errorBorderColor="red.600"
               focusBorderColor="#0133FF"
-              value={values.name}
+              value={values?.name}
               onChange={handleChange}
               onBlur={onBlur}
             />
@@ -56,7 +75,7 @@ const ContactForm = ({
           <FormControl
             className="mb-4"
             isRequired
-            isInvalid={touched.email && !values.email || hasError.email}
+            isInvalid={touched?.email && !values?.email || hasError?.email}
           >
             <FormLabel
               className="mb-1.5 text-dark-grey"
@@ -68,17 +87,17 @@ const ContactForm = ({
               name="email"
               errorBorderColor="red.600"
               focusBorderColor="#0133FF"
-              value={values.email}
+              value={values?.email}
               onChange={handleChange}
               onBlur={onBlur}
             />
             {
-              (touched.email && !values.email) ? (
+              (touched?.email && !values?.email) ? (
                 <FormErrorMessage>To pole jest wymagane</FormErrorMessage>
               ) : (null)
             }
             {
-              (hasError.email) ? (
+              (hasError?.email) ? (
                 <FormErrorMessage>Nieprawidłowy adres email</FormErrorMessage>
               ) : (null)
             }
@@ -98,7 +117,7 @@ const ContactForm = ({
               name="title"
               errorBorderColor="red.600"
               onChange={handleChange}
-              value={values.title}
+              value={values?.title}
               onBlur={onBlur}
             />
           </FormControl>
@@ -106,7 +125,7 @@ const ContactForm = ({
           <FormControl
           className="mb-8"
           isRequired
-          isInvalid={touched.message && !values.message}
+          isInvalid={touched?.message && !values?.message}
         >
           <FormLabel
             className="text-dark-grey"
@@ -120,7 +139,7 @@ const ContactForm = ({
             errorBorderColor="red.600"
             focusBorderColor="#0133FF"
             rows={6}
-            value={values.message}
+            value={values?.message}
             onChange={handleChange}
             onBlur={onBlur}
           />
@@ -133,7 +152,7 @@ const ContactForm = ({
           variant="primary"
           isLoading={isLoading}
           loadingText={'Wysyłanie'}
-          isDisabled={!values.name || !values.email || !values.message}
+          isDisabled={!values?.name || !values?.email || !values?.message}
           onClick={onSubmit}
         >
           Wyślij

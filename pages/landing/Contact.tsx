@@ -10,7 +10,7 @@ import Typography from "@/components/Typography"
 
 const initValues = { name: "", email: "", title: "", message: "" }
 const initState = { values: initValues, isLoading: false, }
-const initTouched = {name: false, email: false,title: false, message: false }
+const initTouched = {name: false, email: false, title: false, message: false }
 const initHasError = { name: false, email: false, title: false, message: false }
 
 type Events = {
