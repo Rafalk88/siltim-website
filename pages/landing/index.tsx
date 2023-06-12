@@ -75,7 +75,9 @@ const Landing = () => {
         <AboutUs />
 
         {/* CONTACT */}
-        <Contact />
+        <Contact
+          main={true}
+        />
       </div>
     </section>
   )
