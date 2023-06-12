@@ -46,6 +46,7 @@ const Anchor = () => {
               </Typography>
 
               <Image
+                className="cursor-pointer"
                 src={CloseIcon}
                 alt="close-icon"
                 onClick={() => setIsVisible(prev => !prev)}
