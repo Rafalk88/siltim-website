@@ -26,6 +26,7 @@ const SocialMediaIcons = ({ className, width, height }: Props) => {
               className="hover:opacity-50 transition duration-500"
               target="_blank"
               rel="noreferrer"
+              passHref
             >
               <Image 
                 src={`/assets/${icon.name}.png`}
