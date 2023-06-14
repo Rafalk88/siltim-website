@@ -64,11 +64,10 @@ const ContactForm = ({
               name="name"
               errorBorderColor="red.600"
               focusBorderColor="#0133FF"
-              autoComplete="name"
-              value={values?.name}
+              autoComplete="username"
+              value={values.name}
               onChange={handleChange}
               onBlur={onBlur}
-              formNoValidate
             />
             <FormErrorMessage>To pole jest wymagane</FormErrorMessage>
           </FormControl>
@@ -76,7 +75,7 @@ const ContactForm = ({
           <FormControl
             className="mb-4"
             isRequired
-            isInvalid={touched?.email && !values?.email || hasError?.email}
+            isInvalid={touched.email && !values.email || hasError.email}
           >
             <FormLabel
               className="mb-1.5 text-dark-grey"
@@ -89,18 +88,17 @@ const ContactForm = ({
               autoComplete="email"
               errorBorderColor="red.600"
               focusBorderColor="#0133FF"
-              value={values?.email}
+              value={values.email}
               onChange={handleChange}
               onBlur={onBlur}
-              formNoValidate
             />
             {
-              (touched?.email && !values?.email) ? (
+              (touched.email && !values.email) ? (
                 <FormErrorMessage>To pole jest wymagane</FormErrorMessage>
               ) : (null)
             }
             {
-              (hasError?.email) ? (
+              (hasError.email) ? (
                 <FormErrorMessage>Nieprawidłowy adres email</FormErrorMessage>
               ) : (null)
             }
@@ -121,16 +119,15 @@ const ContactForm = ({
               autoComplete="title"
               errorBorderColor="red.600"
               onChange={handleChange}
-              value={values?.title}
+              value={values.title}
               onBlur={onBlur}
-              formNoValidate
             />
           </FormControl>
 
           <FormControl
           className="mb-8"
           isRequired
-          isInvalid={touched?.message && !values?.message}
+          isInvalid={touched.message && !values.message}
         >
           <FormLabel
             className="text-dark-grey"
@@ -145,7 +142,7 @@ const ContactForm = ({
             errorBorderColor="red.600"
             focusBorderColor="#0133FF"
             rows={6}
-            value={values?.message}
+            value={values.message}
             onChange={handleChange}
             onBlur={onBlur}
           />
@@ -158,7 +155,7 @@ const ContactForm = ({
           variant="primary"
           isLoading={isLoading}
           loadingText={'Wysyłanie'}
-          isDisabled={!values?.name || !values?.email || !values?.message}
+          isDisabled={!values.name || !values.email || !values.message}
           onClick={onSubmit}
         >
           Wyślij

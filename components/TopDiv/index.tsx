@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { useToast } from "@chakra-ui/react"
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard"
 
 import SocialMediaIcons from "../SocialMediaIcons"
@@ -6,9 +7,22 @@ import SecuredLetter from "@/public/assets/SecuredLetter.svg"
 import PlaceMarker from "@/public/assets/PlaceMarker.svg"
 
 const textStyles = "text-white ml-2 cursor-pointer"
+const officialEmail = "office@siltim.com"
+const address = "Św. Jana 11/4, 40-012 Katowice, Polska"
 
 const TopDiv = () => {
-  const [text, copy] = useCopyToClipboard()
+  const toast = useToast()
+  const [, copy] = useCopyToClipboard()
+
+  const copyToClipBoard = (text: string) => {
+    copy(text)
+    toast({
+      title: "Skopiowano do schowka.",
+      status: "info",
+      duration: 2000,
+      position: "top",
+    })
+  }
 
   return (
     <section className="w-full h-[40px] bg-blue">
@@ -25,9 +39,9 @@ const TopDiv = () => {
           />
           <p
             className={textStyles}
-            onClick={() => copy('office@siltim.com')}
+            onClick={() => copyToClipBoard(officialEmail)}
           >
-            office@siltim.com
+            {officialEmail}
           </p>
           <Image
             className="ml-2"
@@ -36,7 +50,12 @@ const TopDiv = () => {
             width={24}
             height={24}
           />
-          <p className={textStyles}>Św. Jana 11/4, 40-012 Katowice, Polska</p>
+          <p
+            className={textStyles}
+            onClick={() => copyToClipBoard(address)}
+          >
+            {address}
+          </p>
         </div>
         
         <SocialMediaIcons width={23} height={23} />
