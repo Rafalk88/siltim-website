@@ -6,7 +6,6 @@ const toEmail = process.env.TO_EMAIL
 
 export const transporter = nodemailer.createTransport({
   service: "gmail",
-  port: 465,
   auth: {
     user: email,
     pass: password,
