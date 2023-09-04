@@ -10,8 +10,8 @@ const index = () => {
           Siltim Sp. z o.o. | O nas
         </title>
       </Head>
-      <section className="w-5/6 max-w-[1200px] sm:h-[calc(100vh-80px)] mx-auto
-        flex flex-col justify-center items-center pt-40 sm:pt-0"
+      <section className="w-5/6 max-w-[1200px] mx-auto
+        flex flex-col justify-center items-center pt-40"
       >
         <Typography 
           className="flex justify-center"
@@ -35,6 +35,47 @@ const index = () => {
           oprzyrządowania, modele 3D oraz dokumentację fazy wykonawczej.
           Zainteresowania naukowe: projektowanie leków, barwniki i materiały
           dla elektroniki organicznej, całkowita synteza chemiczna.
+        </Typography>
+        <Typography
+          className="py-6"
+          variant="h5"
+          as="h4"
+        >
+          Zapraszamy do indywidualnych rozmów i spotkań:
+        </Typography>
+        <Typography
+          className="flex w-2/3 justify-between px-10"
+          variant="h5"
+          as="ul"
+        >
+          <li>dr Piotr Bartczak</li>
+          <li>dr inz. Jacek Mularski</li>
+        </Typography>
+        <Typography
+        className="py-10"
+        variant="body"
+        as="p"
+        >
+          Nasz główny obszar działalności wiąże się z otrzymywaniem związków chemicznych
+          oraz badaniem nowych metod syntezy chemicznej. Tworzenie nowych struktur może
+          wymagać opracowania spersonalizowanego planu syntezy, a każdemu etapowi
+          procesu należy poświęcić szczególną uwagę w celu zidentyfikowania korzystnych
+          warunków poprzez eksperymenty. W tym celu korzystamy z naszej własnej bazy
+          procedur preparatywnych, w której zgromadziliśmy wiedzę zdobytą w codziennej
+          praktyce laboratoryjnej.
+        </Typography>
+        <Typography
+        className="py-10"
+        variant="body"
+        as="p"
+        >
+          Podejmujemy zlecenia na badania nad syntezą związków chemicznych w kontekście
+          projektów związanych z odkrywaniem aktywnych struktur leków, mechanizmów
+          komórkowych oraz organicznych związków dedykowanych zastosowaniom
+          półprzewodnikowym.
+          Syntezy kontraktowe (na zlecenie) Skupiamy się na szczegółach związanych z
+          przyjmowaniem i realizacją syntez kontraktowych, przykładając dużą wagę do
+          bezpośredniego kontaktu, merytorycznej rozmowy oraz fachowego doradztwa.
         </Typography>
       </section>
     </>
