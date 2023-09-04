@@ -61,20 +61,42 @@ const index = () => {
           variant="body"
           as="p"
         >
-          Nasze osiągnięcia w obszarze materiałów funkcjonalnych skupiają się także
-          w szeroko pojętej dziedzinie technologii wodorowych. Obecnie testujemy
-          katalizator dedykowany do krakingu amoniaku. Pomysł wykorzystania amoniaku
-          jako źródła wodoru ma długą historię. Niewątpliwie atrakcyjna jest idea
-          wykorzystania gazów powstających w wyniku rozkładu cząsteczki NH3, do
-          bezpośredniego zasilania ogniw paliwowych. Katalizator, który testujemy ma
-          dodatni bilans energetyczny ze względu na jego aktywność w temperaturach
-          poniżej 450 *C - jaki ten bilans w liczbach, i wykazuje ponad 99,9%
-          efektywność działania w trakcie wielodniowych testów laboratoryjnych.
-          Zaletą jest niski koszt wytworzenia oraz skalowalna technologia produkcji.
-          Więcej informacji udzielamy na życzenie. Przygotowujemy wniosek grantowy w
-          konkursie Europejskim.... na dalszy rozwój tego materiału, ponieważ
-          dostrzegamy możliwość dalszego obniżania temperatury efektywnego rozkładu
-          amoniaku. Planujemy także demonstrator dla branży automotive.
+          Bezpieczna i efektywna technologia umożliwiająca wykorzystanie wodoru jako
+          paliwa stanowi złożone wyzwanie technologiczne. Jedną z możliwości jest
+          wykorzystanie amoniaku jako nośnika (magazynu) wodoru. Głównym powodem dla
+          którego ta idea budzi zainteresowanie na skalę globalną, jest możliwość transportu
+          ciekłego amoniaku. Pod względem stechiometrycznym udział atomów wodoru jest
+          znacznie większy niż w przypadku innych nośników. Skroplony gaz zapewnia także
+          dużą, nieosiągalną dla innych rozwiązań, masę wodoru w jednostce objętości.
+          Obecnie prowadzimy III - fazę testów katalizatora, wykazującego następujące
+          właściwości:
+        </Typography>
+        <Typography
+          className="py-6"
+          variant="body"
+          as="ul"
+        >
+          <li>
+            - dodatni bilans energetyczny ze względu na jego aktywność w temperaturach
+            poniżej 450 *C (jaki ten bilans w liczbach)
+          </li>
+          <li>
+            - ponad 99,9% efektywność działania w trakcie wielodniowych testów
+            laboratoryjnych.
+          </li>
+          <li>
+            - niski koszt wytworzenia oraz skalowalna technologia produkcji.
+          </li>
+        </Typography>
+        <Typography
+          className="py-6"
+          variant="body"
+          as="p"
+        >
+          Poszukujemy podmiotów zainteresowanych współpracą ukierunkowaną na
+          wdrożenie rynkowe katalizatora oraz badaniami nad dalszą poprawą efektywności
+          procesu rozkładu amoniaku (obniżaniem temperatury procesu - poprawą bilansu
+          energetycznego). Mile widziane projekty z branży automotive.
         </Typography>
       </section>
     </>
