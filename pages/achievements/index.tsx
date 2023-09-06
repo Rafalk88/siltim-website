@@ -269,21 +269,21 @@ const index = () => {
         flex flex-col justify-center items-center pt-40"
       >
         <Typography 
-          className="flex justify-center"
-          variant="h3"
-          as="h3"
+          className="flex justify-center font-extrabold text-dark-grey"
+          variant="h2"
+          as="h2"
         >
-          Publikacje i patenty Założycieli firmy:
+          Publikacje i patenty Założycieli firmy
         </Typography>
         <Typography
-          className="py-6"
-          variant="h5"
-          as="h5"
+          className="py-6 text-dark-grey"
+          variant="h4"
+          as="h4"
         >
           Wykaz publikacji
         </Typography>
         <Typography
-          className="py-6"
+          className="py-6 text-dark-grey"
           variant="body"
           as="ol"
         >
@@ -330,14 +330,14 @@ const index = () => {
           }
         </Typography>
         <Typography
-          className="py-6"
-          variant="h5"
-          as="h5"
+          className="py-6 text-dark-grey"
+          variant="h4"
+          as="h4"
         >
           Udzielone patenty
         </Typography>
         <Typography
-          className="py-6"
+          className="py-6 text-dark-grey"
           variant="body"
           as="ol"
         >
@@ -371,7 +371,7 @@ const index = () => {
           }
         </Typography>
         <Typography
-          className="pb-12"
+          className="pb-12 text-dark-grey"
           variant="body"
           as="p"
         >
