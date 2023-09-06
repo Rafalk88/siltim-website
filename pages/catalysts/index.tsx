@@ -20,16 +20,16 @@ const index = () => {
       >
         <div>
           <Typography
-            className="flex justify-center"
-            variant="h3"
-            as="h3"
+            className="flex justify-center font-extrabold text-dark-grey pb-10"
+            variant="h2"
+            as="h2"
           >
             Katalizatory
           </Typography>
-          <div className="sm:flex sm:justify-between sm:items-center">
+          <div className="sm:flex sm:items-center">
             <div className="sm:w-1/2">
               <Typography
-                className="pt-6"
+                className="text-dark-grey"
                 variant="body"
                 as="p"
               >
@@ -40,7 +40,14 @@ const index = () => {
                 jest kilka wariantów. Na zlecenie produkowane są inne układy katalityczne,
                 dostępne w ilościach   miligram - kilogram. Możliwa jest produkcja układów
                 o zróżnicowanej i dedykowanej morfologii,  zawierających jeden metal lub
-                kilka. Możemy także przygotować bibliotekę o   ustalonej
+                kilka.
+              </Typography>
+              <Typography
+                className="pt-6 text-dark-grey"
+                variant="body"
+                as="p"
+              >
+                Możemy także przygotować bibliotekę o   ustalonej
                 konfiguracji - rodzaje metali, ich dystrybucja - i pośrednio  stężenie,
                 rozmiar ziaren, rodzaj podłoża, rozkład dyspersji -  monodyspersyjność.
                 Katalizatory zawierają metale ciężkie, nieszlachetne, szlachetne i ziem
@@ -49,6 +56,7 @@ const index = () => {
                 Przykładowo analizy  SEM, TEM, FTIR i XRD.
               </Typography>
               <Typography
+                className="text-dark-grey"
                 variant="body"
                 as="p"
               >
@@ -58,7 +66,7 @@ const index = () => {
                 charakterystyki funkcjonalnej materiału.
               </Typography>
             </div>
-            <div>
+            <div className="sm:w-1/2 sm:flex sm:flex-col sm:items-center">
               <Image
                 className="mb-10"
                 src={cataOnePhoto}
@@ -84,9 +92,9 @@ const index = () => {
         </div>
         <div>
           <Typography
-            className="py-6 flex justify-center"
-            variant="h3"
-            as="h3"
+            className="py-8 flex justify-center font-extrabold text-dark-grey"
+            variant="h2"
+            as="h2"
           >
             Technologie wodorowe
           </Typography>
