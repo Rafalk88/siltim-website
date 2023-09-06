@@ -18,14 +18,14 @@ const index = () => {
         flex flex-col justify-center items-center pt-40"
       >
         <Typography 
-          className="flex justify-center"
-          variant="h3"
-          as="h3"
+          className="flex justify-center font-extrabold text-dark-grey"
+          variant="h2"
+          as="h2"
         >
           Nasz misja
         </Typography>
         <Typography
-          className="py-6"
+          className="py-6 text-dark-grey"
           variant="body"
           as="p"
         >
@@ -41,14 +41,14 @@ const index = () => {
           dla elektroniki organicznej, całkowita synteza chemiczna.
         </Typography>
         <Typography
-          className="py-8"
-          variant="h5"
+          className="py-8 font-normal text-dark-grey"
+          variant="h4"
           as="h4"
         >
           Zapraszamy do indywidualnych rozmów i spotkań:
         </Typography>
         <Typography
-          className="flex flex-col sm:flex-row items-center sm:justify-between w-full sm:w-2/3 sm:px-10"
+          className="flex flex-col sm:flex-row items-center sm:justify-between w-full sm:w-2/3 sm:px-10 text-dark-grey"
           variant="h5"
           as="ul"
         >
@@ -74,7 +74,7 @@ const index = () => {
           </div>
         </Typography>
         <Typography
-        className="py-10"
+        className="py-10 text-dark-grey"
         variant="body"
         as="p"
         >
@@ -87,7 +87,7 @@ const index = () => {
           praktyce laboratoryjnej.
         </Typography>
         <Typography
-        className="py-10"
+        className="py-10 text-dark-grey"
         variant="body"
         as="p"
         >
