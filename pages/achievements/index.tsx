@@ -192,7 +192,7 @@ const patents = [
     id: 6,
     name: 'Sposób utylizacji gliceryny do kwasu octowego.',
     pathId: 'Pat.223367, 2015',
-    authors: 'Kapkowski, M.; Bartczak, P. ;Korzec, M.; Polański, J.',
+    authors: 'Kapkowski, M.; Bartczak, P.; Korzec, M.; Polański, J.',
   },
   {
     id: 7,
