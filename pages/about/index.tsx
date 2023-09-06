@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Typography from "@/components/Typography"
 
 import PiotrBPhoto from '@/public/assets/PiotrB.jpg'
+import JacekMPhoto from '@/public/assets/JacekM.png'
 
 const index = () => {
   return (
@@ -64,7 +65,7 @@ const index = () => {
           <div className="flex flex-col items-center">
             <Image
               className="rounded-full mb-4"
-              src={PiotrBPhoto}
+              src={JacekMPhoto}
               alt="Jacek Mularski photo"
               width={175}
               height={175}
