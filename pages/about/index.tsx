@@ -1,6 +1,9 @@
 import Head from "next/head"
+import Image from 'next/image'
 
 import Typography from "@/components/Typography"
+
+import PiotrBPhoto from '@/public/assets/PiotrB.jpg'
 
 const index = () => {
   return (
@@ -37,19 +40,37 @@ const index = () => {
           dla elektroniki organicznej, całkowita synteza chemiczna.
         </Typography>
         <Typography
-          className="py-6"
+          className="py-8"
           variant="h5"
           as="h4"
         >
           Zapraszamy do indywidualnych rozmów i spotkań:
         </Typography>
         <Typography
-          className="flex w-2/3 justify-between px-10"
+          className="flex flex-col sm:flex-row items-center sm:justify-between w-full sm:w-2/3 sm:px-10"
           variant="h5"
           as="ul"
         >
-          <li>dr Piotr Bartczak</li>
-          <li>dr inz. Jacek Mularski</li>
+          <div className="pb-10 sm:pb-0 flex flex-col items-center">
+            <Image
+              className="rounded-full mb-4"
+              src={PiotrBPhoto}
+              alt="Piotr Bartczak photo"
+              width={175}
+              height={175}
+            />
+            <li>dr Piotr Bartczak</li>
+          </div>
+          <div className="flex flex-col items-center">
+            <Image
+              className="rounded-full mb-4"
+              src={PiotrBPhoto}
+              alt="Jacek Mularski photo"
+              width={175}
+              height={175}
+            />
+            <li>dr inz. Jacek Mularski</li>
+          </div>
         </Typography>
         <Typography
         className="py-10"
