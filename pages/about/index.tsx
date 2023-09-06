@@ -70,7 +70,7 @@ const index = () => {
               width={175}
               height={175}
             />
-            <li>dr inz. Jacek Mularski</li>
+            <li>dr inż. Jacek Mularski</li>
           </div>
         </Typography>
         <Typography
