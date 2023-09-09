@@ -52,16 +52,6 @@ const index = () => {
           variant="h5"
           as="ul"
         >
-          <div className="pb-10 sm:pb-0 flex flex-col items-center">
-            <Image
-              className="rounded-full mb-4"
-              src={PiotrBPhoto}
-              alt="Piotr Bartczak photo"
-              width={175}
-              height={175}
-            />
-            <li>dr Piotr Bartczak</li>
-          </div>
           <div className="flex flex-col items-center">
             <Image
               className="rounded-full mb-4"
@@ -71,6 +61,16 @@ const index = () => {
               height={175}
             />
             <li>dr inż. Jacek Mularski</li>
+          </div>
+          <div className="pb-10 sm:pb-0 flex flex-col items-center">
+            <Image
+              className="rounded-full mb-4"
+              src={PiotrBPhoto}
+              alt="Piotr Bartczak photo"
+              width={175}
+              height={175}
+            />
+            <li>dr Piotr Bartczak</li>
           </div>
         </Typography>
         <Typography
