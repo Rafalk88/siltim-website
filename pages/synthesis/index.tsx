@@ -163,11 +163,11 @@ const index = () => {
               alt="laboratory image"
             />
           </div>
-          <div className="flex flex-col sm:w-1/2">
+          <div className="flex flex-col sm:w-1/2 justify-center">
             <div
               className="md:flex md:justify-between"
             >
-              <div className="md:w-1/2">
+              <div>
                 <Typography
                   className="pb-4 text-dark-grey"
                   variant="body"
