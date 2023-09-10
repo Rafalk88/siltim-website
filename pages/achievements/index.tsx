@@ -351,7 +351,7 @@ const index = () => {
                 >
                   <div className="flex gap-3 pb-2">
                     <span>
-                      {id}
+                      {id + '.'}
                     </span>
                     <span>
                       {name}
