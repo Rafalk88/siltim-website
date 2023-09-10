@@ -21,7 +21,7 @@ const ChemSlider = () => {
     arrows: arrows,
     pauseOnHover: false,
     resetProgress: false,
-    speed: 10000,
+    speed: 6500,
     width: `650px`,
     height: `${height}px`,
     perPage: 1,
