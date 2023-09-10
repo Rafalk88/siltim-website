@@ -18,7 +18,7 @@ const index = () => {
         flex flex-col justify-center items-center pt-40"
       >
         <Typography 
-          className="flex justify-center font-extrabold text-dark-grey"
+          className="flex justify-center font-extrabold text-dark-grey pb-10"
           variant="h2"
           as="h2"
         >
@@ -87,7 +87,7 @@ const index = () => {
           praktyce laboratoryjnej.
         </Typography>
         <Typography
-        className="py-10 text-dark-grey"
+        className="pb-10 text-dark-grey"
         variant="body"
         as="p"
         >

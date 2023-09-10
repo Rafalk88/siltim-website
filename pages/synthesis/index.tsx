@@ -22,7 +22,7 @@ const index = () => {
         flex flex-col pt-40"
       >
         <Typography
-          className="flex justify-center font-extrabold py-6 text-dark-grey"
+          className="flex justify-center font-extrabold pb-10 text-dark-grey"
           variant="h2"
           as="h2"
         >
