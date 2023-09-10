@@ -18,12 +18,10 @@ const index = () => {
           Siltim Sp. z o.o. | Katalizatory
         </title>
       </Head>
-      <section className="w-5/6 max-w-[1200px] md:min-h-[calc(100vh-80px)] mx-auto
-        flex flex-col justify-center items-center pt-40 pb-12"
-      >
+      <section className="w-5/6 max-w-[1200px] md:min-h-[calc(100vh-80px)] mx-auto pt-40 pb-12">
         <>
           <Typography
-            className="flex justify-center font-extrabold text-dark-grey pb-10"
+            className="font-extrabold text-dark-grey pb-10"
             variant="h2"
             as="h2"
           >
@@ -94,13 +92,6 @@ const index = () => {
             </div>
           </div>
         </>
-        <Typography
-          className="py-8 flex justify-center font-extrabold text-dark-grey"
-          variant="h2"
-          as="h2"
-        >
-          Technologie wodorowe
-        </Typography>
         <div className="flex items-center flex-col sm:flex-row">
           <div className="w-full pb-10 sm:pb-0 sm:w-1/2 flex flex-col items-center order-last sm:order-first p-5 sm:p-0">
             <Image
@@ -126,6 +117,13 @@ const index = () => {
             />
           </div>
           <div className="sm:w-1/2">
+            <Typography
+              className="py-8 flex justify-center font-extrabold text-dark-grey"
+              variant="h2"
+              as="h2"
+            >
+              Technologie wodorowe
+            </Typography>
             <Typography
               variant="body"
               as="p"
