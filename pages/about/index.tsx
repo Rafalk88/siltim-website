@@ -19,7 +19,7 @@ const index = () => {
       >
         <div className="sm:w-1/2">
           <Typography 
-            className="flex justify-center font-extrabold text-dark-grey pb-10"
+            className="font-extrabold text-dark-grey pb-10"
             variant="h2"
             as="h2"
           >
