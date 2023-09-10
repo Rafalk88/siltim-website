@@ -72,14 +72,12 @@ export const Navbar = ({ isTopOfPage }: Props) => {
 
               <Link href={"/shop"} passHref>
                 <Button
-                  className="w-[125px] h-[42px]"
+                  className="w-[145px] h-[42px]"
                   variant="primary"
                 >
                   Sklep
                 </Button>
               </Link>
-
-              {/* SEARCH BTN HERE */}
             </div>
           ) : (
             <div className="w-5/6 flex justify-end">
