@@ -8,6 +8,7 @@ import SynthTwoImg from "@/public/assets/synt2.png"
 import SynthThreeImg from "@/public/assets/synt3.png"
 import SynthFourImg from "@/public/assets/synt4.png"
 import SynthFiveImg from "@/public/assets/synt5.png"
+import SynthSixImg from "@/public/assets/synt6.png"
 
 const index = () => {
   return (
@@ -81,7 +82,7 @@ const index = () => {
               alt="laboratory image"
             />
             <Image
-              className="rounded-xl"
+              className="rounded-xl mb-10"
               src={SynthTwoImg}
               width={300}
               height={300}
@@ -148,8 +149,15 @@ const index = () => {
               alt="laboratory image"
             />
             <Image
-              className="rounded-xl"
+              className="rounded-xl mb-10"
               src={SynthFiveImg}
+              width={300}
+              height={300}
+              alt="laboratory image"
+            />
+            <Image
+              className="rounded-xl mb-10"
+              src={SynthSixImg}
               width={300}
               height={300}
               alt="laboratory image"
