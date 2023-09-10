@@ -1,5 +1,7 @@
 import Head from "next/head"
 import Image from 'next/image'
+import Link from 'next/link'
+import { Button } from "@chakra-ui/react"
 
 import Typography from "@/components/Typography"
 
@@ -93,7 +95,7 @@ const index = () => {
               <li className="font-normal pb-2 text-center">Dyrektor generalny</li>
               <li className="font-normal">tel.: 666 666 666</li>
             </div>
-            <div className="pb-10 sm:pb-0 flex flex-col items-center">
+            <div className="pb-10 flex flex-col items-center">
               <Image
                 className="rounded-full mb-4"
                 src={PiotrBPhoto}
@@ -106,6 +108,15 @@ const index = () => {
               <li className="font-normal">tel.: 888 888 888</li>
             </div>
           </Typography>
+          <Link href={"/achievements"} passHref>
+            <Button
+              className="w-full sm:w-[250px] h-[45px] cursor-pointer font-bold"
+              data-role="information"
+              variant="primary"
+            >
+              Zobacz nasze osiągnięcia
+            </Button>
+        </Link>
         </div>
       </section>
     </>
