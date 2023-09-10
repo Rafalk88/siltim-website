@@ -77,8 +77,8 @@ const index = () => {
             Zapraszamy do indywidualnych rozmów i spotkań:
           </Typography>
           <Typography
-            className="flex flex-col items-center sm:justify-between w-full sm:w-2/3 sm:px-10 text-dark-grey"
-            variant="h5"
+            className="flex flex-col items-center sm:justify-between w-full sm:w-2/3 sm:px-5 text-dark-grey"
+            variant="h6"
             as="ul"
           >
             <div className="flex flex-col items-center mb-10">
@@ -89,7 +89,9 @@ const index = () => {
                 width={175}
                 height={175}
               />
-              <li className="text-center">dr inż. Jacek Mularski</li>
+              <li className="text-center pb-2">dr inż. Jacek Mularski</li>
+              <li className="font-normal pb-2 text-center">Dyrektor generalny</li>
+              <li className="font-normal">tel.: 666 666 666</li>
             </div>
             <div className="pb-10 sm:pb-0 flex flex-col items-center">
               <Image
@@ -99,7 +101,9 @@ const index = () => {
                 width={175}
                 height={175}
               />
-              <li className="text-center">dr Piotr Bartczak</li>
+              <li className="text-center pb-2">dr Piotr Bartczak</li>
+              <li className="font-normal pb-2 text-center">Dyrektor ds. technologii</li>
+              <li className="font-normal">tel.: 888 888 888</li>
             </div>
           </Typography>
         </div>
