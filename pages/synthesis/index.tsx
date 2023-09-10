@@ -22,7 +22,7 @@ const index = () => {
         flex flex-col pt-40"
       >
         <Typography
-          className="flex justify-center font-extrabold pb-10 text-dark-grey"
+          className="font-extrabold pb-10 text-dark-grey"
           variant="h2"
           as="h2"
         >
@@ -31,7 +31,7 @@ const index = () => {
         <div className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-center">
           <div className="sm:w-1/2">
             <Typography
-              className="py-4 text-dark-grey text-center"
+              className="py-4 text-dark-grey"
               variant="h5"
               as="h5"
             >
@@ -54,7 +54,7 @@ const index = () => {
             </Typography>
 
             <Typography
-              className="py-4 text-dark-grey text-center"
+              className="py-4 text-dark-grey"
               variant="h5"
               as="h5"
             >
@@ -164,32 +164,26 @@ const index = () => {
             />
           </div>
           <div className="flex flex-col sm:w-1/2 justify-center">
-            <div
-              className="md:flex md:justify-between"
+            <Typography
+              className="pb-4 text-dark-grey"
+              variant="body"
+              as="p"
             >
-              <div>
-                <Typography
-                  className="pb-4 text-dark-grey"
-                  variant="body"
-                  as="p"
-                >
-                  Katalizatory są aktywne w sub-stechiometrycznych ilościach (podać TON/TOF dla
-                  znanych układów) i otrzymujemy je z doskonałą powtarzalnością. W stałej ofercie
-                  dostępnych jest kilka wariantów a na zlecenie opracowujemy specyficzne układy
-                  katalityczne, dostępne w ilościach miligram - kilogram.
-                </Typography>
-                <Typography
-                  className="py-4 text-dark-grey"
-                  variant="body"
-                  as="p"
-                >
-                  Możliwa jest produkcja układów o zróżnicowanej i dedykowanej morfologii,
-                  zawierających jeden metal lub kilka. Możemy także przygotować bibliotekę o
-                  ustalonej konfiguracji (rodzaje metali, ich dystrybucja - i pośrednio stężenie,
-                  rozmiar ziaren, rodzaj podłoża, rozkład dyspersji (monodyspersyjność).
-                </Typography>
-              </div>
-            </div>
+              Katalizatory są aktywne w sub-stechiometrycznych ilościach (podać TON/TOF dla
+              znanych układów) i otrzymujemy je z doskonałą powtarzalnością. W stałej ofercie
+              dostępnych jest kilka wariantów a na zlecenie opracowujemy specyficzne układy
+              katalityczne, dostępne w ilościach miligram - kilogram.
+            </Typography>
+            <Typography
+              className="py-4 text-dark-grey"
+              variant="body"
+              as="p"
+            >
+              Możliwa jest produkcja układów o zróżnicowanej i dedykowanej morfologii,
+              zawierających jeden metal lub kilka. Możemy także przygotować bibliotekę o
+              ustalonej konfiguracji (rodzaje metali, ich dystrybucja - i pośrednio stężenie,
+              rozmiar ziaren, rodzaj podłoża, rozkład dyspersji (monodyspersyjność).
+            </Typography>
             <Typography
               className="py-4 text-dark-grey"
               variant="body"
