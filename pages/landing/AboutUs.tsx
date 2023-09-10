@@ -47,7 +47,7 @@ const AboutUs = () => {
             data-role="information"
             variant="primary"
           >
-            Zobacz nasze osiągnęcia
+            Zobacz nasze osiągnięcia
           </Button>
         </Link>
         
