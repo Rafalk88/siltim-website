@@ -69,7 +69,7 @@ const index = () => {
                 charakterystyki funkcjonalnej materiału.
               </Typography>
             </div>
-            <div className="sm:w-1/2 sm:flex sm:flex-col sm:items-center">
+            <div className="w-full pt-10 sm:pt-0 sm:w-1/2 flex flex-col items-center">
               <Image
                 className="mb-10 rounded-xl"
                 src={cataOnePhoto}
@@ -101,8 +101,8 @@ const index = () => {
         >
           Technologie wodorowe
         </Typography>
-        <div className="sm:flex sm:items-center">
-          <div className="sm:w-1/2 sm:flex sm:flex-col sm:items-center">
+        <div className="flex items-center flex-col sm:flex-row">
+          <div className="w-full pb-10 sm:pb-0 sm:w-1/2 flex flex-col items-center order-last sm:order-first p-5 sm:p-0">
             <Image
               className="mb-10 rounded-xl"
               src={cataFourPhoto}
