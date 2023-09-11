@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Image from "next/image"
+import Link from "next/link"
 
 import Typography from "@/components/Typography"
 
@@ -105,8 +106,14 @@ const index = () => {
             variant="body"
             as="li"
           >
-            Tworzenie wiązań węgiel-węgiel (link do artykułów naukowych i artykułów na
-            stronie): reakcja Sonogashiry.
+            Tworzenie wiązań węgiel-węgiel {
+              <Link
+                className="underline italic hover:text-black"
+                href="/achievements"
+              >
+                (link)
+              </Link>
+            }: reakcja Sonogashiry.
           </Typography>
           <Typography
             className="text-dark-grey"
@@ -169,38 +176,34 @@ const index = () => {
               variant="body"
               as="p"
             >
-              Katalizatory są aktywne w sub-stechiometrycznych ilościach (podać TON/TOF dla
-              znanych układów) i otrzymujemy je z doskonałą powtarzalnością. W stałej ofercie
-              dostępnych jest kilka wariantów a na zlecenie opracowujemy specyficzne układy
-              katalityczne, dostępne w ilościach miligram - kilogram.
+              W celu zaspokojenia indywidualnych zapotrzebowań naszych klientów na
+              układy katalityczne, opracowujemy dedykowane materiały o określonej strukturze i
+              składzie (w ilościach od miligramów do kilograma) oraz prowadzimy prace
+              badawcze, weryfikujące użyteczność takich materiałów w konkretnych reakcjach
+              chemicznych.
             </Typography>
             <Typography
               className="py-4 text-dark-grey"
               variant="body"
               as="p"
             >
-              Możliwa jest produkcja układów o zróżnicowanej i dedykowanej morfologii,
-              zawierających jeden metal lub kilka. Możemy także przygotować bibliotekę o
-              ustalonej konfiguracji (rodzaje metali, ich dystrybucja - i pośrednio stężenie,
-              rozmiar ziaren, rodzaj podłoża, rozkład dyspersji (monodyspersyjność).
+              Możliwa jest produkcja układów o zróżnicowanej morfologii, zawierających
+              jeden lub kilka metali. Jesteśmy gotowi na przygotowanie bibliotek
+              materiałowych o
+              ustalonej z klientem konfiguracji (rodzaje metali, ich dystrybucja - i pośrednio
+              stężenie, rozmiar ziaren, rodzaj podłoża, rozkład dyspersji) do badań
+              skriningowych.
             </Typography>
             <Typography
-              className="py-4 text-dark-grey"
+              className="py-4 pb-10 text-dark-grey"
               variant="body"
               as="p"
             >
-              Katalizatory zawierają metale ciężkie, nieszlachetne, szlachetne i ziem rzadkich.
-              Ze względu na badawczo-rozwojowy charakter naszego laboratorium, możemy
-              zapewnić charakterystykę materiałów jakie otrzymujemy. Przykładowo analizy
-              SEM, TEM, FTIR i XRD.
-            </Typography>
-            <Typography
-              className="pt-4 pb-12 text-dark-grey"
-              variant="body"
-              as="p"
-            >
-              Oferujemy organokatalizatory, związki koordynacyjne, będące połączeniem metali i
-              ligandów organicznych. Związki te przygotowujemy w ścisłej współpracy z
+              Nasze materiały charakteryzujemy przy pomocy ustalonych z klientem metod
+              analitycznych, takich jak: SEM, TEM, BET, FTIR, XPS i XRD.
+              Rozwijanym obecnie kierunkiem w naszej firmie są heterogeniczne
+              kompozytowe katalizatory (w tym nośnikowe), będące połączeniem metali z
+              ligandami organicznymi. Układy takie przygotowujemy w ścisłej współpracy z
               klientami z uwagi na specyficzne wymagania co do budowy i charakterystyki
               funkcjonalnej materiału.
             </Typography>
