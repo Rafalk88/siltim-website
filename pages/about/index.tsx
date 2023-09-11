@@ -94,6 +94,7 @@ const index = () => {
               <li className="text-center pb-2">dr inż. Jacek Mularski</li>
               <li className="font-normal pb-2 text-center">Dyrektor generalny</li>
               <li className="font-normal">tel.: 666 666 666</li>
+              {/* DODAJ ZDJĘCIE NUMERU TEL + MAIL */}
             </div>
             <div className="pb-10 flex flex-col items-center">
               <Image
@@ -106,6 +107,7 @@ const index = () => {
               <li className="text-center pb-2">dr Piotr Bartczak</li>
               <li className="font-normal pb-2 text-center">Dyrektor ds. technologii</li>
               <li className="font-normal">tel.: 888 888 888</li>
+              {/* DODAJ ZDJĘCIE NUMERU TEL + MAIL */}
             </div>
           </Typography>
           <Link href={"/achievements"} passHref>
