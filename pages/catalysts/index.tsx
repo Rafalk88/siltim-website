@@ -36,7 +36,7 @@ const index = () => {
               >
                 Oferujemy heterogeniczne katalizatory, użyteczne w syntezie organicznej
                 przy tworzeniu wiązań węgiel-węgiel. Katalizatory są aktywne w
-                sub-stechiometrycznych ilościach (podać TON/TOF   dla znanych układów)
+                sub-stechiometrycznych ilościach
                 i otrzymujemy je z doskonałą powtarzalnością. W stałej ofercie dostępnych
                 jest kilka wariantów. Na zlecenie produkowane są inne układy katalityczne,
                 dostępne w ilościach   miligram - kilogram. Możliwa jest produkcja układów
