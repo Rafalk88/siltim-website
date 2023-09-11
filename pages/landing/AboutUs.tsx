@@ -41,7 +41,7 @@ const AboutUs = () => {
           i doskonalimy oryginalne rozwiązania od początku działalności.
         </Typography>
 
-        <Link href={"/achievements"} passHref>
+        {/* <Link href={"/achievements"} passHref>
           <Button
             className="w-full sm:w-[250px] h-[45px] cursor-pointer font-bold"
             data-role="information"
@@ -49,7 +49,7 @@ const AboutUs = () => {
           >
             Zobacz nasze osiągnięcia
           </Button>
-        </Link>
+        </Link> */}
         
       </div>
     </section>
