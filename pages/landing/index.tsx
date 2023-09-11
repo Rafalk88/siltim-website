@@ -46,7 +46,7 @@ const Landing = () => {
                 as="p"
               >
                 Związki chemiczne, które umieściliśmy w naszym katalogu to propozycje do wykorzystania
-                w kolejnych syntezach chemicznych związanych szczególnie z projektami odkrywania leków,
+                w syntezach chemicznych związanych szczególnie z projektami odkrywania leków,
                 barwników fluorescencyjnych, katalizatorów heterogenicznych oraz związków zapachowych.
               </Typography>
               {/* <Typography
