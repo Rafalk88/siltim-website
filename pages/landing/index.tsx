@@ -49,14 +49,14 @@ const Landing = () => {
                 w kolejnych syntezach chemicznych związanych szczególnie z projektami odkrywania leków,
                 barwników fluorescencyjnych, katalizatorów heterogenicznych oraz związków zapachowych.
               </Typography>
-              <Typography
+              {/* <Typography
                 className="pt-9 text-dark-grey"
                 variant="body"
                 as="p"
               >
                 Pełny katalog produktów do pobrania:
-              </Typography>
-              <Link href={"/notready"} passHref>
+              </Typography> */}
+              {/* <Link href={"/notready"} passHref>
                 <Button
                   className="w-full sm:w-[200px] h-[45px] mt-3 shadow-sm
                     duration-500 font-bold"
@@ -65,7 +65,7 @@ const Landing = () => {
                 >
                   Pobierz
                 </Button>
-              </Link>
+              </Link> */}
               
             </article>
           </div>
