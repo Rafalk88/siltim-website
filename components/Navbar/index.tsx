@@ -16,7 +16,7 @@ export const menu = [
   {text: "O nas", route: "about"},
   {text: "Katalizatory", route: "catalysts"},
   {text: "Syntezy na zlecenie", route: "synthesis"},
-  {text: "Oferta", route: "offer", mq: "sm"},
+  {text: "Katalog", route: "catalog", mq: "sm"},
 ];
 
 type Props = {
