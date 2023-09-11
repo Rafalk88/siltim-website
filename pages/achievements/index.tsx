@@ -266,10 +266,10 @@ const index = () => {
         </title>
       </Head>
       <section className="w-5/6 max-w-[1200px] mx-auto
-        flex flex-col justify-center items-center pt-40"
+        flex flex-col justify-center pt-40"
       >
         <Typography 
-          className="flex justify-center font-extrabold text-dark-grey"
+          className="font-extrabold text-dark-grey"
           variant="h2"
           as="h2"
         >
