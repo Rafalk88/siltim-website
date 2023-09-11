@@ -16,7 +16,7 @@ export const menu = [
   {text: "O nas", route: "about"},
   {text: "Katalizatory", route: "catalysts"},
   {text: "Syntezy na zlecenie", route: "synthesis"},
-  {text: "Sklep", route: "shop", mq: "sm"},
+  {text: "Oferta", route: "offer", mq: "sm"},
 ];
 
 type Props = {
@@ -75,7 +75,7 @@ export const Navbar = ({ isTopOfPage }: Props) => {
                   className="w-[145px] h-[42px]"
                   variant="primary"
                 >
-                  Sklep
+                  {menu[menu.length - 1].text}
                 </Button>
               </Link>
             </div>
