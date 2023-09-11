@@ -10,7 +10,7 @@ const pubs = [
     name: 'Quinoline Alkaloids Against Neglected Tropical Diseases.',
     journal: 'Curr. Org. Chem. 2017, 21, 1896–1906. (IF 2.193)',
     authors: 'Musioł, R.; Malarz, K.; Mularski, J.',
-    doi: '',
+    doi: '10.2174/1385272821666170207103634',
     doiLink: ''
   },
   {
@@ -26,7 +26,7 @@ const pubs = [
     name: 'The p53 stabilizing agent CP-31398 and multi-kinase inhibitors. Designing, synthesizing and screening of styrylquinazoline series.',
     journal: 'Eur. J. Med. Chem. 2019, 163, 610–625. (IF 5.572)',
     authors: 'Mularski, J.; Malarz, K.; Pacholczyk, M.; Musioł, R.',
-    doi: '',
+    doi: '10.1016/j.ejmech.2018.12.012',
     doiLink: ''
   },
   {
@@ -34,7 +34,7 @@ const pubs = [
     name: 'The landscape of the anti-kinase activity of the IDH1 inhibitors.',
     journal: 'Cancers 2020, 12(3), 536. (IF 6.639)',
     authors: 'Malarz, K.; Mularski, J.; Pacholczyk, M.; Musioł, R.',
-    doi: '',
+    doi: '10.3390/cancers12030536',
     doiLink: ''
   },
   {
@@ -42,7 +42,7 @@ const pubs = [
     name: 'Novel benzenesulfonate scaffolds with a high anticancer activity and G2/M cell cycle arrest.',
     journal: 'Cancers 2021, 13(8), 1790. (IF 6.575)',
     authors: 'Malarz, K.; Mularski, J.; Musioł, R.',
-    doi: '',
+    doi: '10.3390/cancers13081790',
     doiLink: ''
   },
   {
@@ -50,7 +50,7 @@ const pubs = [
     name: 'Terpyridines as promising antitumor agents: an overview of their discovery and development.',
     journal: 'Expert Opin. Drug Discov. 2022, 17(3), 259–271. (IF 6.3)',
     authors: 'Mularski, J.; Pacholczyk, M.; Musioł, R.',
-    doi: '',
+    doi: '10.1080/17460441.2022.2017877',
     doiLink: ''
   },
   {
