@@ -8,7 +8,6 @@ import cataTwoPhoto from "@/public/assets/cata2.png"
 import cataThreePhoto from "@/public/assets/cata3.png"
 import cataFourPhoto from "@/public/assets/cata4.png"
 import cataFivePhoto from "@/public/assets/cata5.png"
-import cataSixPhoto from "@/public/assets/cata6.png"
 
 const index = () => {
   return (
@@ -82,18 +81,18 @@ const index = () => {
                 width={300}
                 height={300}
               />
-              <Image
-                className="rounded-xl"
-                src={cataThreePhoto}
-                alt="section photo"
-                width={300}
-                height={300}
-              />
             </div>
           </div>
         </>
         <div className="flex items-center flex-col sm:flex-row">
           <div className="w-full pb-10 sm:pb-0 sm:w-1/2 flex flex-col items-center order-last sm:order-first p-5 sm:p-0">
+            <Image
+              className="mb-10 rounded-xl"
+              src={cataThreePhoto}
+              alt="section photo"
+              width={300}
+              height={300}
+            />
             <Image
               className="mb-10 rounded-xl"
               src={cataFourPhoto}
@@ -104,13 +103,6 @@ const index = () => {
             <Image
               className="mb-10 rounded-xl"
               src={cataFivePhoto}
-              alt="section photo"
-              width={300}
-              height={300}
-            />
-            <Image
-              className="rounded-xl"
-              src={cataSixPhoto}
               alt="section photo"
               width={300}
               height={300}
