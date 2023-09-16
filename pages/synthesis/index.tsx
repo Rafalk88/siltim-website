@@ -207,6 +207,14 @@ const index = () => {
               klientami z uwagi na specyficzne wymagania co do budowy i charakterystyki
               funkcjonalnej materiału.
             </Typography>
+            <Link
+              className="underline text-dark-grey hover:text-black pb-10"
+              href="/files/KatalizatorySILTIM.pdf"
+              target="_blank"
+              download
+            >
+                Pobierz ulotkę
+            </Link>
           </div>
         </div>
       </section>
