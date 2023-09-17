@@ -70,7 +70,7 @@ export const Navbar = ({ isTopOfPage }: Props) => {
                 }
               </Typography>
 
-              <Link href={"/shop"} passHref>
+              <Link href={`/${menu[menu.length - 1].route}`} passHref>
                 <Button
                   className="w-[145px] h-[42px]"
                   variant="primary"
