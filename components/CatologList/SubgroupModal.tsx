@@ -1,8 +1,11 @@
 import React, { Dispatch, SetStateAction } from 'react'
+import { useToast } from "@chakra-ui/react"
 
 import Typography from '../Typography'
 import Modal from '../Modal'
 import { useMediaQuery } from "@/hooks/useMediaQuery"
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard"
+import { copyToClipBoard } from '@/lib/copyToClipBoard'
 
 import { SelectedGroup } from '.'
 
@@ -54,11 +57,15 @@ const chemicalFormula = (formula: string) => {
 }
 
 const SubgroupModal = ({ isOpen, setIsOpen, id, molecularFormula, smiles, cas }: SubgroupModalProps) => {
+  const toast = useToast()
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)")
+  const [, copy] = useCopyToClipboard()
 
   return (
     <Modal
-      className={`absolute ${isAboveSmallScreens ? 'w-[130%] right-[-65%]' : '[w-100%] right-0'} top-[-15%] cursor-pointer bg-white border rounded-xl border-dark-grey p-2`}
+      className={`absolute ${isAboveSmallScreens ? 'w-[130%] right-[-65%]' : '[w-100%] right-0'} top-[-15%]
+        bg-white border rounded-xl border-dark-grey p-2`
+      }
       isOpen={isOpen}
       onClose={() => setIsOpen(null)}
     >
@@ -76,9 +83,10 @@ const SubgroupModal = ({ isOpen, setIsOpen, id, molecularFormula, smiles, cas }:
           Formuła molekularna:
         </Typography>
         <Typography
-          className="text-dark-grey flex items-center mb-2"
+          className="text-dark-grey mb-2 hover:text-black w-fit cursor-pointer"
           variant="body"
           as="p"
+          onClick={() => copyToClipBoard(molecularFormula, copy, toast)}
         >
           {chemicalFormula(molecularFormula)}
         </Typography>
@@ -89,25 +97,33 @@ const SubgroupModal = ({ isOpen, setIsOpen, id, molecularFormula, smiles, cas }:
           Smiles:
         </Typography>
         <Typography
-          className="text-dark-grey mb-2"
+          className="text-dark-grey mb-2 hover:text-black w-fit cursor-pointer"
           variant="body"
           as="p"
+          onClick={() => copyToClipBoard(smiles, copy, toast)}
         >
           {smiles}
         </Typography>
-        <Typography
-          className="text-dark-grey"
-          variant="h6"
-        >
-          CAS:
-        </Typography>
-        <Typography
-          className="text-dark-grey mb-6"
-          variant="body"
-          as="p"
-        >
-          {cas}
-        </Typography>
+        {
+          cas && (
+            <>
+              <Typography
+                className="text-dark-grey"
+                variant="h6"
+              >
+                CAS:
+              </Typography>
+              <Typography
+                className="text-dark-grey mb-6 hover:text-black w-fit cursor-pointer"
+                variant="body"
+                as="p"
+                onClick={() => copyToClipBoard(cas, copy, toast)}
+              >
+                {cas}
+              </Typography>
+            </>
+          )
+        }
         <Typography
           className="text-dark-grey font-normal"
           variant="h6"
@@ -115,9 +131,10 @@ const SubgroupModal = ({ isOpen, setIsOpen, id, molecularFormula, smiles, cas }:
           W razie pytań zachęcamy do kontaktu:
         </Typography>
         <Typography
-          className="text-dark-grey"
+          className="text-dark-grey hover:text-black w-fit cursor-pointer"
           variant="body"
           as="p"
+          onClick={() => copyToClipBoard('office@siltim.com', copy, toast)}
         >
           office@siltim.com
         </Typography>
