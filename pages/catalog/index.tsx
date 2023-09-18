@@ -3,11 +3,39 @@ import Head from "next/head"
 
 import CatalogList from "@/components/CatologList"
 import { getGroupOfProducts } from '@/lib/mongo/groupOfProducts'
-import { getProducts } from '@/lib/mongo/products'
+
+type Price = {
+  currency: string
+  value: number
+}
+
+type Prices = {
+  quantity: string
+  purity: string
+  price: Price[]
+}
+
+type Product = {
+  _id: string
+  id: string
+  group: string
+  image: string
+  name: string
+  smiles: string
+  molecularFormula: string
+  cas?: string
+  mw: number
+  prices?: Prices[]
+}
+
+type ProductsState = {
+  products: Product[]
+}
 
 const Catalog = ({ groupOfProducts }: any) => {
   const [selectedGroup, setSelectedGroup] = useState<string | null>(null)
-  const [product, setProduct] = useState(null)
+  const [product, setProduct] = useState<ProductsState | null>(null)
+  const [cacheProducts, setCacheProducts] = useState<ProductsState>({ products: []})
 
   const fetchData = useCallback(async () => {
     try {
@@ -29,6 +57,16 @@ const Catalog = ({ groupOfProducts }: any) => {
     fetchData()
   }, [fetchData, selectedGroup])
 
+  useEffect(() => {
+    if (product && product.products) {
+      setCacheProducts((prevState: ProductsState) => {
+        return {
+          products: [...prevState.products, ...product.products],
+        };
+      });
+    }
+  }, [product]);
+
   return (
     <>
       <Head>
@@ -41,6 +79,7 @@ const Catalog = ({ groupOfProducts }: any) => {
           <CatalogList
             groupOfProducts={groupOfProducts}
             product={product}
+            setProduct={setProduct}
             selectedGroup={selectedGroup}
             setSelectedGroup={setSelectedGroup}
           />
