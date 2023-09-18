@@ -2,7 +2,7 @@ import React from 'react';
 
 type ModalProps = {
   className?: string
-  isOpen: number | null
+  isOpen: string | null
   children: React.ReactNode
   onClick?: () => void
 }

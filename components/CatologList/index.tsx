@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Dispatch, SetStateAction, useEffect } from 'react'
 
 import LiElement from './LiElement'
 import HoverModal from '../HoverModal'
@@ -6,81 +6,53 @@ import Modal from '../Modal'
 import Typography from '../Typography'
 import { useMediaQuery } from "@/hooks/useMediaQuery"
 
-const fakeData = {
-  mainCompound: [
-    {
-      id: 1,
-      name: 'indole',
-      image_name: 'indole.png',
-      subgroup: [
-        {
-          id: 'SL-001',
-          name: '2-(4-bromo-1H-indol-3-yl)ethanamine',
-          image_name: 'idole1.png',
-          smiles: 'NCCc1c[nH]c2cccc(Br)c12',
-          molecularFormula: 'C10H11BrN2',
-          CAS: '108061-74-1',
-        },
-        {
-          id: 'SL-002',
-          name: '2-(5-methoxy-1H-indol-3-yl)ethanamine',
-          image_name: 'indole2.png',
-          smiles: 'COc1ccc2[nH]cc(CCN)c2c1',
-          molecularFormula: 'C11H14N2O',
-          CAS: '608-07-1',
-        }
-      ],
-    },
-    {
-      id: 2,
-      name: 'benzotriazole',
-      image_name: 'benzotriazole.png',
-      subgroup: [
-        {
-          id: 'SL-001',
-          name: 'drugie dane',
-          image_name: 'idole1.png',
-          smiles: 'NCCc1c[nH]c2cccc(Br)c12',
-          molecularFormula: 'C10H11BrN2',
-          CAS: '108061-74-1',
-        },
-        {
-          id: 'SL-002',
-          name: 'drugie dane',
-          image_name: 'indole2.png',
-          smiles: 'COc1ccc2[nH]cc(CCN)c2c1',
-          molecularFormula: 'C11H14N2O',
-          CAS: '608-07-1',
-        }
-      ],
-    }
-  ]
+type SelectedGroup = string | null
+
+type CatalogListProps ={
+  groupOfProducts: any
+  selectedGroup: SelectedGroup
+  setSelectedGroup: Dispatch<SetStateAction<SelectedGroup>>
+  product: any
 }
 
-const transformItem = 'transform ease-in-out duration-500'
+type GroupOfProducts = {
+  _id: string
+  id: string
+  name: string
+  imageName: string
+}
 
-export const CatalogList = () => {
+const transformItem = 'transform ease-in-out duration-400'
+
+export const CatalogList = ({
+    groupOfProducts, selectedGroup, setSelectedGroup, product,
+  }: CatalogListProps) => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)")
-  const [isClicked, setIsClicked] = useState<number | null>(null)
-  const [isHovered, setIsHovered] = useState<number | null>(null)
-  const [isOpen, setIsOpen] = useState<number | null>(null)
-  const handleHoverOnClick = (id: number) => {
-    if (isClicked === id) return setIsClicked(null)
-    setIsClicked(id)
+  const [isHovered, setIsHovered] = useState<string | null>(null)
+  const [isOpen, setIsOpen] = useState<string | null>(null)
+
+  const handleOnClickGroup = (name: string) => {
+    setSelectedGroup((prevSelectedGroup) => {
+      if (name && prevSelectedGroup === name) {
+        return null;
+      }
+      return name || prevSelectedGroup;
+    });
   }
-  const handleOnClick = (id: number) => {
+  const handleOnClickSubgroup = (id: string) => {
     if (isOpen === id) return setIsOpen(null)
+    
     setIsOpen(id)
   }
-  const handleMouseEnter = (id: number) => setIsHovered(id)
+  const handleMouseEnter = (id: string) => setIsHovered(id)
   const handleMouseLeave = () =>  setIsHovered(null)
 
   return (
     <>
       <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto pb-16">
         {
-          fakeData.mainCompound.map((compound, idx) => {
-            const { id, name, image_name, subgroup } = compound
+          groupOfProducts.map((compound: GroupOfProducts, idx: number) => {
+            const { id, name, imageName } = compound
             return (
               <li
                 key={`${id}-${idx}`}
@@ -90,17 +62,17 @@ export const CatalogList = () => {
               >
                 <LiElement
                   className={`w-full h-[200px] border rounded-xl border-dark-grey hover:border-black
-                    opacity-60 hover:opacity-100 ${isClicked === id ? 'opacity-100 border-2' : null} ${transformItem}`}
+                    opacity-60 hover:opacity-100 ${selectedGroup === id ? 'opacity-100 border-4' : null} ${transformItem}`}
                   name={name}
-                  aria-pressed={isClicked === id}
-                  image_name={image_name}
-                  onClick={() => handleHoverOnClick(id)}
+                  aria-pressed={selectedGroup === name}
+                  imageName={imageName}
+                  onClick={() => handleOnClickGroup(name)}
                 />
                 {isHovered === id && (
                     <HoverModal
                       className="absolute w-full h-full top-0 right-0 cursor-pointer"
                       isOpen={isHovered}
-                      onClick={() => handleHoverOnClick(id)}
+                      onClick={() => handleOnClickGroup(name)}
                     >
                       <div className="w-[95%] h-[95%] bg-white/80 border-inherit rounded-xl p-4 flex flex-col justify-center">
                         <Typography
@@ -114,7 +86,7 @@ export const CatalogList = () => {
                           variant="body"
                           as="p"
                         >
-                          {subgroup.length}
+                          Zrobić
                         </Typography>
                       </div>
                     </HoverModal>
@@ -125,25 +97,25 @@ export const CatalogList = () => {
           })
         }
       </ul>
-      {isClicked && (
+      {selectedGroup && product && (
         <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto pb-16">
-          {fakeData.mainCompound.find(compound => compound.id === isClicked)?.subgroup.map((subItem, idx) => {
-            const { id, name, image_name, smiles, CAS, molecularFormula} = subItem
+          {product.products.map((item: any, idx: number) => {
+            const { id, name, imageName, smiles, CAS, molecularFormula} = item
             const splitID = id.split('-')
-            const formattedID = Number(splitID[1])
+            const formattedID = splitID[1]
             return (
               <li
                 className='relative'
                 key={`${id}-${idx}`}
-                onClick={() => handleOnClick(formattedID)}
+                onClick={() => handleOnClickSubgroup(formattedID)}
               >
                 <LiElement
                   className={`w-full h-[220px] border rounded-xl border-dark-grey hover:border-black
                     opacity-60 hover:opacity-100 ${isOpen === formattedID ? 'opacity-100 border-2' : null} ${transformItem}`}
                   name={name}
                   aria-pressed={isOpen === formattedID}
-                  image_name={image_name}
-                  onClick={() => handleOnClick(formattedID)}
+                  imageName={imageName}
+                  onClick={() => handleOnClickSubgroup(formattedID)}
                 />
                 {
                   isOpen === formattedID && (

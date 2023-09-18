@@ -3,7 +3,7 @@ import Typography from '../Typography'
 
 type ModalProps = {
   className?: string
-  isOpen: number | null
+  isOpen: string | null
   onClose: React.Dispatch<React.SetStateAction<boolean>>
   children: React.ReactNode
 }

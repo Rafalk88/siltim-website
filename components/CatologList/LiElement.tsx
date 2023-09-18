@@ -4,14 +4,14 @@ import Image from 'next/image'
 type LiElementProps = {
   className?: string;
   name: string
-  image_name: string
+  imageName: string
   onClick: () => void
 }
 
 const LiElement = ({
-  className, name, image_name, onClick, ...otherProps
+  className, name, imageName, onClick, ...otherProps
 }: LiElementProps) => {
-  const imagePath = `/images/${image_name}`
+  const imagePath = `/images/${imageName}.png`
   return (
     <>
       <button
