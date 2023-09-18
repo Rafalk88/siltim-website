@@ -6,7 +6,7 @@ import Typography from "@/components/Typography"
 import AboutUs from "./AboutUs"
 import Contact from "./Contact"
 
-import HeroImg from "@/public/assets/hero.png"
+import HeroImg from "@/public/assets/hero2.png"
 
 const Landing = () => {
   return (
