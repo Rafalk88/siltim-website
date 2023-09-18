@@ -1,9 +1,11 @@
 import React, { useState, Dispatch, SetStateAction } from 'react'
+import { Link as ScrollLink } from 'react-scroll'
 
 import LiElement from './LiElement'
 import HoverModal from '../HoverModal'
 import Typography from '../Typography'
 import SubgroupModal from './SubgroupModal'
+import Searchbar from './Searchbar'
 
 export type SelectedGroup = string | null
 
@@ -12,19 +14,21 @@ type CatalogListProps ={
   selectedGroup: SelectedGroup
   setSelectedGroup: Dispatch<SetStateAction<SelectedGroup>>
   product: any
+  setProduct: Dispatch<SetStateAction<any>>
 }
 
 type GroupOfProducts = {
   _id: string
   id: string
   name: string
+  groupName: string
   imageName: string
 }
 
 const transformItem = 'transform ease-in-out duration-400'
 
 export const CatalogList = ({
-    groupOfProducts, selectedGroup, setSelectedGroup, product,
+    groupOfProducts, selectedGroup, setSelectedGroup, product, setProduct
   }: CatalogListProps) => {
   const [isHovered, setIsHovered] = useState<string | null>(null)
   const [isOpen, setIsOpen] = useState<string | null>(null)
@@ -47,10 +51,10 @@ export const CatalogList = ({
 
   return (
     <>
-      <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto pb-16">
+      <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto">
         {
           groupOfProducts.map((compound: GroupOfProducts, idx: number) => {
-            const { id, name, imageName } = compound
+            const { id, name, groupName, imageName } = compound
             return (
               <li
                 key={`${id}-${idx}`}
@@ -60,34 +64,42 @@ export const CatalogList = ({
               >
                 <LiElement
                   className={`w-full h-[200px] border rounded-xl border-dark-grey hover:border-black
-                    opacity-60 hover:opacity-100 ${selectedGroup === id ? 'opacity-100 border-4' : null} ${transformItem}`}
-                  name={name}
+                    ${selectedGroup === id ? 'border-4' : null} ${transformItem}`}
+                  name={groupName}
                   aria-pressed={selectedGroup === name}
                   imageName={imageName}
-                  onClick={() => handleOnClickGroup(name)}
+                  onClick={() => {
+                    handleOnClickGroup(name)
+                  }}
                 />
                 {isHovered === id && (
-                    <HoverModal
-                      className="absolute w-full h-full top-0 right-0 cursor-pointer"
-                      isOpen={isHovered}
-                      onClick={() => handleOnClickGroup(name)}
+                    <ScrollLink
+                      to="scrollTo"
+                      smooth={true}
+                      duration={500}
                     >
-                      <div className="w-[95%] h-[95%] bg-white/80 border-inherit rounded-xl p-4 flex flex-col justify-center">
-                        <Typography
-                          className="text-center"
-                          variant="h4"
-                        >
-                          Ilość pozycji w grupie:
-                        </Typography>
-                        <Typography
-                          className="text-center"
-                          variant="body"
-                          as="p"
-                        >
-                          Zrobić
-                        </Typography>
-                      </div>
-                    </HoverModal>
+                      <HoverModal
+                        className="absolute w-full h-full top-0 right-0 cursor-pointer"
+                        isOpen={isHovered}
+                        onClick={() => handleOnClickGroup(name)}
+                      >
+                        <div className="w-[95%] h-[95%] bg-white/80 border-inherit rounded-xl p-4 flex flex-col justify-center">
+                          <Typography
+                            className="text-center"
+                            variant="h4"
+                          >
+                            Ilość pozycji w grupie:
+                          </Typography>
+                          <Typography
+                            className="text-center"
+                            variant="body"
+                            as="p"
+                          >
+                            Zrobić
+                          </Typography>
+                        </div>
+                      </HoverModal>
+                    </ScrollLink>
                   )
                 }
               </li>
@@ -95,42 +107,51 @@ export const CatalogList = ({
           })
         }
       </ul>
+      <div id="scrollTo"></div>
       {selectedGroup && product && (
-        <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto pb-16">
-          {product.products.map((item: any, idx: number) => {
-            const { id, name, image, smiles, cas, molecularFormula } = item
-            const splitID = id.split('-')
-            const formattedID = splitID[1]
-            return (
-              <li
-                className='relative'
-                key={`${id}-${idx}`}
-                onClick={() => handleOnClickSubgroup(formattedID)}
-              >
-                <LiElement
-                  className={`w-full h-[220px] border rounded-xl border-dark-grey hover:border-black
-                    opacity-60 hover:opacity-100 ${isOpen === formattedID ? 'opacity-100 border-2' : null} ${transformItem}`}
-                  name={name}
-                  aria-pressed={isOpen === formattedID}
-                  imageName={image}
-                  onClick={() => handleOnClickSubgroup(formattedID)}
-                />
-                {
-                  isOpen === formattedID && (
-                    <SubgroupModal
-                      isOpen={isOpen}
-                      setIsOpen={setIsOpen}
-                      id={id}
-                      molecularFormula={molecularFormula}
-                      smiles={smiles}
-                      cas={cas}
-                    />
-                  )
-                }
-              </li>
-            )
-          })}
-        </ul>
+        <>
+          {/* <Searchbar
+            className="max-w-2xl mx-auto my-8"
+            product={product}
+            setProduct={setProduct}
+          /> */}
+          <ul
+            className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto py-16"
+          >
+            {product.products.map((item: any, idx: number) => {
+              const { id, name, image, smiles, cas, molecularFormula } = item
+              const splitID = id.split('-')
+              const formattedID = splitID[1]
+              return (
+                <li
+                  className='relative'
+                  key={`${id}-${idx}`}
+                >
+                  <LiElement
+                    className={`w-full h-[220px] border rounded-xl border-dark-grey
+                      hover:border-2 ${isOpen === formattedID ? 'border-2' : null} ${transformItem}`}
+                    name={name}
+                    aria-pressed={isOpen === formattedID}
+                    imageName={image}
+                    onClick={() => handleOnClickSubgroup(formattedID)}
+                  />
+                  {
+                    isOpen === formattedID && (
+                      <SubgroupModal
+                        isOpen={isOpen}
+                        setIsOpen={setIsOpen}
+                        id={id}
+                        molecularFormula={molecularFormula}
+                        smiles={smiles}
+                        cas={cas}
+                      />
+                    )
+                  }
+                </li>
+              )
+            })}
+          </ul>
+        </>
       )}
     </>
   )
