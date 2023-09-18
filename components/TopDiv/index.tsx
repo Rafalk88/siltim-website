@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { useToast } from "@chakra-ui/react"
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard"
+import { copyToClipBoard } from "@/lib/copyToClipBoard"
 
 import SocialMediaIcons from "../SocialMediaIcons"
 import SecuredLetter from "@/public/assets/SecuredLetter.svg"
@@ -13,16 +14,6 @@ const address = "Św. Jana 11/4, 40-012 Katowice, Polska"
 const TopDiv = () => {
   const toast = useToast()
   const [, copy] = useCopyToClipboard()
-
-  const copyToClipBoard = (text: string) => {
-    copy(text)
-    toast({
-      title: "Skopiowano do schowka.",
-      status: "info",
-      duration: 2000,
-      position: "top",
-    })
-  }
 
   return (
     <section className="w-full h-[40px] bg-blue">
@@ -39,7 +30,7 @@ const TopDiv = () => {
           />
           <p
             className={textStyles}
-            onClick={() => copyToClipBoard(officialEmail)}
+            onClick={() => copyToClipBoard(officialEmail, copy, toast)}
           >
             {officialEmail}
           </p>
@@ -52,7 +43,7 @@ const TopDiv = () => {
           />
           <p
             className={textStyles}
-            onClick={() => copyToClipBoard(address)}
+            onClick={() => copyToClipBoard(address, copy, toast)}
           >
             {address}
           </p>
