@@ -1,12 +1,11 @@
-import React, { useState, Dispatch, SetStateAction, useEffect } from 'react'
+import React, { useState, Dispatch, SetStateAction } from 'react'
 
 import LiElement from './LiElement'
 import HoverModal from '../HoverModal'
-import Modal from '../Modal'
 import Typography from '../Typography'
-import { useMediaQuery } from "@/hooks/useMediaQuery"
+import SubgroupModal from './SubgroupModal'
 
-type SelectedGroup = string | null
+export type SelectedGroup = string | null
 
 type CatalogListProps ={
   groupOfProducts: any
@@ -27,7 +26,6 @@ const transformItem = 'transform ease-in-out duration-400'
 export const CatalogList = ({
     groupOfProducts, selectedGroup, setSelectedGroup, product,
   }: CatalogListProps) => {
-  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)")
   const [isHovered, setIsHovered] = useState<string | null>(null)
   const [isOpen, setIsOpen] = useState<string | null>(null)
 
@@ -100,7 +98,7 @@ export const CatalogList = ({
       {selectedGroup && product && (
         <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto pb-16">
           {product.products.map((item: any, idx: number) => {
-            const { id, name, imageName, smiles, CAS, molecularFormula} = item
+            const { id, name, imageName, smiles, cas, molecularFormula } = item
             const splitID = id.split('-')
             const formattedID = splitID[1]
             return (
@@ -119,72 +117,14 @@ export const CatalogList = ({
                 />
                 {
                   isOpen === formattedID && (
-                    <Modal
-                      className={`absolute ${isAboveSmallScreens ? 'w-[130%] right-[-65%]' : '[w-100%] right-0'} top-[-15%] cursor-pointer bg-white border rounded-xl border-dark-grey p-2`}
+                    <SubgroupModal
                       isOpen={isOpen}
-                      onClose={() => setIsOpen(null)}
-                    >
-                      <div className="flex flex-col justify-center">
-                        <Typography
-                          className="text-dark-grey mb-4"
-                          variant="h5"
-                        >
-                          {id}
-                        </Typography>
-                        <Typography
-                          className="text-dark-grey w-full"
-                          variant="h6"
-                        >
-                          Formuła molekularna:
-                        </Typography>
-                        <Typography
-                          className="text-dark-grey flex items-center mb-2"
-                          variant="body"
-                          as="p"
-                        >
-                          {molecularFormula}
-                        </Typography>
-                        <Typography
-                          className="text-dark-grey"
-                          variant="h6"
-                        >
-                          Smiles:
-                        </Typography>
-                        <Typography
-                          className="text-dark-grey mb-2"
-                          variant="body"
-                          as="p"
-                        >
-                          {smiles}
-                        </Typography>
-                        <Typography
-                          className="text-dark-grey"
-                          variant="h6"
-                        >
-                          CAS:
-                        </Typography>
-                        <Typography
-                          className="text-dark-grey mb-6"
-                          variant="body"
-                          as="p"
-                        >
-                          {CAS}
-                        </Typography>
-                        <Typography
-                          className="text-dark-grey font-normal"
-                          variant="h6"
-                        >
-                          W razie pytań zachęcamy do kontaktu:
-                        </Typography>
-                        <Typography
-                          className="text-dark-grey"
-                          variant="body"
-                          as="p"
-                        >
-                          office@siltim.com
-                        </Typography>
-                      </div>
-                    </Modal>
+                      setIsOpen={setIsOpen}
+                      id={id}
+                      molecularFormula={molecularFormula}
+                      smiles={smiles}
+                      cas={cas}
+                    />
                   )
                 }
               </li>
