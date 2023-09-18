@@ -23,6 +23,7 @@ type GroupOfProducts = {
   name: string
   groupName: string
   imageName: string
+  count: number
 }
 
 const transformItem = 'transform ease-in-out duration-400'
@@ -54,7 +55,7 @@ export const CatalogList = ({
       <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto">
         {
           groupOfProducts.map((compound: GroupOfProducts, idx: number) => {
-            const { id, name, groupName, imageName } = compound
+            const { id, name, groupName, imageName, count } = compound
             return (
               <li
                 key={`${id}-${idx}`}
@@ -95,7 +96,7 @@ export const CatalogList = ({
                             variant="body"
                             as="p"
                           >
-                            Zrobić
+                            {count}
                           </Typography>
                         </div>
                       </HoverModal>
