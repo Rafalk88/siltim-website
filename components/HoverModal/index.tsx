@@ -10,7 +10,7 @@ type ModalProps = {
 export const HoverModal = ({ className, isOpen, onClick, children }: ModalProps) => {
   return isOpen ? (
     <div
-      className={`flex flex-col items-center justify-center ${className} z-[100]`}
+      className={`flex flex-col items-center justify-center ${className} z-[25]`}
       onClick={onClick}
     >
       {children}
