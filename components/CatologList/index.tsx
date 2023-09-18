@@ -23,7 +23,6 @@ type GroupOfProducts = {
   name: string
   groupName: string
   imageName: string
-  count: number
 }
 
 const transformItem = 'transform ease-in-out duration-400'
@@ -33,6 +32,7 @@ export const CatalogList = ({
   }: CatalogListProps) => {
   const [isHovered, setIsHovered] = useState<string | null>(null)
   const [isOpen, setIsOpen] = useState<string | null>(null)
+  const [title, setTitle] = useState<string | null>(null)
 
   const handleOnClickGroup = (name: string) => {
     setSelectedGroup((prevSelectedGroup) => {
@@ -49,13 +49,19 @@ export const CatalogList = ({
   }
   const handleMouseEnter = (id: string) => setIsHovered(id)
   const handleMouseLeave = () =>  setIsHovered(null)
+  const toggleTitle = (value: string | null) => {
+    setTitle((prevState) => {
+      if (prevState === value) return null
+      return value
+    })
+  }
 
   return (
     <>
       <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto">
         {
           groupOfProducts.map((compound: GroupOfProducts, idx: number) => {
-            const { id, name, groupName, imageName, count } = compound
+            const { id, name, groupName, imageName } = compound
             return (
               <li
                 key={`${id}-${idx}`}
@@ -71,6 +77,7 @@ export const CatalogList = ({
                   imageName={imageName}
                   onClick={() => {
                     handleOnClickGroup(name)
+                    toggleTitle(groupName)
                   }}
                 />
                 {isHovered === id && (
@@ -82,23 +89,17 @@ export const CatalogList = ({
                       <HoverModal
                         className="absolute w-full h-full top-0 right-0 cursor-pointer"
                         isOpen={isHovered}
-                        onClick={() => handleOnClickGroup(name)}
+                        onClick={() => {
+                          handleOnClickGroup(name)
+                          toggleTitle(groupName)
+                        }}
                       >
-                        <div className="w-[95%] h-[95%] bg-white/80 border-inherit rounded-xl p-4 flex flex-col justify-center">
-                          <Typography
-                            className="text-center"
-                            variant="h4"
-                          >
-                            Ilość pozycji w grupie:
-                          </Typography>
-                          <Typography
-                            className="text-center"
-                            variant="body"
-                            as="p"
-                          >
-                            {count}
-                          </Typography>
-                        </div>
+                        <Typography
+                          className="w-[95%] h-[95%] bg-white/80 border-inherit rounded-xl p-4 flex flex-col justify-center text-center"
+                          variant="h4"
+                        >
+                          Kliknij aby rozwinąć
+                        </Typography>
                       </HoverModal>
                     </ScrollLink>
                   )
@@ -108,7 +109,14 @@ export const CatalogList = ({
           })
         }
       </ul>
-      <div id="scrollTo"></div>
+      <div id="scrollTo">
+        <Typography
+          className="text-center text-dark-grey py-10"
+          variant="h5"
+        >
+          {title}
+        </Typography>
+      </div>
       {selectedGroup && product && (
         <>
           {/* <Searchbar
@@ -117,7 +125,7 @@ export const CatalogList = ({
             setProduct={setProduct}
           /> */}
           <ul
-            className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto py-16"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto pb-16"
           >
             {product.products.map((item: any, idx: number) => {
               const { id, name, image, smiles, cas, molecularFormula } = item
