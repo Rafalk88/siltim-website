@@ -15,6 +15,44 @@ type SubgroupModalProps = {
   cas: string
 }
 
+const chemicalFormula = (formula: string) => {
+  const splitFormula = (formula: string) => {
+    const parts = [];
+    let currentPart = '';
+
+    for (let i = 0; i < formula.length; i++) {
+      const char = formula[i];
+      if (/[A-Za-z]/.test(char)) {
+        if (currentPart !== '') {
+          parts.push(currentPart);
+          currentPart = '';
+        }
+        parts.push(char);
+      } else {
+        currentPart += char;
+      }
+    }
+
+    if (currentPart !== '') {
+      parts.push(currentPart);
+    }
+
+    return parts.map((part, index) => {
+      if (/[A-Za-z]/.test(part)) {
+        return <span key={index}>{part}</span>;
+      } else {
+        return <sub key={index}>{part}</sub>;
+      }
+    });
+  };
+
+  return (
+    <>
+      {splitFormula(formula)}
+    </>
+  );
+}
+
 const SubgroupModal = ({ isOpen, setIsOpen, id, molecularFormula, smiles, cas }: SubgroupModalProps) => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)")
 
@@ -42,7 +80,7 @@ const SubgroupModal = ({ isOpen, setIsOpen, id, molecularFormula, smiles, cas }:
           variant="body"
           as="p"
         >
-          {molecularFormula}
+          {chemicalFormula(molecularFormula)}
         </Typography>
         <Typography
           className="text-dark-grey"

@@ -98,7 +98,7 @@ export const CatalogList = ({
       {selectedGroup && product && (
         <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto pb-16">
           {product.products.map((item: any, idx: number) => {
-            const { id, name, imageName, smiles, cas, molecularFormula } = item
+            const { id, name, image, smiles, cas, molecularFormula } = item
             const splitID = id.split('-')
             const formattedID = splitID[1]
             return (
@@ -112,7 +112,7 @@ export const CatalogList = ({
                     opacity-60 hover:opacity-100 ${isOpen === formattedID ? 'opacity-100 border-2' : null} ${transformItem}`}
                   name={name}
                   aria-pressed={isOpen === formattedID}
-                  imageName={imageName}
+                  imageName={image}
                   onClick={() => handleOnClickSubgroup(formattedID)}
                 />
                 {
