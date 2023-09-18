@@ -16,6 +16,7 @@ interface Props {
   children: React.ReactNode
   className?: string
   as?: ElementType
+  onClick?: () => void
 }
 
 const tags: Record<Variant, ElementType> = {
@@ -42,11 +43,11 @@ const sizes: Record<Variant, string> = {
   small: "text-xs sm:text-sm"
 }
 
-const Typography = ({ variant, children, className, as }: Props) => {
+const Typography = ({ variant, children, className, as, onClick }: Props) => {
   const sizeClasses = sizes[variant]
   const Tag = as || tags[variant]
 
-  return <Tag className={`${sizeClasses} ${className}`}>{children}</Tag>
+  return <Tag className={`${sizeClasses} ${className}`} onClick={onClick}>{children}</Tag>
 }
 
 export default Typography
