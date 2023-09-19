@@ -33,6 +33,20 @@ jobs:
       - name: Authorize Docker push
         run: gcloud auth configure-docker
 
+      - name: Set environment variables
+        run: |-
+          echo "EMAIL=${{ secrets.EMAIL }}" >> .env.local
+          echo "EMAIL_PASS=${{ secrets.EMAIL_PASS }}" >> .env.local
+          echo "TO_EMAIL=${{ secrets.TO_EMAIL }}" >> .env.local
+          echo "MONGODB_URL=${{ secrets.MONGODB_URL }}" >> .env.local
+
+      - name: Check if environment variables are set
+        run: |
+          if [[ -z "$EMAIL" || -z "$EMAIL_PASS" || -z "$TO_EMAIL" || -z "$MONGODB_URL" ]]; then
+            echo "Brak wymaganych zmiennych środowiskowych."
+            exit 1
+          fi
+
       - name: Build and tag the docker image
         run: |-
           docker build . --tag gcr.io/$PROJECT_ID/$REPO_NAME:$GITHUB_SHA
