@@ -1,4 +1,4 @@
-name: siltim
+name: siltim-website
 
 on:
   push:
