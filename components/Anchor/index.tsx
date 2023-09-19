@@ -7,16 +7,19 @@ import Typography from '../Typography'
 import SecuredLetter from "@/public/assets/SecuredLetter.svg"
 import CloseIcon from "@/public/assets/close-icon.svg"
 
-const Anchor = () => {
-  const [isVisible, setIsVisible] = useState(false)
+type Props = {
+  isVisible: boolean
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>
+}
 
+const Anchor = ({ isVisible, setIsVisible }: Props) => {
   return (
     <>
       {
         !isVisible ? (
-          <section className="w-[80px] h-[80px] rounded-full flex justify-center
+          <div className="w-[80px] h-[80px] rounded-full flex justify-center
             items-center bg-blue fixed top-[85%] right-[1%] cursor-pointer
-            drop-shadow-md hover:bg-blue/80 z-[1]"
+            drop-shadow-md hover:bg-light-blue z-[10]"
           >
             <button 
               className="cursor-pointer"
@@ -29,7 +32,7 @@ const Anchor = () => {
                 height={46}
               />
             </button>
-          </section>
+          </div>
         ) : null
       }
       
