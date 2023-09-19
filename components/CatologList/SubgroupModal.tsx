@@ -83,7 +83,7 @@ const SubgroupModal = ({ isOpen, setIsOpen, id, molecularFormula, smiles, cas }:
           Formuła molekularna:
         </Typography>
         <Typography
-          className="text-dark-grey mb-2 hover:text-black w-fit cursor-pointer"
+          className="text-dark-grey mb-2 hover:text-black hover:underline w-fit cursor-pointer"
           variant="body"
           as="p"
           onClick={() => copyToClipBoard(molecularFormula, copy, toast)}
@@ -97,12 +97,12 @@ const SubgroupModal = ({ isOpen, setIsOpen, id, molecularFormula, smiles, cas }:
           Smiles:
         </Typography>
         <Typography
-          className="text-dark-grey mb-2 hover:text-black w-fit cursor-pointer"
+          className="text-dark-grey mb-2 hover:text-black hover:underline w-fit cursor-pointer"
           variant="body"
           as="p"
           onClick={() => copyToClipBoard(smiles, copy, toast)}
         >
-          {smiles}
+          Kopiuj Smiles
         </Typography>
         {
           cas && (
@@ -114,7 +114,7 @@ const SubgroupModal = ({ isOpen, setIsOpen, id, molecularFormula, smiles, cas }:
                 CAS:
               </Typography>
               <Typography
-                className="text-dark-grey mb-6 hover:text-black w-fit cursor-pointer"
+                className="text-dark-grey mb-6 hover:text-black hover:underline w-fit cursor-pointer"
                 variant="body"
                 as="p"
                 onClick={() => copyToClipBoard(cas, copy, toast)}
@@ -131,7 +131,7 @@ const SubgroupModal = ({ isOpen, setIsOpen, id, molecularFormula, smiles, cas }:
           W razie pytań zachęcamy do kontaktu:
         </Typography>
         <Typography
-          className="text-dark-grey hover:text-black w-fit cursor-pointer"
+          className="text-dark-grey hover:text-black hover:underline w-fit cursor-pointer"
           variant="body"
           as="p"
           onClick={() => copyToClipBoard('office@siltim.com', copy, toast)}
