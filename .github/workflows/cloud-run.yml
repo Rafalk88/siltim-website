@@ -8,7 +8,7 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.CLOUD_RUN_PROJECT_NAME }}
-  REGION: europe-central2-a
+  REGION: europe-central2
   # project-name but it can be anything you want
   REPO_NAME: siltim-website
 
