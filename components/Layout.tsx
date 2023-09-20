@@ -12,7 +12,7 @@ type Props = {
 }
 
 const Layout = ({ children, isTopOfPage }: Props) => {
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1000px)")
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1400px)")
 
   return (
     <section id="top">

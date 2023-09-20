@@ -18,7 +18,7 @@ const Anchor = ({ isVisible, setIsVisible }: Props) => {
       {
         !isVisible ? (
           <div className="w-[80px] h-[80px] rounded-full flex justify-center
-            items-center bg-blue fixed top-[85%] right-[1%] cursor-pointer
+            items-center bg-blue fixed top-[85%] right-[25px] cursor-pointer
             drop-shadow-md hover:bg-light-blue z-[10]"
           >
             <button 

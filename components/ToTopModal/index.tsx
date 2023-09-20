@@ -13,12 +13,12 @@ const ToTopModal = ({ id }: Props) => {
   const [isVisible, setIsVisible] = useState(false)
 
   return (
-    <div>
+    <div className="relative">
       {
         !isVisible ? (
           <ScrollLink
             className="w-[60px] h-[60px] rounded-full flex justify-center
-              items-center bg-dark-grey fixed top-[82%] right-[5%] cursor-pointer
+              items-center bg-dark-grey fixed top-[82%] right-[80px] cursor-pointer
               drop-shadow-md hover:bg-grey z-[5]"
             to={id}
             smooth={true}
