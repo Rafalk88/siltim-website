@@ -41,6 +41,7 @@ const ChemSlider = () => {
           alt="Splide-image-1"
           width={650}
           height={height}
+          placeholder="blur"
         />
       </SplideSlide>
       <SplideSlide>
@@ -49,6 +50,7 @@ const ChemSlider = () => {
           alt="Splide-image-2"
           width={650}
           height={height}
+          placeholder="blur"
         />
       </SplideSlide>
       <SplideSlide>
@@ -57,6 +59,7 @@ const ChemSlider = () => {
           alt="Splide-image-3"
           width={650}
           height={height}
+          placeholder="blur"
         />
       </SplideSlide>
     </Splide>

@@ -131,20 +131,20 @@ const index = () => {
               właściwości:
             </Typography>
             <Typography
-              className="py-6"
+              className="py-6 pl-10 list-lower"
               variant="body"
               as="ul"
             >
               <li>
-                - dodatni bilans energetyczny ze względu na jego aktywność w temperaturach
-                poniżej 450 *C (jaki ten bilans w liczbach)
+                dodatni bilans energetyczny ze względu na jego aktywność w temperaturach
+                poniżej 450 <sup>0</sup>C (jaki ten bilans w liczbach),
               </li>
               <li>
-                - ponad 99,9% efektywność działania w trakcie wielodniowych testów
-                laboratoryjnych.
+                ponad 99,9% efektywność działania w trakcie wielodniowych testów
+                laboratoryjnych,
               </li>
               <li>
-                - niski koszt wytworzenia oraz skalowalna technologia produkcji.
+                niski koszt wytworzenia oraz skalowalna technologia produkcji.
               </li>
             </Typography>
             <Typography

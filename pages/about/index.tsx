@@ -67,9 +67,9 @@ const index = () => {
             projektów związanych z odkrywaniem aktywnych struktur leków, mechanizmów
             komórkowych oraz organicznych związków dedykowanych zastosowaniom
             półprzewodnikowym.
-            Syntezy kontraktowe (na zlecenie) Skupiamy się na szczegółach związanych z
-            przyjmowaniem i realizacją syntez kontraktowych, przykładając dużą wagę do
-            bezpośredniego kontaktu, merytorycznej rozmowy oraz fachowego doradztwa.
+            Skupiamy się na szczegółach związanych z przyjmowaniem i realizacją syntez
+            kontraktowych, przykładając dużą wagę do bezpośredniego kontaktu, merytorycznej
+            rozmowy oraz fachowego doradztwa.
           </Typography>
         </div>
         <div className="sm:w-1/2 flex flex-col items-center order-first sm:order-last pb-14 sm:pb-0">
@@ -99,6 +99,8 @@ const index = () => {
                 <Image
                   src={JacekMPhone}
                   alt="Jacek Mularski phone and email"
+                  width={140}
+                  height={40}
                 />
               </li>
             </div>
@@ -116,6 +118,8 @@ const index = () => {
                 <Image
                   src={PiotrBPhone}
                   alt="Piotr Bartczak phone and email"
+                  width={200}
+                  height={50}
                 />
               </li>
             </div>
@@ -123,7 +127,7 @@ const index = () => {
           <Link href={"/achievements"} passHref>
             <Button
               className="w-full sm:w-[250px] h-[45px] cursor-pointer font-bold"
-              data-role="information"
+              type="button"
               variant="primary"
             >
               Zobacz nasze osiągnięcia

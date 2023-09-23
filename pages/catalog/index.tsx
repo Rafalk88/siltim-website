@@ -71,7 +71,7 @@ const Catalog = ({ groupOfProducts }: any) => {
     <>
       <Head>
         <title>
-          Siltim Sp. z o.o. | Sklep
+          Siltim Sp. z o.o. | Katalog
         </title>
       </Head>
       <section className="w-5/6 max-w-[1200px] mx-auto">

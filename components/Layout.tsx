@@ -1,7 +1,6 @@
 import TopDiv from "./TopDiv"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
-import Anchor from "./Anchor"
 import ToTopModal from "./ToTopModal"
 
 import { useMediaQuery } from "@/hooks/useMediaQuery"

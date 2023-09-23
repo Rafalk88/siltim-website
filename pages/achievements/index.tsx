@@ -155,6 +155,14 @@ const pubs = [
     doi: '10.3390/en15051798',
     doiLink: 'https://www.mdpi.com/1996-1073/15/5/1798'
   },
+  {
+    id: 20,
+    name: 'Induction heating catalysis: carbon dioxide methanation on deactivation-resistant trimetallic PdRe/Ni nanoconjugates with Ni-supports',
+    journal: 'Chemical Engineering Research and Design, 2023 (IF 3.9)',
+    authors: 'Siudyga, T.; Kapkowski, M.; Lach, D.; Bartczak, P.; Kocot, K.; Jendrzejewska I.; Dercz, G.; Zubko, M.; Balin, K.; Golba S.; Tomiczek, B.; Pacultova K.;Polanski, J.',
+    doi: '10.1016/j.cherd.2023.09.017',
+    doiLink: ''
+  },
 ]
 
 const patents = [
@@ -239,7 +247,7 @@ const underlineString = (dividedAuthors: string[]) => {
   })
 }
 
-const mergeElements = (arrayOfElements: React.ReactElement[]) => {
+const mergeString = (arrayOfElements: React.ReactElement[]) => {
   return arrayOfElements.map((element, idx) => {
     return (
       <React.Fragment key={idx}>
@@ -253,7 +261,7 @@ const mergeElements = (arrayOfElements: React.ReactElement[]) => {
 const formatAuthors = (authors: string) => {
   const dividedAuthors = splitString(authors, '; ')
   const underlinedAuthors = underlineString(dividedAuthors)
-  const mergedAuthors = mergeElements(underlinedAuthors)
+  const mergedAuthors = mergeString(underlinedAuthors)
   return mergedAuthors
 }
 
@@ -273,7 +281,7 @@ const index = () => {
           variant="h2"
           as="h2"
         >
-          Publikacje i patenty Założycieli firmy
+          Publikacje i patenty założycieli firmy
         </Typography>
         <Typography
           className="py-6 text-dark-grey"
@@ -375,7 +383,7 @@ const index = () => {
           variant="body"
           as="p"
         >
-          Powróć do <Link href="/" className="underline text-blue-500">Strony Głównej</Link>
+          Powróć do strony <Link href="/about" className="underline text-blue-500">O Nas</Link>
         </Typography>
       </section>
     </>

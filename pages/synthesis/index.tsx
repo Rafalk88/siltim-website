@@ -97,48 +97,48 @@ const index = () => {
           as="p"
         >
           Posiadamy długoletnie doświadczenie oraz własne know-how w projektowaniu i
-          preparatyce heterogenicznych katalizatorów, szczególnie w kierunku poniższych
-          wymienionych zastosowań.
+          preparatyce heterogenicznych katalizatorów, szczególnie w kierunku poniżej
+          wymienionych zastosowań:
         </Typography>
-        <ol className="py-4 pl-10 list-decimal">
+        <ul className="py-4 pl-10 list-lower">
           <Typography
             className="text-dark-grey"
             variant="body"
             as="li"
           >
-            Tworzenie wiązań węgiel-węgiel {
+            tworzenie wiązań węgiel-węgiel {
               <Link
                 className="underline italic hover:text-black"
                 href="/achievements"
               >
-                (link)
+                (zobacz tutaj)
               </Link>
-            }: reakcja Sonogashiry.
+            }: reakcja Sonogashiry,
           </Typography>
           <Typography
             className="text-dark-grey"
             variant="body"
             as="li"
           >
-            Reakcje substytucji aromatycznej: Reakcja Buchwalda (przykłady substytucji z
+            reakcje substytucji aromatycznej: Reakcja Buchwalda (przykłady substytucji z
             wykorzystaniem triazoli), aktywacja układów heterocyklicznych w substytucji
-            halogenów - grupą azydkową.
+            halogenów - grupą azydkową,
           </Typography>
           <Typography
             className="text-dark-grey"
             variant="body"
             as="li"
           >
-            Selektywne utlenianie związków pochodzenia naturalnego.
+            selektywne utlenianie związków pochodzenia naturalnego,
           </Typography>
           <Typography
             className="text-dark-grey"
             variant="body"
             as="li"
           >
-            Kraking (rozkład) amoniaku do azotu i wodoru.
+            kraking (rozkład) amoniaku do azotu i wodoru.
           </Typography>
-        </ol>
+        </ul>
         <div className="flex flex-col sm:flex-row pt-16">
           <div className="flex flex-col justify-center items-center sm:w-1/2 pb-5 sm:pb-0">
             <Image

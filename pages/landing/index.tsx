@@ -16,16 +16,17 @@ const Landing = () => {
       >
         {/* HERO */}
         <section className="mx-auto w-5/6 max-w-[1200px]
-          pt-20 md:pt-28 flex flex-col justify-between items-center xl:mb-20"
+          pt-20 md:pt-28 flex flex-col justify-between items-center"
         >
-          <div className="pb-12 md:pb-0 md:flex md:justify-between md:gap-14 ">
+          <div className="pb-12 md:pb-0 md:flex">
             <figure className="hidden md:py-0 md:flex md:justify-center md:items-center
               md:order-2 md:w-1/3 z-[-1]"
             >
               <Image
+                className="rotate-180"
                 src={HeroImg}
                 alt="Hero-image"
-                priority={true}
+                placeholder="blur"
               />
             </figure>
 
