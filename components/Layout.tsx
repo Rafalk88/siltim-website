@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+
 import TopDiv from "./TopDiv"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
@@ -12,13 +14,14 @@ type Props = {
 
 const Layout = ({ children, isTopOfPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1400px)")
+  const footerRef = useRef(null)
 
   return (
     <section id="top">
       {
         isAboveMediumScreens ? (
           <>
-            <ToTopModal id="top" />
+            <ToTopModal id="top" footerRef={footerRef} />
             <TopDiv />
           </>
         )
@@ -31,7 +34,7 @@ const Layout = ({ children, isTopOfPage }: Props) => {
       <main>
         {children}
       </main>
-      <Footer />
+      <Footer footerRef={footerRef} />
     </section>
   )
 }

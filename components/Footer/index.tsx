@@ -6,9 +6,13 @@ import SocialMediaIcons from "@/components/SocialMediaIcons"
 import Typography from "../Typography"
 import { menu } from "../Navbar"
 
-const Footer = () => {
+interface FooterProps {
+  footerRef: React.RefObject<HTMLElement> | null
+}
+
+const Footer = ({ footerRef }: FooterProps) => {
   return (
-    <footer className="w-full bg-blue">
+    <footer className="w-full bg-blue" ref={footerRef}>
       <div className="w-5/6 max-w-[1200px] mx-auto md:flex pt-12 text-white">
         <div className="w-full">
           <div className="sm:flex sm:justify-between">

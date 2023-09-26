@@ -4,6 +4,7 @@ import Typography from "@/components/Typography"
 
 const liDecimalStyle = "list-decimal font-normal pt-2"
 const liLowerStyle = "list-lower font-normal"
+const webPageName = 'siltim.pl'
 
 const Policy = () => {
   return (
@@ -23,7 +24,7 @@ const Policy = () => {
           variant="h2"
           as="h2"
         >
-          siltim.com
+          {webPageName}
         </Typography>
         <ol>
           <Typography
@@ -39,12 +40,12 @@ const Policy = () => {
                 as="li"
               >
                 Administratorem danych osobowych zbieranych za pośrednictwem strony internetowej&nbsp;
-                <span className="font-bold">siltim.com</span>&nbsp;jest <span className="font-bold">Siltim Sp. z o.o.</span> 
+                <span className="font-bold">{webPageName}</span>&nbsp;jest <span className="font-bold">Siltim Sp. z o.o.</span> 
                 &nbsp;wpisana do rejestru przedsiębiorców przez właściwy sąd pod numerem KRS:&nbsp;
                 <span className="font-bold">0000934584</span>, kapitał zakładowy: 5304,00 PLN, miejsce
                 wykonywania działalności: ŚW. Jana 11/4, 40-012 Katowice, adres do doręczeń: ŚW. Jana 11/4,
                 40-012 Katowice, NIP: 634-300-37-39, REGON: 520523333, adres poczty elektronicznej e-mail:
-                office@siltim.com, zwany dalej &quot;Administratorem&quot;.
+                office@{webPageName}, zwany dalej &quot;Administratorem&quot;.
               </Typography>
               <Typography
                 className={`${liDecimalStyle}`}
@@ -73,7 +74,7 @@ const Policy = () => {
                 as="li"
               >
                 CEL PRZETWARZANIA I PODSTAWA PRAWNA. Administrator przetwarza dane osobowe za pośrednictwem strony&nbsp;
-                <span className="font-bold">siltim.com</span> w przypadku:
+                <span className="font-bold">{webPageName}</span> w przypadku:
                 <ol className="pl-6 pt-2">
                   <Typography
                     className={liLowerStyle}
@@ -324,7 +325,7 @@ const Policy = () => {
                 as="li"
               >
                 W celu realizacji uprawnień, o których mowa w pkt 2 można wysłać stosowną wiadomość e-mail na
-                adres: office@siltim.com.
+                adres: office@{webPageName}.
               </Typography>
               <Typography
                 className={liDecimalStyle}

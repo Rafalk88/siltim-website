@@ -10,16 +10,19 @@ import CloseIcon from "@/public/assets/close-icon.svg"
 type Props = {
   isVisible: boolean
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>
+  modalElement: React.RefObject<HTMLElement> | null
 }
 
-const Anchor = ({ isVisible, setIsVisible }: Props) => {
+const Anchor = ({ isVisible, setIsVisible, modalElement }: Props) => {
   return (
     <>
       {
         !isVisible ? (
-          <div className="w-[80px] h-[80px] rounded-full flex justify-center
-            items-center bg-blue fixed top-[85%] right-[25px] cursor-pointer
-            drop-shadow-md hover:bg-light-blue z-[10]"
+          <section
+            className="w-[80px] h-[80px] rounded-full flex justify-center
+              items-center bg-blue absolute top-[60%] right-[-80%] cursor-pointer
+              drop-shadow-md hover:bg-light-blue z-[10]"
+            ref={modalElement}
           >
             <button 
               className="cursor-pointer"
@@ -32,13 +35,16 @@ const Anchor = ({ isVisible, setIsVisible }: Props) => {
                 height={46}
               />
             </button>
-          </div>
+          </section>
         ) : null
       }
       
       {
         isVisible ? (
-          <section className="fixed top-[32%] right-[5%] bg-white rounded-xl shadow-xl p-5 z-[25]">
+          <section
+            className="fixed top-[32%] right-[5%] bg-white rounded-xl shadow-xl p-5 z-[25]"
+            ref={modalElement}
+          >
             <div className="bg-blue h-12 mb-8 flex items-center justify-between px-3">
               <Typography
                 className="text-white"

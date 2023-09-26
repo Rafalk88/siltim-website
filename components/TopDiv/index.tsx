@@ -8,7 +8,7 @@ import SecuredLetter from "@/public/assets/SecuredLetter.svg"
 import PlaceMarker from "@/public/assets/PlaceMarker.svg"
 
 const textStyles = "text-white ml-2 cursor-pointer"
-const officialEmail = "office@siltim.com"
+const officialEmail = "office@siltim.pl"
 const address = "Św. Jana 11/4, 40-012 Katowice, Polska"
 
 const TopDiv = () => {
