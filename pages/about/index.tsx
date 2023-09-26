@@ -96,12 +96,12 @@ const index = () => {
               <li className="text-center pb-2">dr inż. Jacek Mularski</li>
               <li className="font-normal pb-2 text-center">Dyrektor generalny</li>
               <li>
-                {/* <Image
+                <Image
                   src={JacekMPhone}
                   alt="Jacek Mularski phone and email"
                   width={140}
                   height={40}
-                /> */}
+                />
               </li>
             </div>
             <div className="pb-10 flex flex-col items-center">
@@ -115,12 +115,12 @@ const index = () => {
               <li className="text-center pb-2">dr Piotr Bartczak</li>
               <li className="font-normal pb-2 text-center">Dyrektor ds. technologii</li>
               <li>
-                {/* <Image
+                <Image
                   src={PiotrBPhone}
                   alt="Piotr Bartczak phone and email"
                   width={200}
                   height={50}
-                /> */}
+                />
               </li>
             </div>
           </Typography>
