@@ -9,6 +9,7 @@ module.exports = {
     listStyleType: {
       none: "none",
       lower: "lower-alpha",
+      disc: "disc",
       decimal: "decimal",
     },
     extend: {
