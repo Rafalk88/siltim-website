@@ -88,7 +88,7 @@ const index = () => {
           </Typography>
           <Link href={discardLink} passHref>
             <Button
-              className="w-[185px] h-[52px] ml-4"
+              className="w-[185px] h-[52px] md:ml-4"
               variant="secondary"
             >
               Link do zrzutki
