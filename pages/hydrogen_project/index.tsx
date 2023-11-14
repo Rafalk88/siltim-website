@@ -1,9 +1,12 @@
 import React from 'react'
 import Head from "next/head"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@chakra-ui/react"
 
 import Typography from "@/components/Typography"
+
+import pageImg from "@/public/assets/projekt_wodorowy_siltim.png"
 
 const discardLink = "/"
 
@@ -23,31 +26,59 @@ const index = () => {
         >
           Projekt wodorowy
         </Typography>
-        <Typography
-          className="py-4 text-dark-grey"
-          variant="h5"
-          as="h5"
-        >
-          Katalizator rozkładu amoniaku oraz prototyp reaktora wodorowego
-        </Typography>
-        <Typography
-          className="py-4 text-dark-grey"
-          variant="h5"
-          as="h5"
-        >
-          Odkryjmy przyszłość zrównoważonego transportu - technologia wodorowa w Polsce
-        </Typography>
-        <Typography
-          className="py-4 text-dark-grey"
-          variant="body"
-          as="p"
-        >
-          Czy wiesz, że Polska ma szansę stać się liderem w dziedzinie technologii wodorowych?
-          Nasz projekt dotyczący innowacyjnego katalizatora ma potencjał, aby odmienić przyszłość
-          całej branży samochodowej. Potrzebujemy Twojego wsparcia, aby przyspieszyć prace nad
-          tą przełomową technologią i uczynić Polskę centrum rozwoju technologii wodorowych.
-        </Typography>
-        <div className="py-6 flex items-center justify-center">
+        <div className="md:flex">
+          <Image
+            className="md:w-1/2 md:order-2"
+            src={pageImg}
+            alt="page image"
+            width={157*3}
+            height={185*3}
+          />
+          <div className="md:w-1/2">
+            <Typography
+              className="py-4 text-dark-grey"
+              variant="h5"
+              as="h5"
+            >
+              Katalizator rozkładu amoniaku oraz prototyp reaktora wodorowego
+            </Typography>
+            <Typography
+              className="py-4 text-dark-grey"
+              variant="h5"
+              as="h5"
+            >
+              Odkryjmy przyszłość zrównoważonego transportu - technologia wodorowa w Polsce
+            </Typography>
+            <Typography
+              className="py-4 text-dark-grey"
+              variant="body"
+              as="p"
+            >
+              Czy wiesz, że Polska ma szansę stać się liderem w dziedzinie technologii wodorowych?
+              Nasz projekt dotyczący innowacyjnego katalizatora ma potencjał, aby odmienić przyszłość
+              całej branży samochodowej. Potrzebujemy Twojego wsparcia, aby przyspieszyć prace nad
+              tą przełomową technologią i uczynić Polskę centrum rozwoju technologii wodorowych.
+            </Typography>
+            <Typography
+              className="py-4 text-dark-grey"
+              variant="h5"
+              as="h5"
+            >
+              Dlaczego nasz projekt jest tak wyjątkowy?
+            </Typography>
+            <Typography
+              className="py-4 text-dark-grey"
+              variant="body"
+              as="p"
+            >
+              Nasza inicjatywa opiera się na efektywnej i nowatorskiej technologii, która umożliwia
+              wykorzystanie generowanego wodoru jako paliwa. Jest to złożone wyzwanie technologiczne,
+              ale mamy plan, dzięki któremu możemy je zrealizować. Jednym z kluczowych elementów
+              naszego projektu jest wykorzystanie amoniaku jako źródła wodoru.
+            </Typography>
+          </div>
+        </div>
+        <div className="py-6 flex flex-col md:flex-row items-center justify-center">
           <Typography
             className="py-4 text-dark-grey"
             variant="h5"
@@ -64,23 +95,6 @@ const index = () => {
             </Button>
           </Link>
         </div>
-        <Typography
-          className="py-4 text-dark-grey"
-          variant="h5"
-          as="h5"
-        >
-          Dlaczego nasz projekt jest tak wyjątkowy?
-        </Typography>
-        <Typography
-          className="py-4 text-dark-grey"
-          variant="body"
-          as="p"
-        >
-          Nasza inicjatywa opiera się na efektywnej i nowatorskiej technologii, która umożliwia
-          wykorzystanie generowanego wodoru jako paliwa. Jest to złożone wyzwanie technologiczne,
-          ale mamy plan, dzięki któremu możemy je zrealizować. Jednym z kluczowych elementów
-          naszego projektu jest wykorzystanie amoniaku jako źródła wodoru.
-        </Typography>
         <Typography
           className="pt-4 text-dark-grey"
           variant="h5"
