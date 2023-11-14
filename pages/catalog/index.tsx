@@ -1,71 +1,12 @@
-import React, { useState, useCallback, useEffect } from "react"
+import React, { useState } from "react"
 import Head from "next/head"
+import axios from "axios"
 
 import CatalogList from "@/components/CatologList"
-import { getGroupOfProducts } from '@/lib/mongo/groupOfProducts'
+import { getGroupOfProducts, getProducts } from '@/lib/mongo/groupOfProducts'
 
-type Price = {
-  currency: string
-  value: number
-}
-
-type Prices = {
-  quantity: string
-  purity: string
-  price: Price[]
-}
-
-type Product = {
-  _id: string
-  id: string
-  group: string
-  image: string
-  name: string
-  smiles: string
-  molecularFormula: string
-  cas?: string
-  mw: number
-  prices?: Prices[]
-}
-
-type ProductsState = {
-  products: Product[]
-}
-
-const Catalog = ({ groupOfProducts }: any) => {
+const Catalog = ({ groupOfProducts, products }: any) => {
   const [selectedGroup, setSelectedGroup] = useState<string | null>(null)
-  const [product, setProduct] = useState<ProductsState | null>(null)
-  const [cacheProducts, setCacheProducts] = useState<ProductsState>({ products: []})
-
-  const fetchData = useCallback(async () => {
-    try {
-      if (selectedGroup) {
-        const response = await fetch(`/api/products?group=${selectedGroup}`);
-        const result = await response.json();
-
-        setProduct(result);
-        return
-      }
-
-      setProduct(null)
-    } catch (error) {
-      console.error('Wystąpił błąd podczas pobierania danych:', error);
-    }
-  }, [selectedGroup]);
-
-  useEffect(() => {
-    fetchData()
-  }, [fetchData, selectedGroup])
-
-  useEffect(() => {
-    if (product && product.products) {
-      setCacheProducts((prevState: ProductsState) => {
-        return {
-          products: [...prevState.products, ...product.products],
-        };
-      });
-    }
-  }, [product]);
 
   return (
     <>
@@ -78,8 +19,7 @@ const Catalog = ({ groupOfProducts }: any) => {
         <div className="w-full min-h-[calc(100vh-120px)] pt-40">
           <CatalogList
             groupOfProducts={groupOfProducts}
-            product={product}
-            setProduct={setProduct}
+            product={products}
             selectedGroup={selectedGroup}
             setSelectedGroup={setSelectedGroup}
           />
@@ -91,16 +31,18 @@ const Catalog = ({ groupOfProducts }: any) => {
 
 export default Catalog
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const { groupOfProducts } = await getGroupOfProducts()
-    if (!groupOfProducts) {
-      throw new Error('Failed to fetch groupOfProducts!')
+    const { products } = await getProducts()
+    if (!groupOfProducts || !products) {
+      throw new Error('Failed to fetch groupOfProducts! or products!')
     }
 
     return {
       props: {
         groupOfProducts,
+        products,
       },
     }
   } catch (error: any) {
@@ -109,6 +51,7 @@ export async function getServerSideProps() {
     return {
       props: {
         groupOfProducts: null,
+        product: null,
       },
     }
   }

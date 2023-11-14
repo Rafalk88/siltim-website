@@ -5,7 +5,6 @@ import LiElement from './LiElement'
 import HoverModal from '../HoverModal'
 import Typography from '../Typography'
 import SubgroupModal from './SubgroupModal'
-import Searchbar from './Searchbar'
 
 export type SelectedGroup = string | null
 
@@ -14,7 +13,6 @@ type CatalogListProps ={
   selectedGroup: SelectedGroup
   setSelectedGroup: Dispatch<SetStateAction<SelectedGroup>>
   product: any
-  setProduct: Dispatch<SetStateAction<any>>
 }
 
 type GroupOfProducts = {
@@ -28,11 +26,12 @@ type GroupOfProducts = {
 const transformItem = 'transform ease-in-out duration-400'
 
 export const CatalogList = ({
-    groupOfProducts, selectedGroup, setSelectedGroup, product, setProduct
+    groupOfProducts, selectedGroup, setSelectedGroup, product,
   }: CatalogListProps) => {
   const [isHovered, setIsHovered] = useState<string | null>(null)
   const [isOpen, setIsOpen] = useState<string | null>(null)
   const [title, setTitle] = useState<string | null>(null)
+  console.log(product[0].group)
 
   const handleOnClickGroup = (name: string) => {
     setSelectedGroup((prevSelectedGroup) => {
@@ -60,7 +59,7 @@ export const CatalogList = ({
     <>
       <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto">
         {
-          groupOfProducts.map((compound: GroupOfProducts, idx: number) => {
+          groupOfProducts && groupOfProducts.map((compound: GroupOfProducts, idx: number) => {
             const { id, name, groupName, imageName } = compound
             return (
               <li
@@ -118,16 +117,11 @@ export const CatalogList = ({
         </Typography>
       </div>
       {selectedGroup && product && (
-        <>
-          {/* <Searchbar
-            className="max-w-2xl mx-auto my-8"
-            product={product}
-            setProduct={setProduct}
-          /> */}
-          <ul
-            className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto pb-16"
-          >
-            {product.products.map((item: any, idx: number) => {
+        <ul
+          className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-2xl mx-auto pb-16"
+        >
+          {product.map((item: any, idx: number) => {
+            if (selectedGroup === item.group) {
               const { id, name, image, smiles, cas, molecularFormula } = item
               const splitID = id.split('-')
               const formattedID = splitID[1]
@@ -158,9 +152,9 @@ export const CatalogList = ({
                   }
                 </li>
               )
-            })}
-          </ul>
-        </>
+            }
+          })}
+        </ul>
       )}
     </>
   )
