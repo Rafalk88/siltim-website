@@ -16,6 +16,7 @@ export const menu = [
   {text: "O nas", route: "about"},
   {text: "Katalizatory", route: "catalysts"},
   {text: "Syntezy na zlecenie", route: "synthesis"},
+  {text: "Projekt wodorowy" , route: "hydrogen_project"},
   {text: "Katalog", route: "catalog", mq: "sm"},
 ];
 
@@ -55,9 +56,10 @@ export const Navbar = ({ isTopOfPage }: Props) => {
                 {
                   menu.map(item => {
                     if (!item.mq) {
+                      const itemTextBold = item.text === "Projekt wodorowy" ? "font-bold" : ""
                       return (
                         <li className={`flex flex-col before:content-[''] before:w-[135px]
-                          before:h-[1px] before:bg-black before:hover:bg-blue hover:text-blue`}
+                          before:h-[1px] before:bg-black before:hover:bg-blue hover:text-blue ${itemTextBold}`}
                           key={item.text}
                         >
                           <Link href={`/${item.route}`} className="cursor-pointer">
