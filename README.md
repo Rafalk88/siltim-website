@@ -1,3 +1,4 @@
+![Website screenshot](assets/readme-image.png)
 
 # Siltim Ltd.
 
