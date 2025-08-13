@@ -15,6 +15,9 @@ A simple website commissioned by a company that produces chemical structures. Th
 
 https://siltim-website.vercel.app
 
+## Live
+
+http://www.siltim.pl/
 
 ## Installation
 
