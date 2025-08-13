@@ -1,4 +1,4 @@
-![Website screenshot](assets/readme-image.png)
+![Website screenshot](public/assets/readme-mage.png)
 
 # Siltim Ltd.
 
